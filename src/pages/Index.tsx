@@ -1,5 +1,15 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "@/i18n/LanguageContext";
+import {
+  WaveTurquoise,
+  YolkBrush,
+  TurquoiseOrbit,
+  YolkBlob,
+  TurquoiseSquiggle,
+  DotGrid,
+  YolkUnderline,
+  CrackLines,
+} from "@/components/BrandDecor";
 
 export default function Index() {
   const { t } = useTranslation();
