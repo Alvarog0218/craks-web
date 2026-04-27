@@ -86,10 +86,14 @@ export default function Index() {
       </section>
 
       {/* Services Section: Bento */}
-      <section className="py-24 px-8 md:px-20 max-w-7xl mx-auto">
-        <div className="mb-16 text-center max-w-2xl mx-auto">
+      <section className="relative py-24 px-8 md:px-20 max-w-7xl mx-auto">
+        {/* Trazo amarillo de fondo */}
+        <YolkBrush className="absolute top-8 left-1/2 -translate-x-1/2 w-[600px] h-20 opacity-50 pointer-events-none" />
+        <DotGrid className="absolute -bottom-4 -right-6 w-44 h-32 opacity-50 hidden md:block" />
+        <div className="mb-16 text-center max-w-2xl mx-auto relative">
           <h2 className="text-4xl md:text-5xl font-extrabold font-headline text-primary mb-6 tracking-tight">{t.solutions_h2}</h2>
-          <p className="text-on-surface-variant">{t.solutions_sub}</p>
+          <YolkUnderline className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-48 h-4" />
+          <p className="text-on-surface-variant mt-4">{t.solutions_sub}</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {/* For Consumers */}
