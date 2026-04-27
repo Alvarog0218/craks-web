@@ -1,0 +1,104 @@
+{
+  "es": {
+    "nav": {
+      "inicio": "Inicio",
+      "productos": "Productos",
+      "nosotros": "Nosotros",
+      "distribuidores": "Distribuidores",
+      "logistica": "Logística",
+      "pedidos": "Pedidos",
+      "partner": "Partner con Nosotros"
+    },
+    "hero": {
+      "badge": "Origen Certificado",
+      "title_1": "La Revolución",
+      "title_2": "del Huevo",
+      "description": "Logística de precisión y frescura absoluta. Llevamos la esencia de la granja a tu mesa con una red de distribución inteligente y sostenible.",
+      "cta": "Empezar Pedido",
+      "social_proof": "Confían en nosotros",
+      "stats_eggs": "1.2M+ Huevos distribuidos",
+      "stats_organic": "100% Orgánico garantizado",
+      "farm_name": "Granja Los Olivos",
+      "farm_status": "Recogido hoy, 06:00 AM"
+    },
+    "services": {
+      "title": "Soluciones a Medida",
+      "subtitle": "Ya seas un consumidor exigente o un distribuidor a gran escala, tenemos el sistema perfecto para ti.",
+      "consumer_title": "Para Consumidores",
+      "consumer_desc": "Suscríbete y recibe huevos frescos semanalmente en la puerta de tu casa. Sin intermediarios, directo de la granja.",
+      "consumer_li1": "Envío gratuito en 24h",
+      "consumer_li2": "Empaque 100% compostable",
+      "logistics_title": "Distribución Logística",
+      "logistics_desc": "Infraestructura de vanguardia para restaurantes y grandes superficies.",
+      "logistics_cta": "Saber más",
+      "organic_title": "Origen 100% Orgánico",
+      "organic_desc": "Nuestras gallinas viven en libertad, con alimentación natural y sin procesos industriales acelerados.",
+      "gallery_text": "Calidad que se siente en el origen."
+    },
+    "footer": {
+      "desc": "Distribución orgánica de precisión para el mercado global desde 2026.",
+      "resources": "Recursos",
+      "res_supply": "Cadena de Suministro",
+      "res_logistics": "Logística Global",
+      "res_sustainability": "Sostenibilidad",
+      "company": "Empresa",
+      "comp_about": "Nosotros",
+      "comp_press": "Prensa",
+      "comp_privacy": "Política de Privacidad",
+      "certification": "Certificación",
+      "cert_quote": "\"Estableciendo el estándar en logística orgánica internacional mediante transparencia tecnológica y agricultura ética.\"",
+      "copyright": "© 2026 Craks Egg Distribution Ltd. Estándares Internacionales Certificados."
+    }
+  },
+  "en": {
+    "nav": {
+      "inicio": "Home",
+      "productos": "Products",
+      "nosotros": "About Us",
+      "distribuidores": "Distributors",
+      "logistica": "Logistics",
+      "pedidos": "Orders",
+      "partner": "Partner with Us"
+    },
+    "hero": {
+      "badge": "Certified Origin",
+      "title_1": "The Egg",
+      "title_2": "Revolution",
+      "description": "Precision logistics and absolute freshness. We bring the essence of the farm to your table with an intelligent and sustainable distribution network.",
+      "cta": "Start Order",
+      "social_proof": "Trust us",
+      "stats_eggs": "1.2M+ Eggs distributed",
+      "stats_organic": "100% Guaranteed Organic",
+      "farm_name": "Los Olivos Farm",
+      "farm_status": "Picked today, 06:00 AM"
+    },
+    "services": {
+      "title": "Tailored Solutions",
+      "subtitle": "Whether you are a demanding consumer or a large-scale distributor, we have the perfect system for you.",
+      "consumer_title": "For Consumers",
+      "consumer_desc": "Subscribe and receive fresh eggs weekly at your doorstep. No middlemen, straight from the farm.",
+      "consumer_li1": "Free 24h shipping",
+      "consumer_li2": "100% compostable packaging",
+      "logistics_title": "Logistics Distribution",
+      "logistics_desc": "State-of-the-art infrastructure for restaurants and large retailers.",
+      "logistics_cta": "Learn more",
+      "organic_title": "100% Organic Origin",
+      "organic_desc": "Our hens live freely, with natural feeding and without accelerated industrial processes.",
+      "gallery_text": "Quality felt at the source."
+    },
+    "footer": {
+      "desc": "Precision organic distribution for the global market since 2026.",
+      "resources": "Resources",
+      "res_supply": "Supply Chain",
+      "res_logistics": "Global Logistics",
+      "res_sustainability": "Sustainability",
+      "company": "Company",
+      "comp_about": "About Us",
+      "comp_press": "Press",
+      "comp_privacy": "Privacy Policy",
+      "certification": "Certification",
+      "cert_quote": "\"Setting the standard in international organic logistics through technological transparency and ethical agriculture.\"",
+      "copyright": "© 2026 Craks Egg Distribution Ltd. International Standards Certified."
+    }
+  }
+}
