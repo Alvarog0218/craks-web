@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/footer.tsx","./src/components/navbar.tsx","./src/i18n/languagecontext.tsx","./src/pages/distribuidores.tsx","./src/pages/index.tsx","./src/pages/logistica.tsx","./src/pages/nosotros.tsx","./src/pages/productos.tsx"],"version":"5.9.3"}

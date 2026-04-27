@@ -1,29 +1,27 @@
 {
   "name": "craks",
+  "private": true,
   "version": "1.0.0",
+  "type": "module",
   "description": "Craks Egg Distributor — Organic Precision Platform",
-  "main": "server.js",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/styles.css -o ./public/css/styles.css --minify",
-    "watch:css": "tailwindcss -i ./src/styles.css -o ./public/css/styles.css --watch",
-    "start": "node server.js",
-    "dev": "concurrently \"npm run watch:css\" \"nodemon server.js\""
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "compression": "^1.7.4",
-    "cookie-parser": "^1.4.7",
-    "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "geoip-lite": "^2.0.1",
-    "node-ipinfo": "^4.4.0",
-    "request-ip": "^3.3.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.7",
-    "autoprefixer": "^10.4.17",
-    "concurrently": "^8.2.2",
-    "nodemon": "^3.0.2",
-    "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1"
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.1"
   }
 }

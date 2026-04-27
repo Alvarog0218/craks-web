@@ -16,7 +16,11 @@
       "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000__TRACKED_VAR__)",
       "Bash(curl -s -o /dev/null -w \"%{http_code} size=%{size_download}\" \"http://localhost:3000/public/css/styles.css\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:3000/public/assets/logo_azul.png\")",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(mkdir -p public/assets_bak)",
+      "Bash(cp -r public/assets/* public/assets_bak/)",
+      "Bash(npx tsc:*)",
+      "Bash(timeout 8 npx vite --host)"
     ]
   }
 }
