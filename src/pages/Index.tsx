@@ -1,5 +1,15 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "@/i18n/LanguageContext";
+import {
+  WaveTurquoise,
+  YolkBrush,
+  TurquoiseOrbit,
+  YolkBlob,
+  TurquoiseSquiggle,
+  DotGrid,
+  YolkUnderline,
+  CrackLines,
+} from "@/components/BrandDecor";
 
 export default function Index() {
   const { t } = useTranslation();
@@ -8,6 +18,11 @@ export default function Index() {
     <main>
       {/* Hero Section */}
       <section className="relative min-h-[921px] flex items-center px-8 md:px-24 py-12 md:py-20 overflow-hidden">
+        {/* Decor: orbita turquesa + blob amarillo + puntos */}
+        <TurquoiseOrbit className="absolute -top-20 -left-24 w-[420px] h-[420px] opacity-60" />
+        <YolkBlob className="absolute -bottom-32 -left-20 w-72 h-72 opacity-30 -z-10" />
+        <DotGrid className="absolute top-10 right-10 w-48 h-36 opacity-70 hidden lg:block" />
+        <CrackLines className="absolute bottom-12 right-1/3 w-24 h-24 opacity-50 hidden md:block" />
         <div className="grid lg:grid-cols-2 gap-16 items-center w-full max-w-7xl mx-auto z-10">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full">
@@ -15,7 +30,10 @@ export default function Index() {
               <span className="text-xs font-bold uppercase tracking-widest text-on-surface-variant font-label">{t.hero_badge}</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-extrabold font-headline leading-[1.1] tracking-tighter text-primary">
-              {t.hero_h1_1} <br /><span className="text-secondary italic">{t.hero_h1_2}</span>
+              {t.hero_h1_1} <br /><span className="relative inline-block text-secondary italic">
+                {t.hero_h1_2}
+                <YolkUnderline className="absolute left-0 -bottom-3 w-full h-4" />
+              </span>
             </h1>
             <p className="text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed">
               {t.hero_desc}
@@ -68,10 +86,14 @@ export default function Index() {
       </section>
 
       {/* Services Section: Bento */}
-      <section className="py-24 px-8 md:px-20 max-w-7xl mx-auto">
-        <div className="mb-16 text-center max-w-2xl mx-auto">
+      <section className="relative py-24 px-8 md:px-20 max-w-7xl mx-auto">
+        {/* Trazo amarillo de fondo */}
+        <YolkBrush className="absolute top-8 left-1/2 -translate-x-1/2 w-[600px] h-20 opacity-50 pointer-events-none" />
+        <DotGrid className="absolute -bottom-4 -right-6 w-44 h-32 opacity-50 hidden md:block" />
+        <div className="mb-16 text-center max-w-2xl mx-auto relative">
           <h2 className="text-4xl md:text-5xl font-extrabold font-headline text-primary mb-6 tracking-tight">{t.solutions_h2}</h2>
-          <p className="text-on-surface-variant">{t.solutions_sub}</p>
+          <YolkUnderline className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-48 h-4" />
+          <p className="text-on-surface-variant mt-4">{t.solutions_sub}</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {/* For Consumers */}
@@ -130,9 +152,13 @@ export default function Index() {
       </section>
 
       {/* Origen 100% Orgánico */}
-      <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative py-16 px-6">
+        {/* Onda turquesa superior */}
+        <WaveTurquoise className="top-0 -translate-y-1/2 opacity-90" />
+        <div className="max-w-5xl mx-auto relative">
           <div className="relative rounded-xl overflow-hidden bg-surface-container-highest p-8 md:p-12">
+            <CrackLines className="absolute top-6 right-8 w-28 h-28 opacity-60" />
+            <TurquoiseSquiggle className="absolute bottom-6 left-8 w-72 h-8 opacity-80" />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-black font-headline text-primary mb-6">{t.organic_h2}</h2>
               <p className="text-on-surface-variant mb-8 leading-relaxed max-w-lg">{t.organic_p}</p>
@@ -164,8 +190,10 @@ export default function Index() {
       </section>
 
       {/* Desktop Quality Bento */}
-      <section className="hidden md:block py-20 px-6 bg-surface-container-low">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative hidden md:block py-20 px-6 bg-surface-container-low overflow-hidden">
+        <YolkBlob className="absolute -top-32 -left-24 w-80 h-80 opacity-25" />
+        <TurquoiseOrbit className="absolute -bottom-24 -right-24 w-96 h-96 opacity-50" />
+        <div className="max-w-5xl mx-auto relative">
           <div className="text-center mb-16">
             <span className="font-headline font-bold text-secondary uppercase tracking-[0.3em] text-sm">{t.quality_sub}</span>
             <h2 className="font-headline text-5xl font-extrabold text-primary mt-4">{t.quality_h2}</h2>
@@ -208,11 +236,16 @@ export default function Index() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-16 px-6">
+      <section className="relative py-16 px-6 overflow-hidden">
+        <WaveTurquoise className="top-0 -translate-y-1/2 opacity-80" />
+        <TurquoiseSquiggle className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[500px] h-6 opacity-70" />
         <div className="max-w-3xl mx-auto bg-surface-container rounded-xl p-10 md:p-16 text-center relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+          <YolkBlob className="absolute -bottom-16 -right-16 w-48 h-48 opacity-30" />
+          <CrackLines className="absolute top-6 left-6 w-20 h-20 opacity-50" />
           <div className="relative z-10">
             <h2 className="text-3xl md:text-5xl font-black font-headline text-primary tracking-tighter mb-4">{t.cta_h2}</h2>
+            <YolkUnderline className="mx-auto mb-6 w-56 h-4" />
             <p className="text-on-surface-variant mb-8 max-w-md mx-auto">{t.cta_p}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/distribuidores" className="yolk-gradient text-on-primary-fixed px-10 py-4 rounded-full font-bold text-lg transition-all active:scale-95">{t.cta_btn1}</Link>
