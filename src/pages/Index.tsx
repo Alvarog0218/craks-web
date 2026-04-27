@@ -190,8 +190,10 @@ export default function Index() {
       </section>
 
       {/* Desktop Quality Bento */}
-      <section className="hidden md:block py-20 px-6 bg-surface-container-low">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative hidden md:block py-20 px-6 bg-surface-container-low overflow-hidden">
+        <YolkBlob className="absolute -top-32 -left-24 w-80 h-80 opacity-25" />
+        <TurquoiseOrbit className="absolute -bottom-24 -right-24 w-96 h-96 opacity-50" />
+        <div className="max-w-5xl mx-auto relative">
           <div className="text-center mb-16">
             <span className="font-headline font-bold text-secondary uppercase tracking-[0.3em] text-sm">{t.quality_sub}</span>
             <h2 className="font-headline text-5xl font-extrabold text-primary mt-4">{t.quality_h2}</h2>
