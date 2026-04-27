@@ -152,9 +152,13 @@ export default function Index() {
       </section>
 
       {/* Origen 100% Orgánico */}
-      <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative py-16 px-6">
+        {/* Onda turquesa superior */}
+        <WaveTurquoise className="top-0 -translate-y-1/2 opacity-90" />
+        <div className="max-w-5xl mx-auto relative">
           <div className="relative rounded-xl overflow-hidden bg-surface-container-highest p-8 md:p-12">
+            <CrackLines className="absolute top-6 right-8 w-28 h-28 opacity-60" />
+            <TurquoiseSquiggle className="absolute bottom-6 left-8 w-72 h-8 opacity-80" />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-black font-headline text-primary mb-6">{t.organic_h2}</h2>
               <p className="text-on-surface-variant mb-8 leading-relaxed max-w-lg">{t.organic_p}</p>
