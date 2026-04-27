@@ -236,11 +236,16 @@ export default function Index() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-16 px-6">
+      <section className="relative py-16 px-6 overflow-hidden">
+        <WaveTurquoise className="top-0 -translate-y-1/2 opacity-80" />
+        <TurquoiseSquiggle className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[500px] h-6 opacity-70" />
         <div className="max-w-3xl mx-auto bg-surface-container rounded-xl p-10 md:p-16 text-center relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+          <YolkBlob className="absolute -bottom-16 -right-16 w-48 h-48 opacity-30" />
+          <CrackLines className="absolute top-6 left-6 w-20 h-20 opacity-50" />
           <div className="relative z-10">
             <h2 className="text-3xl md:text-5xl font-black font-headline text-primary tracking-tighter mb-4">{t.cta_h2}</h2>
+            <YolkUnderline className="mx-auto mb-6 w-56 h-4" />
             <p className="text-on-surface-variant mb-8 max-w-md mx-auto">{t.cta_p}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/distribuidores" className="yolk-gradient text-on-primary-fixed px-10 py-4 rounded-full font-bold text-lg transition-all active:scale-95">{t.cta_btn1}</Link>
