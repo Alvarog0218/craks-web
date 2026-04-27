@@ -18,6 +18,11 @@ export default function Index() {
     <main>
       {/* Hero Section */}
       <section className="relative min-h-[921px] flex items-center px-8 md:px-24 py-12 md:py-20 overflow-hidden">
+        {/* Decor: orbita turquesa + blob amarillo + puntos */}
+        <TurquoiseOrbit className="absolute -top-20 -left-24 w-[420px] h-[420px] opacity-60" />
+        <YolkBlob className="absolute -bottom-32 -left-20 w-72 h-72 opacity-30 -z-10" />
+        <DotGrid className="absolute top-10 right-10 w-48 h-36 opacity-70 hidden lg:block" />
+        <CrackLines className="absolute bottom-12 right-1/3 w-24 h-24 opacity-50 hidden md:block" />
         <div className="grid lg:grid-cols-2 gap-16 items-center w-full max-w-7xl mx-auto z-10">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full">
@@ -25,7 +30,10 @@ export default function Index() {
               <span className="text-xs font-bold uppercase tracking-widest text-on-surface-variant font-label">{t.hero_badge}</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-extrabold font-headline leading-[1.1] tracking-tighter text-primary">
-              {t.hero_h1_1} <br /><span className="text-secondary italic">{t.hero_h1_2}</span>
+              {t.hero_h1_1} <br /><span className="relative inline-block text-secondary italic">
+                {t.hero_h1_2}
+                <YolkUnderline className="absolute left-0 -bottom-3 w-full h-4" />
+              </span>
             </h1>
             <p className="text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed">
               {t.hero_desc}
