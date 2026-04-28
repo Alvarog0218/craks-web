@@ -190,47 +190,48 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Desktop Quality Bento */}
-      <section className="relative hidden md:block py-20 px-6 bg-surface-container-low overflow-hidden">
-        <YolkBlob className="absolute -top-32 -left-24 w-80 h-80 opacity-25" />
-        <TurquoiseOrbit className="absolute -bottom-24 -right-24 w-96 h-96 opacity-50" />
+      {/* Desktop Quality Bento — FONDO PETRÓLEO/TURQUESA */}
+      <section className="relative hidden md:block py-24 px-6 petrol-gradient overflow-hidden">
+        <YolkBlob className="absolute -top-32 -left-24 w-80 h-80 opacity-40" />
+        <TurquoiseOrbit className="absolute -bottom-24 -right-24 w-96 h-96 opacity-70" />
+        <DotGrid className="absolute top-10 right-12 w-48 h-36 opacity-60" />
         <div className="max-w-5xl mx-auto relative">
           <div className="text-center mb-16">
-            <span className="font-headline font-bold text-secondary uppercase tracking-[0.3em] text-sm">{t.quality_sub}</span>
-            <h2 className="font-headline text-5xl font-extrabold text-primary mt-4">{t.quality_h2}</h2>
-            <div className="w-24 h-1 bg-primary-fixed mx-auto mt-6 rounded-full"></div>
+            <span className="font-headline font-bold text-yolk-light uppercase tracking-[0.3em] text-sm">{t.quality_sub}</span>
+            <h2 className="font-headline text-5xl font-extrabold text-white mt-4">{t.quality_h2}</h2>
+            <div className="w-24 h-1 bg-yolk mx-auto mt-6 rounded-full"></div>
           </div>
           <div className="grid grid-cols-12 gap-6">
-            <div className="col-span-7 bg-surface-container-lowest p-10 rounded-xl relative overflow-hidden group">
-              <h3 className="font-headline text-2xl font-bold text-primary mb-4">Organic Precision</h3>
+            <div className="col-span-7 bg-white/95 backdrop-blur-sm p-10 rounded-xl relative overflow-hidden group">
+              <h3 className="font-headline text-2xl font-bold text-petrol mb-4">Organic Precision</h3>
               <p className="text-on-surface-variant max-w-md">{t.quality_c1_p}</p>
               <div className="mt-8 flex items-center gap-3">
-                <span className="material-symbols-outlined text-3xl text-secondary">verified</span>
-                <span className="font-bold text-primary text-sm">Certified International Standards</span>
+                <span className="material-symbols-outlined text-3xl text-tertiary">verified</span>
+                <span className="font-bold text-petrol text-sm">Certified International Standards</span>
               </div>
               <div className="absolute right-[-10%] bottom-[-10%] w-64 h-64 opacity-10 group-hover:opacity-20 transition-opacity">
-                <span className="material-symbols-outlined text-[12rem] text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>egg</span>
+                <span className="material-symbols-outlined text-[12rem] text-tertiary" style={{ fontVariationSettings: "'FILL' 1" }}>egg</span>
               </div>
             </div>
-            <div className="col-span-5 bg-secondary text-on-secondary p-10 rounded-xl flex flex-col justify-center">
+            <div className="col-span-5 yolk-gradient text-on-primary-fixed p-10 rounded-xl flex flex-col justify-center shadow-2xl">
               <span className="material-symbols-outlined text-5xl mb-6">public</span>
               <h3 className="font-headline text-2xl font-bold mb-3">Global Reach</h3>
-              <p className="opacity-80">{t.quality_c2_p}</p>
+              <p className="opacity-90">{t.quality_c2_p}</p>
             </div>
-            <div className="col-span-4 bg-surface-container-highest p-8 rounded-xl">
-              <span className="material-symbols-outlined text-primary text-4xl mb-4 block">eco</span>
+            <div className="col-span-4 bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-xl text-white">
+              <span className="material-symbols-outlined text-yolk text-4xl mb-4 block">eco</span>
               <h4 className="font-headline text-lg font-bold mb-2">{t.quality_c3_h4}</h4>
-              <p className="text-on-surface-variant text-sm">{t.quality_c3_p}</p>
+              <p className="text-white/80 text-sm">{t.quality_c3_p}</p>
             </div>
-            <div className="col-span-4 bg-surface-container-highest p-8 rounded-xl">
-              <span className="material-symbols-outlined text-primary text-4xl mb-4 block">local_shipping</span>
+            <div className="col-span-4 bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-xl text-white">
+              <span className="material-symbols-outlined text-yolk text-4xl mb-4 block">local_shipping</span>
               <h4 className="font-headline text-lg font-bold mb-2">Rapid Logistics</h4>
-              <p className="text-on-surface-variant text-sm">{t.organic_cert4}</p>
+              <p className="text-white/80 text-sm">{t.organic_cert4}</p>
             </div>
-            <div className="col-span-4 bg-surface-container-highest p-8 rounded-xl">
-              <span className="material-symbols-outlined text-primary text-4xl mb-4 block">health_and_safety</span>
+            <div className="col-span-4 bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-xl text-white">
+              <span className="material-symbols-outlined text-yolk text-4xl mb-4 block">health_and_safety</span>
               <h4 className="font-headline text-lg font-bold mb-2">Pure Integrity</h4>
-              <p className="text-on-surface-variant text-sm">{t.quality_c5_p}</p>
+              <p className="text-white/80 text-sm">{t.quality_c5_p}</p>
             </div>
           </div>
         </div>
