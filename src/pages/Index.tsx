@@ -20,11 +20,14 @@ export default function Index() {
     <main>
       {/* Hero Section */}
       <section className="relative min-h-[921px] flex items-center px-8 md:px-24 py-12 md:py-20 overflow-hidden">
-        {/* Decor: orbita turquesa + blob amarillo + puntos */}
-        <TurquoiseOrbit className="absolute -top-20 -left-24 w-[420px] h-[420px] opacity-60" />
-        <YolkBlob className="absolute -bottom-32 -left-20 w-72 h-72 opacity-30 -z-10" />
+        {/* Decor: huevos grandes + orbita turquesa + puntos */}
+        <EggShape variant="turquoise" className="absolute -top-24 -left-16 w-72 h-80 opacity-40 -rotate-12" />
+        <EggShape variant="yolk" className="absolute top-32 right-8 w-40 h-48 opacity-70 rotate-12 hidden lg:block" />
+        <EggShape variant="outline" className="absolute bottom-10 left-1/3 w-28 h-32 opacity-60 -rotate-6 hidden md:block" />
+        <TurquoiseOrbit className="absolute -top-20 -left-24 w-[420px] h-[420px] opacity-50" />
+        <YolkBlob className="absolute -bottom-32 -left-20 w-72 h-72 opacity-40 -z-10" />
         <DotGrid className="absolute top-10 right-10 w-48 h-36 opacity-70 hidden lg:block" />
-        <CrackLines className="absolute bottom-12 right-1/3 w-24 h-24 opacity-50 hidden md:block" />
+        <CrackLines className="absolute bottom-12 right-1/3 w-24 h-24 opacity-60 hidden md:block" />
         <div className="grid lg:grid-cols-2 gap-16 items-center w-full max-w-7xl mx-auto z-10">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full">
