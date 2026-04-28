@@ -200,3 +200,66 @@ export function CrackLines({ className = "" }: DecorProps) {
     </svg>
   );
 }
+
+/* ─── Huevo amarillo grande (silueta yema fuerte) ─── */
+export function EggShape({
+  className = "",
+  variant = "yolk",
+}: DecorProps & { variant?: "yolk" | "turquoise" | "petrol" | "outline" }) {
+  const fills: Record<string, { fill: string; stroke: string; shadow: string }> = {
+    yolk:      { fill: "#FFC500", stroke: "#E8B923", shadow: "#FFE680" },
+    turquoise: { fill: "#15c6d2", stroke: "#0FA8B3", shadow: "#7DE0E8" },
+    petrol:    { fill: "#428488", stroke: "#2E6E73", shadow: "#6FB0B5" },
+    outline:   { fill: "none",    stroke: "#FFC500", shadow: "#FFC500" },
+  };
+  const c = fills[variant];
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 200 240"
+      className={`pointer-events-none ${className}`}
+    >
+      <defs>
+        <radialGradient id={`eggGrad-${variant}`} cx="38%" cy="32%" r="70%">
+          <stop offset="0%" stopColor={c.shadow} />
+          <stop offset="100%" stopColor={c.fill} />
+        </radialGradient>
+      </defs>
+      <path
+        d="M100,12 C150,12 180,90 180,150 C180,200 145,228 100,228 C55,228 20,200 20,150 C20,90 50,12 100,12 Z"
+        fill={variant === "outline" ? "none" : `url(#eggGrad-${variant})`}
+        stroke={c.stroke}
+        strokeWidth={variant === "outline" ? 4 : 2}
+      />
+    </svg>
+  );
+}
+
+/* ─── Patrón de huevos repetidos (campo de fondo) ─── */
+export function EggField({ className = "" }: DecorProps) {
+  const eggs = [
+    { x: 40,  y: 60,  r: 0,   s: 0.7, c: "#FFC500" },
+    { x: 180, y: 30,  r: 15,  s: 0.5, c: "#15c6d2" },
+    { x: 320, y: 90,  r: -10, s: 0.8, c: "#FFC500" },
+    { x: 90,  y: 200, r: 20,  s: 0.6, c: "#428488" },
+    { x: 260, y: 220, r: -8,  s: 0.7, c: "#FFC500" },
+    { x: 380, y: 170, r: 5,   s: 0.55,c: "#15c6d2" },
+  ];
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 440 280"
+      className={`pointer-events-none ${className}`}
+    >
+      {eggs.map((e, i) => (
+        <g key={i} transform={`translate(${e.x},${e.y}) rotate(${e.r}) scale(${e.s})`}>
+          <path
+            d="M0,0 C30,0 48,46 48,82 C48,112 27,128 0,128 C-27,128 -48,112 -48,82 C-48,46 -30,0 0,0 Z"
+            fill={e.c}
+            opacity="0.85"
+          />
+        </g>
+      ))}
+    </svg>
+  );
+}

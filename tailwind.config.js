@@ -5,58 +5,58 @@ export default {
   theme: {
     extend: {
       colors: {
-        // ── Superficies (amarillo crema dominante) ──
-        'surface':                   '#FFF8DC',  // crema yema suave
-        'surface-bright':            '#FFFBE6',
-        'surface-dim':               '#F2E8B0',
-        'surface-variant':           '#FAEFC4',
-        'surface-container-lowest':  '#ffffff',
-        'surface-container-low':     '#FFF4C9',
-        'surface-container':         '#FFEFB3',
-        'surface-container-high':    '#FCE89A',
-        'surface-container-highest': '#F7DF7A',
-        'surface-tint':              '#E8B923',
-        'on-surface':                '#1F2A14',
-        'on-surface-variant':        '#3D4A2A',
-        'inverse-surface':           '#2A3018',
-        'inverse-on-surface':        '#FFF8DC',
+        // ── Superficies (crema yema cálida) ──
+        'surface':                   '#FFF6C2',  // crema yema más saturada
+        'surface-bright':            '#FFFAE0',
+        'surface-dim':               '#F2DC7A',
+        'surface-variant':           '#FAE89A',
+        'surface-container-lowest':  '#FFFEF5',
+        'surface-container-low':     '#FFF1A8',
+        'surface-container':         '#FFE988',
+        'surface-container-high':    '#FBDD66',
+        'surface-container-highest': '#F5CE3D',
+        'surface-tint':              '#15c6d2',
+        'on-surface':                '#0E2E32',  // petróleo profundo (texto)
+        'on-surface-variant':        '#2E5559',
+        'inverse-surface':           '#0E2E32',
+        'inverse-on-surface':        '#FFF6C2',
 
-        'background':                '#FFF8DC',
-        'on-background':             '#1F2A14',
+        'background':                '#FFF6C2',
+        'on-background':             '#0E2E32',
 
-        // ── Primary: AMARILLO YEMA (dominante) ──
-        'primary':                   '#E8B923',  // amarillo yema profundo
-        'primary-container':         '#FFD84D',
-        'primary-fixed':             '#FFE680',
-        'primary-fixed-dim':         '#F5C634',
-        'on-primary':                '#1F2A14',
-        'on-primary-container':      '#5C4500',
-        'on-primary-fixed':          '#2A1E00',
-        'on-primary-fixed-variant':  '#7A5C00',
-        'inverse-primary':           '#FFD84D',
+        // ── Primary: TURQUESA del manual (protagonista) ──
+        'primary':                   '#15c6d2',  // turquesa oficial CRACKS
+        'primary-container':         '#7DE0E8',
+        'primary-fixed':             '#B5EEF3',
+        'primary-fixed-dim':         '#15c6d2',
+        'on-primary':                '#ffffff',
+        'on-primary-container':      '#003E45',
+        'on-primary-fixed':          '#001F23',
+        'on-primary-fixed-variant':  '#005662',
+        'inverse-primary':           '#7DE0E8',
 
-        // ── Secondary: VERDE CAMPO (acento principal) ──
-        'secondary':                 '#7CB342',  // verde fresco
-        'secondary-container':       '#A5D66B',
-        'secondary-fixed':           '#C9E89A',
-        'secondary-fixed-dim':       '#5A8F2B',
+        // ── Secondary: PETRÓLEO del manual ──
+        'secondary':                 '#428488',  // petróleo oficial
+        'secondary-container':       '#6FB0B5',
+        'secondary-fixed':           '#A8D4D8',
+        'secondary-fixed-dim':       '#2E6E73',
         'on-secondary':              '#ffffff',
-        'on-secondary-container':    '#2E4A18',
-        'on-secondary-fixed':        '#0F1F00',
-        'on-secondary-fixed-variant':'#3D5A1A',
+        'on-secondary-container':    '#001F23',
+        'on-secondary-fixed':        '#001012',
+        'on-secondary-fixed-variant':'#1F4F54',
 
-        // ── Tertiary: TURQUESA del manual de marca ──
-        'tertiary':                  '#15c6d2',  // turquesa oficial
-        'tertiary-container':        '#7DE0E8',
-        'tertiary-fixed':            '#B5EEF3',
-        'tertiary-fixed-dim':        '#428488',  // petróleo manual
-        'on-tertiary':               '#ffffff',
-        'on-tertiary-container':     '#003E45',
-        'on-tertiary-fixed':         '#001F23',
-        'on-tertiary-fixed-variant': '#005662',
+        // ── Tertiary: AMARILLO YEMA fuerte (manual) ──
+        'tertiary':                  '#F5C634',  // amarillo yema fuerte
+        'tertiary-container':        '#FFD84D',
+        'tertiary-fixed':            '#FFE680',
+        'tertiary-fixed-dim':        '#E8B923',
+        'on-tertiary':               '#2A1E00',
+        'on-tertiary-container':     '#5C4500',
+        'on-tertiary-fixed':         '#2A1E00',
+        'on-tertiary-fixed-variant': '#7A5C00',
 
-        'outline':                   '#7A8060',
-        'outline-variant':           '#C7CDA8',
+        'outline':                   '#5A8488',
+        'outline-variant':           '#A8C8CC',
 
         'error':                     '#ba1a1a',
         'error-container':           '#ffdad6',
@@ -67,15 +67,16 @@ export default {
         'brand-turquoise':           '#15c6d2',
         'brand-petrol':              '#428488',
         'brand-pink':                '#ebbed3',
-        'petrol':                    '#428488',  // alineado al manual
+        'petrol':                    '#428488',
+        'petrol-deep':               '#1F4F54',
+        'turquoise':                 '#15c6d2',
+        'turquoise-light':           '#7DE0E8',
 
-        // ── Verdes y amarillos extendidos ──
+        // ── Amarillos yema (refuerzo) ──
         'yolk':                      '#F5C634',
         'yolk-deep':                 '#E8B923',
+        'yolk-strong':               '#FFC500',  // amarillo intenso manual
         'yolk-light':                '#FFE680',
-        'leaf':                      '#7CB342',
-        'leaf-deep':                 '#5A8F2B',
-        'leaf-light':                '#C9E89A',
       },
       borderRadius: {
         DEFAULT: '1rem',

@@ -9,6 +9,8 @@ import {
   DotGrid,
   YolkUnderline,
   CrackLines,
+  EggShape,
+  EggField,
 } from "@/components/BrandDecor";
 
 export default function Index() {
@@ -18,11 +20,14 @@ export default function Index() {
     <main>
       {/* Hero Section */}
       <section className="relative min-h-[921px] flex items-center px-8 md:px-24 py-12 md:py-20 overflow-hidden">
-        {/* Decor: orbita turquesa + blob amarillo + puntos */}
-        <TurquoiseOrbit className="absolute -top-20 -left-24 w-[420px] h-[420px] opacity-60" />
-        <YolkBlob className="absolute -bottom-32 -left-20 w-72 h-72 opacity-30 -z-10" />
+        {/* Decor: huevos grandes + orbita turquesa + puntos */}
+        <EggShape variant="turquoise" className="absolute -top-24 -left-16 w-72 h-80 opacity-40 -rotate-12" />
+        <EggShape variant="yolk" className="absolute top-32 right-8 w-40 h-48 opacity-70 rotate-12 hidden lg:block" />
+        <EggShape variant="outline" className="absolute bottom-10 left-1/3 w-28 h-32 opacity-60 -rotate-6 hidden md:block" />
+        <TurquoiseOrbit className="absolute -top-20 -left-24 w-[420px] h-[420px] opacity-50" />
+        <YolkBlob className="absolute -bottom-32 -left-20 w-72 h-72 opacity-40 -z-10" />
         <DotGrid className="absolute top-10 right-10 w-48 h-36 opacity-70 hidden lg:block" />
-        <CrackLines className="absolute bottom-12 right-1/3 w-24 h-24 opacity-50 hidden md:block" />
+        <CrackLines className="absolute bottom-12 right-1/3 w-24 h-24 opacity-60 hidden md:block" />
         <div className="grid lg:grid-cols-2 gap-16 items-center w-full max-w-7xl mx-auto z-10">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full">
@@ -86,9 +91,10 @@ export default function Index() {
       </section>
 
       {/* Services Section: Bento */}
-      <section className="relative py-24 px-8 md:px-20 max-w-7xl mx-auto">
-        {/* Trazo amarillo de fondo */}
-        <YolkBrush className="absolute top-8 left-1/2 -translate-x-1/2 w-[600px] h-20 opacity-50 pointer-events-none" />
+      <section className="relative py-24 px-8 md:px-20 max-w-7xl mx-auto egg-pattern">
+        {/* Trazo amarillo de fondo + campo de huevos */}
+        <EggField className="absolute -top-10 right-0 w-[500px] h-72 opacity-30 pointer-events-none" />
+        <YolkBrush className="absolute top-8 left-1/2 -translate-x-1/2 w-[600px] h-20 opacity-60 pointer-events-none" />
         <DotGrid className="absolute -bottom-4 -right-6 w-44 h-32 opacity-50 hidden md:block" />
         <div className="mb-16 text-center max-w-2xl mx-auto relative">
           <h2 className="text-4xl md:text-5xl font-extrabold font-headline text-primary mb-6 tracking-tight">{t.solutions_h2}</h2>
