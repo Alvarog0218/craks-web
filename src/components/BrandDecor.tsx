@@ -15,18 +15,25 @@ export function WaveTurquoise({ className = "" }: DecorProps) {
   return (
     <svg
       aria-hidden="true"
-      viewBox="0 0 1440 120"
+      viewBox="0 0 1440 140"
       preserveAspectRatio="none"
-      className={`pointer-events-none absolute left-0 w-full h-20 md:h-28 ${className}`}
+      className={`pointer-events-none absolute left-0 w-full h-24 md:h-32 ${className}`}
     >
+      {/* Capa petróleo de fondo */}
       <path
-        d="M0,64 C240,112 480,16 720,48 C960,80 1200,112 1440,64 L1440,120 L0,120 Z"
-        fill="#15c6d2"
-        opacity="1"
-      />
-      <path
-        d="M0,80 C240,40 480,120 720,80 C960,40 1200,80 1440,72 L1440,120 L0,120 Z"
+        d="M0,80 C220,30 460,130 720,70 C980,10 1220,90 1440,60 L1440,140 L0,140 Z"
         fill="#428488"
+        opacity="0.95"
+      />
+      {/* Onda turquesa principal */}
+      <path
+        d="M0,95 C260,55 480,135 740,90 C1000,45 1220,115 1440,85 L1440,140 L0,140 Z"
+        fill="#15c6d2"
+      />
+      {/* Acento rosa del manual */}
+      <path
+        d="M0,118 C320,98 620,128 940,108 C1160,96 1300,118 1440,108 L1440,140 L0,140 Z"
+        fill="#ebbed3"
         opacity="0.55"
       />
     </svg>
@@ -238,12 +245,12 @@ export function EggShape({
 /* ─── Patrón de huevos repetidos (campo de fondo) ─── */
 export function EggField({ className = "" }: DecorProps) {
   const eggs = [
-    { x: 40,  y: 60,  r: 0,   s: 0.7, c: "#FFC500" },
-    { x: 180, y: 30,  r: 15,  s: 0.5, c: "#15c6d2" },
-    { x: 320, y: 90,  r: -10, s: 0.8, c: "#FFC500" },
-    { x: 90,  y: 200, r: 20,  s: 0.6, c: "#428488" },
-    { x: 260, y: 220, r: -8,  s: 0.7, c: "#FFC500" },
-    { x: 380, y: 170, r: 5,   s: 0.55,c: "#15c6d2" },
+    { x: 40,  y: 60,  r: 0,   s: 0.7, c: "#15c6d2" },
+    { x: 180, y: 30,  r: 15,  s: 0.5, c: "#ebbed3" },
+    { x: 320, y: 90,  r: -10, s: 0.8, c: "#428488" },
+    { x: 90,  y: 200, r: 20,  s: 0.6, c: "#ebbed3" },
+    { x: 260, y: 220, r: -8,  s: 0.7, c: "#15c6d2" },
+    { x: 380, y: 170, r: 5,   s: 0.55,c: "#428488" },
   ];
   return (
     <svg
