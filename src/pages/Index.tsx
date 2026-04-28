@@ -91,9 +91,10 @@ export default function Index() {
       </section>
 
       {/* Services Section: Bento */}
-      <section className="relative py-24 px-8 md:px-20 max-w-7xl mx-auto">
-        {/* Trazo amarillo de fondo */}
-        <YolkBrush className="absolute top-8 left-1/2 -translate-x-1/2 w-[600px] h-20 opacity-50 pointer-events-none" />
+      <section className="relative py-24 px-8 md:px-20 max-w-7xl mx-auto egg-pattern">
+        {/* Trazo amarillo de fondo + campo de huevos */}
+        <EggField className="absolute -top-10 right-0 w-[500px] h-72 opacity-30 pointer-events-none" />
+        <YolkBrush className="absolute top-8 left-1/2 -translate-x-1/2 w-[600px] h-20 opacity-60 pointer-events-none" />
         <DotGrid className="absolute -bottom-4 -right-6 w-44 h-32 opacity-50 hidden md:block" />
         <div className="mb-16 text-center max-w-2xl mx-auto relative">
           <h2 className="text-4xl md:text-5xl font-extrabold font-headline text-primary mb-6 tracking-tight">{t.solutions_h2}</h2>
