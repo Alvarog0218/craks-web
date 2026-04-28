@@ -17,17 +17,17 @@ export function WaveTurquoise({ className = "" }: DecorProps) {
       aria-hidden="true"
       viewBox="0 0 1440 120"
       preserveAspectRatio="none"
-      className={`pointer-events-none absolute left-0 w-full h-16 md:h-24 ${className}`}
+      className={`pointer-events-none absolute left-0 w-full h-20 md:h-28 ${className}`}
     >
       <path
         d="M0,64 C240,112 480,16 720,48 C960,80 1200,112 1440,64 L1440,120 L0,120 Z"
         fill="#15c6d2"
-        opacity="0.9"
+        opacity="1"
       />
       <path
         d="M0,80 C240,40 480,120 720,80 C960,40 1200,80 1440,72 L1440,120 L0,120 Z"
-        fill="#15c6d2"
-        opacity="0.35"
+        fill="#428488"
+        opacity="0.55"
       />
     </svg>
   );
