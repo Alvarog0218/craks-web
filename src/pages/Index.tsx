@@ -9,6 +9,8 @@ import {
   DotGrid,
   YolkUnderline,
   CrackLines,
+  EggShape,
+  EggField,
 } from "@/components/BrandDecor";
 
 export default function Index() {
