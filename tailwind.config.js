@@ -5,24 +5,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        // ── Superficies (crema yema cálida) ──
-        'surface':                   '#FFF6C2',  // crema yema más saturada
-        'surface-bright':            '#FFFAE0',
-        'surface-dim':               '#F2DC7A',
-        'surface-variant':           '#FAE89A',
-        'surface-container-lowest':  '#FFFEF5',
-        'surface-container-low':     '#FFF1A8',
-        'surface-container':         '#FFE988',
-        'surface-container-high':    '#FBDD66',
-        'surface-container-highest': '#F5CE3D',
+        // ── Superficies (mostaza/crema del manual CRACKS) ──
+        'surface':                   '#F4D04E',  // mostaza fondo manual
+        'surface-bright':            '#F9E37B',
+        'surface-dim':               '#E0B838',
+        'surface-variant':           '#F7E8B0',
+        'surface-container-lowest':  '#FFFBE8',
+        'surface-container-low':     '#F8E596',
+        'surface-container':         '#F4D04E',
+        'surface-container-high':    '#EBC033',
+        'surface-container-highest': '#D9AC1F',
         'surface-tint':              '#15c6d2',
-        'on-surface':                '#0E2E32',  // petróleo profundo (texto)
-        'on-surface-variant':        '#2E5559',
-        'inverse-surface':           '#0E2E32',
-        'inverse-on-surface':        '#FFF6C2',
+        'on-surface':                '#1F4F54',  // petróleo (texto)
+        'on-surface-variant':        '#428488',
+        'inverse-surface':           '#1F4F54',
+        'inverse-on-surface':        '#F4D04E',
 
-        'background':                '#FFF6C2',
-        'on-background':             '#0E2E32',
+        'background':                '#F4D04E',
+        'on-background':             '#1F4F54',
 
         // ── Primary: TURQUESA del manual (protagonista) ──
         'primary':                   '#15c6d2',  // turquesa oficial CRACKS
