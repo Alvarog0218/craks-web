@@ -35,7 +35,7 @@ export default function Index() {
               <span className="text-xs font-bold uppercase tracking-widest text-on-surface-variant font-label">{t.hero_badge}</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-extrabold font-headline leading-[1.1] tracking-tighter text-primary">
-              {t.hero_h1_1} <br /><span className="relative inline-block text-secondary italic">
+              {t.hero_h1_1} <br /><span className="relative inline-block text-yolk-strong italic">
                 {t.hero_h1_2}
                 <YolkUnderline className="absolute left-0 -bottom-3 w-full h-4" />
               </span>
