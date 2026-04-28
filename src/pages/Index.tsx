@@ -117,14 +117,15 @@ export default function Index() {
               <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4lKw_FQGIF2WAdm3I7GGuk_mT6oOmS0YVtfmjCi_UAqcecSv8y6ykNSFre9wE_HvNvATHp7TlhZJzK60Jey9LSqYxHgoGzRVHxQnAh-EQut6VZTWaELORkOhueSYojqQQpn6sNOrjxKnTRFc4okNYeAtBE3gbuek7Vl0YHuDyNAVQJEAyR7t-6j4d7cMgFmpfaawl6LUNNlhESd9ph7U4IZUqiCUO_emwbDjE343p3YWNIGubrkjc-eaaFJBYm9hmy8VhYBmaiQo" alt="Desayuno estético" />
             </div>
           </div>
-          {/* Logistics Card */}
-          <div className="bg-secondary text-on-secondary rounded-xl p-10 flex flex-col justify-between group">
-            <div className="space-y-6">
-              <span className="material-symbols-outlined text-5xl opacity-50">local_shipping</span>
+          {/* Logistics Card — TURQUESA protagonista */}
+          <div className="turquoise-gradient text-white rounded-xl p-10 flex flex-col justify-between group shadow-2xl shadow-tertiary/30 relative overflow-hidden">
+            <CrackLines className="absolute -top-4 -right-4 w-32 h-32 opacity-30" />
+            <div className="space-y-6 relative z-10">
+              <span className="material-symbols-outlined text-5xl opacity-90">local_shipping</span>
               <h3 className="text-3xl font-bold font-headline leading-tight">{t.solutions_log_h3}</h3>
-              <p className="text-secondary-container/80">{t.solutions_log_p}</p>
+              <p className="text-white/85">{t.solutions_log_p}</p>
             </div>
-            <Link className="mt-8 flex items-center justify-between bg-white/10 hover:bg-white/20 p-4 rounded-full transition-colors" to="/logistica">
+            <Link className="mt-8 flex items-center justify-between bg-white/15 hover:bg-white/25 p-4 rounded-full transition-colors relative z-10 backdrop-blur-sm" to="/logistica">
               <span className="font-bold">{t.solutions_log_cta}</span>
               <span className="material-symbols-outlined">north_east</span>
             </Link>
