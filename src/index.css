@@ -50,6 +50,23 @@
     background: linear-gradient(135deg, #FFE680 0%, #F5C634 50%, #7CB342 100%);
   }
 
+  /* ── Turquesa / Petróleo (manual de marca CRACKS) ── */
+  .turquoise-gradient {
+    background: linear-gradient(135deg, #15c6d2 0%, #428488 100%);
+  }
+
+  .petrol-gradient {
+    background: radial-gradient(circle at 20% 20%, #4FB8C0 0%, #2E6E73 60%, #1F4F54 100%);
+  }
+
+  .turquoise-yolk-gradient {
+    background: linear-gradient(120deg, #15c6d2 0%, #428488 55%, #E8B923 100%);
+  }
+
+  .turquoise-band {
+    background: linear-gradient(90deg, #15c6d2 0%, #2EAEB8 50%, #428488 100%);
+  }
+
   .glass-nav {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
