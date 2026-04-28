@@ -245,12 +245,12 @@ export function EggShape({
 /* ─── Patrón de huevos repetidos (campo de fondo) ─── */
 export function EggField({ className = "" }: DecorProps) {
   const eggs = [
-    { x: 40,  y: 60,  r: 0,   s: 0.7, c: "#FFC500" },
-    { x: 180, y: 30,  r: 15,  s: 0.5, c: "#15c6d2" },
-    { x: 320, y: 90,  r: -10, s: 0.8, c: "#FFC500" },
-    { x: 90,  y: 200, r: 20,  s: 0.6, c: "#428488" },
-    { x: 260, y: 220, r: -8,  s: 0.7, c: "#FFC500" },
-    { x: 380, y: 170, r: 5,   s: 0.55,c: "#15c6d2" },
+    { x: 40,  y: 60,  r: 0,   s: 0.7, c: "#15c6d2" },
+    { x: 180, y: 30,  r: 15,  s: 0.5, c: "#ebbed3" },
+    { x: 320, y: 90,  r: -10, s: 0.8, c: "#428488" },
+    { x: 90,  y: 200, r: 20,  s: 0.6, c: "#ebbed3" },
+    { x: 260, y: 220, r: -8,  s: 0.7, c: "#15c6d2" },
+    { x: 380, y: 170, r: 5,   s: 0.55,c: "#428488" },
   ];
   return (
     <svg
