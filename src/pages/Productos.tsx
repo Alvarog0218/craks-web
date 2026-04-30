@@ -59,7 +59,7 @@ export default function Productos() {
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
             {/* Card 1 */}
             <div className="group bg-surface-container-low rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="aspect-[4/5] egg-shape overflow-hidden mb-5 bg-surface-container-high relative">
+              <div className="aspect-[4/5] egg-shape overflow-hidden mb-5 bg-surface-container-high relative isolate">
                 <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzCT0QhrH4DNNZUb9noTNaXWR-wB9GMMchgEHWvIUAJVZiVc2Gu8VnO__dTbQ-6hyuuLKSS406RTrzF3QqXMRxQZn2JztRy_Cm7SymFfspCLUcmVvffSXYtWpYvwrEchu2yCdUIePv-aHqjufOIkiSJXSo9NMBl4Fjv-Rcygy5kVqR2j3hHzBLSQMQ1jiWxfHnUrEbXgAPwG21nTgOIo3RASDPooDecjMgysMZUTRp1VaiEY9HmURYqrHVTB0GOrZwICnknHYije8" alt="Craks Reserve — huevos marrones orgánicos" loading="lazy" />
                 <span className="absolute top-6 left-1/2 -translate-x-1/2 bg-secondary/90 text-on-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Orgánico</span>
               </div>
@@ -75,7 +75,7 @@ export default function Productos() {
 
             {/* Card 2 */}
             <div className="group bg-surface-container-low rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="aspect-[4/5] egg-shape overflow-hidden mb-5 bg-surface-container-high relative">
+              <div className="aspect-[4/5] egg-shape overflow-hidden mb-5 bg-surface-container-high relative isolate">
                 <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr3skdAhyyGdwwST7rSw0wBhSQXBGo3s4IpQWBnmUQUVZuQ3tRBzSys6zmQT0FV7ORTrooTNYpH_qmrsBfaOnrOo55TPQgoAcxJXHF6E7-YNdDpxIm-5YFU14EuoHdiwiX6z9SaxsOVQemXhuPpvScJJ6k0qWkYvXnNVbx9zDwmmpqv1mBHAd3sGt32Po0FRRrwwGbX2iWK-Hp45iHKjRVs2w-cFD63FeWqRmXbVbx3QWXMI4uTqj7k-SDehazHopE3dPU0fz2dnU" alt="Standard Excellence — huevos blancos grandes" loading="lazy" />
                 <span className="absolute top-6 left-1/2 -translate-x-1/2 bg-secondary/90 text-on-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Grande</span>
               </div>
@@ -91,7 +91,7 @@ export default function Productos() {
 
             {/* Card 3 */}
             <div className="group bg-surface-container-low rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="aspect-[4/5] egg-shape overflow-hidden mb-5 bg-surface-container-high relative">
+              <div className="aspect-[4/5] egg-shape overflow-hidden mb-5 bg-surface-container-high relative isolate">
                 <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD0_buhm0zE9QZoI0KD2M2aDtEvHuThGgw5XlBo_eiaYOCweZ8XvXbkWStp6h7ddZ4ZflJih_VLPyusLA2C0B_zvKcI4wQib7HMHgS6nZOX0AAERKYh5CvDaJAmG7NhIWd3f2wimQEcSeKqmh33XoHOM7itkhBNnXGZUpTI8Y6XpCcuHObF-jy8KDUIHo2ib3oAUpMmfh7db6kAGWed6RNcworO7rPEX4ZOMGFgqOfTDluj8btmJvKSV6haNCJYVIlNvyAIxAJSDI" alt="Jumbo Heritage — selección artesanal" loading="lazy" />
                 <span className="absolute top-6 left-1/2 -translate-x-1/2 bg-secondary/90 text-on-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Jumbo</span>
               </div>
@@ -107,7 +107,7 @@ export default function Productos() {
 
             {/* Card 4 */}
             <div className="group bg-surface-container-low rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="aspect-[4/5] egg-shape overflow-hidden mb-5 bg-surface-container-high relative">
+              <div className="aspect-[4/5] egg-shape overflow-hidden mb-5 bg-surface-container-high relative isolate">
                 <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLQE-0GqCPtSObHndEPfMZnQ4oHU9QW-gDplCpsSy3l26XWv5vMjB2rctSSBB4YG-7hDEw-EKYVdhmrvgnaDPAl8wgvVE-xSofbweFfIT3Nxc26sTZJXxFT22PLpdLTxuhVnXweCsS_Qs4fOOfM_W47jKEqV4fhfzhpzzW3mZ2Wcz05c8fqNmGe2zDKgQ3QVTHEVgzNjOg6JUtWGO5IFiJszJgo1jZ0IFsi9o3466pLdyoPU75J5zYnrRNJSNoCVXCRGXplazhBXI" alt="Heritage Variety — colección artesanal" loading="lazy" />
                 <span className="absolute top-6 left-1/2 -translate-x-1/2 bg-primary-fixed text-on-primary-fixed text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Heirloom</span>
               </div>
