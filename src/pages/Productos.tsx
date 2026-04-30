@@ -1,6 +1,70 @@
 import { Link } from "react-router-dom";
+import { useCart } from "@/contexts/CartContext";
+
+type Product = {
+  id: string;
+  name: string;
+  price: number;
+  description: string;
+  image: string;
+  alt: string;
+  badge: string;
+  badgeStyle: "secondary" | "primary";
+};
+
+const products: Product[] = [
+  {
+    id: "craks-reserve",
+    name: "Craks Reserve",
+    price: 24.0,
+    description:
+      "Huevos marrones de gallinas criadas en pastoreo. Certificados non-GMO y ricos en nutrientes.",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAzCT0QhrH4DNNZUb9noTNaXWR-wB9GMMchgEHWvIUAJVZiVc2Gu8VnO__dTbQ-6hyuuLKSS406RTrzF3QqXMRxQZn2JztRy_Cm7SymFfspCLUcmVvffSXYtWpYvwrEchu2yCdUIePv-aHqjufOIkiSJXSo9NMBl4Fjv-Rcygy5kVqR2j3hHzBLSQMQ1jiWxfHnUrEbXgAPwG21nTgOIo3RASDPooDecjMgysMZUTRp1VaiEY9HmURYqrHVTB0GOrZwICnknHYije8",
+    alt: "Craks Reserve — huevos marrones orgánicos",
+    badge: "Orgánico",
+    badgeStyle: "secondary",
+  },
+  {
+    id: "standard-excellence",
+    name: "Standard Excellence",
+    price: 18.5,
+    description:
+      "La base de la cocina doméstica. Huevos Grade A con densidad de yema consistente.",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDr3skdAhyyGdwwST7rSw0wBhSQXBGo3s4IpQWBnmUQUVZuQ3tRBzSys6zmQT0FV7ORTrooTNYpH_qmrsBfaOnrOo55TPQgoAcxJXHF6E7-YNdDpxIm-5YFU14EuoHdiwiX6z9SaxsOVQemXhuPpvScJJ6k0qWkYvXnNVbx9zDwmmpqv1mBHAd3sGt32Po0FRRrwwGbX2iWK-Hp45iHKjRVs2w-cFD63FeWqRmXbVbx3QWXMI4uTqj7k-SDehazHopE3dPU0fz2dnU",
+    alt: "Standard Excellence — huevos blancos grandes",
+    badge: "Grande",
+    badgeStyle: "secondary",
+  },
+  {
+    id: "jumbo-heritage",
+    name: "Jumbo Heritage",
+    price: 32.0,
+    description:
+      "Tamaño extraordinario para precisión en repostería y excelencia culinaria. Grado profesional.",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDD0_buhm0zE9QZoI0KD2M2aDtEvHuThGgw5XlBo_eiaYOCweZ8XvXbkWStp6h7ddZ4ZflJih_VLPyusLA2C0B_zvKcI4wQib7HMHgS6nZOX0AAERKYh5CvDaJAmG7NhIWd3f2wimQEcSeKqmh33XoHOM7itkhBNnXGZUpTI8Y6XpCcuHObF-jy8KDUIHo2ib3oAUpMmfh7db6kAGWed6RNcworO7rPEX4ZOMGFgqOfTDluj8btmJvKSV6haNCJYVIlNvyAIxAJSDI",
+    alt: "Jumbo Heritage — selección artesanal",
+    badge: "Jumbo",
+    badgeStyle: "secondary",
+  },
+  {
+    id: "heritage-variety",
+    name: "Heritage Variety",
+    price: 38.0,
+    description: "Razas únicas de herencia para artes culinarias especializadas.",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDLQE-0GqCPtSObHndEPfMZnQ4oHU9QW-gDplCpsSy3l26XWv5vMjB2rctSSBB4YG-7hDEw-EKYVdhmrvgnaDPAl8wgvVE-xSofbweFfIT3Nxc26sTZJXxFT22PLpdLTxuhVnXweCsS_Qs4fOOfM_W47jKEqV4fhfzhpzzW3mZ2Wcz05c8fqNmGe2zDKgQ3QVTHEVgzNjOg6JUtWGO5IFiJszJgo1jZ0IFsi9o3466pLdyoPU75J5zYnrRNJSNoCVXCRGXplazhBXI",
+    alt: "Heritage Variety — colección artesanal",
+    badge: "Heirloom",
+    badgeStyle: "primary",
+  },
+];
 
 export default function Productos() {
+  const { addItem } = useCart();
+
   return (
     <main className="flex-1 max-w-7xl mx-auto w-full px-6 md:px-12 pt-12 pb-20">
       {/* Page Header */}
@@ -57,69 +121,45 @@ export default function Productos() {
         {/* Product Grid */}
         <section className="flex-grow">
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-            {/* Card 1 */}
-            <div className="group bg-surface-container-low rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="aspect-[4/5] egg-shape overflow-hidden mb-5 bg-surface-container-high relative isolate">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzCT0QhrH4DNNZUb9noTNaXWR-wB9GMMchgEHWvIUAJVZiVc2Gu8VnO__dTbQ-6hyuuLKSS406RTrzF3QqXMRxQZn2JztRy_Cm7SymFfspCLUcmVvffSXYtWpYvwrEchu2yCdUIePv-aHqjufOIkiSJXSo9NMBl4Fjv-Rcygy5kVqR2j3hHzBLSQMQ1jiWxfHnUrEbXgAPwG21nTgOIo3RASDPooDecjMgysMZUTRp1VaiEY9HmURYqrHVTB0GOrZwICnknHYije8" alt="Craks Reserve — huevos marrones orgánicos" loading="lazy" />
-                <span className="absolute top-6 left-1/2 -translate-x-1/2 bg-secondary/90 text-on-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Orgánico</span>
-              </div>
-              <div className="px-2 pb-2">
-                <div className="flex justify-between items-start mb-1">
-                  <h4 className="font-headline text-lg font-extrabold text-primary">Craks Reserve</h4>
-                  <span className="font-headline font-bold text-secondary">$24.00</span>
+            {products.map((p) => (
+              <div
+                key={p.id}
+                className="group bg-surface-container-low rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300"
+              >
+                <div className="aspect-[4/5] egg-shape overflow-hidden mb-5 bg-surface-container-high relative isolate">
+                  <img
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    src={p.image}
+                    alt={p.alt}
+                    loading="lazy"
+                  />
+                  <span
+                    className={`absolute top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full ${
+                      p.badgeStyle === "primary"
+                        ? "bg-primary-fixed text-on-primary-fixed"
+                        : "bg-secondary/90 text-on-secondary"
+                    }`}
+                  >
+                    {p.badge}
+                  </span>
                 </div>
-                <p className="text-on-surface-variant text-sm mb-4 leading-relaxed">Huevos marrones de gallinas criadas en pastoreo. Certificados non-GMO y ricos en nutrientes.</p>
-                <button className="w-full py-3 rounded-full border border-outline-variant/30 text-primary font-bold text-sm hover:bg-primary-fixed transition-colors">Añadir al carrito</button>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="group bg-surface-container-low rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="aspect-[4/5] egg-shape overflow-hidden mb-5 bg-surface-container-high relative isolate">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr3skdAhyyGdwwST7rSw0wBhSQXBGo3s4IpQWBnmUQUVZuQ3tRBzSys6zmQT0FV7ORTrooTNYpH_qmrsBfaOnrOo55TPQgoAcxJXHF6E7-YNdDpxIm-5YFU14EuoHdiwiX6z9SaxsOVQemXhuPpvScJJ6k0qWkYvXnNVbx9zDwmmpqv1mBHAd3sGt32Po0FRRrwwGbX2iWK-Hp45iHKjRVs2w-cFD63FeWqRmXbVbx3QWXMI4uTqj7k-SDehazHopE3dPU0fz2dnU" alt="Standard Excellence — huevos blancos grandes" loading="lazy" />
-                <span className="absolute top-6 left-1/2 -translate-x-1/2 bg-secondary/90 text-on-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Grande</span>
-              </div>
-              <div className="px-2 pb-2">
-                <div className="flex justify-between items-start mb-1">
-                  <h4 className="font-headline text-lg font-extrabold text-primary">Standard Excellence</h4>
-                  <span className="font-headline font-bold text-secondary">$18.50</span>
+                <div className="px-2 pb-2">
+                  <div className="flex justify-between items-start mb-1">
+                    <h4 className="font-headline text-lg font-extrabold text-primary">{p.name}</h4>
+                    <span className="font-headline font-bold text-secondary">${p.price.toFixed(2)}</span>
+                  </div>
+                  <p className="text-on-surface-variant text-sm mb-4 leading-relaxed">{p.description}</p>
+                  <button
+                    onClick={() =>
+                      addItem({ id: p.id, name: p.name, price: p.price, image: p.image })
+                    }
+                    className="w-full py-3 rounded-full border border-outline-variant/30 text-primary font-bold text-sm hover:bg-primary-fixed transition-colors"
+                  >
+                    Añadir al carrito
+                  </button>
                 </div>
-                <p className="text-on-surface-variant text-sm mb-4 leading-relaxed">La base de la cocina doméstica. Huevos Grade A con densidad de yema consistente.</p>
-                <button className="w-full py-3 rounded-full border border-outline-variant/30 text-primary font-bold text-sm hover:bg-primary-fixed transition-colors">Añadir al carrito</button>
               </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="group bg-surface-container-low rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="aspect-[4/5] egg-shape overflow-hidden mb-5 bg-surface-container-high relative isolate">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD0_buhm0zE9QZoI0KD2M2aDtEvHuThGgw5XlBo_eiaYOCweZ8XvXbkWStp6h7ddZ4ZflJih_VLPyusLA2C0B_zvKcI4wQib7HMHgS6nZOX0AAERKYh5CvDaJAmG7NhIWd3f2wimQEcSeKqmh33XoHOM7itkhBNnXGZUpTI8Y6XpCcuHObF-jy8KDUIHo2ib3oAUpMmfh7db6kAGWed6RNcworO7rPEX4ZOMGFgqOfTDluj8btmJvKSV6haNCJYVIlNvyAIxAJSDI" alt="Jumbo Heritage — selección artesanal" loading="lazy" />
-                <span className="absolute top-6 left-1/2 -translate-x-1/2 bg-secondary/90 text-on-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Jumbo</span>
-              </div>
-              <div className="px-2 pb-2">
-                <div className="flex justify-between items-start mb-1">
-                  <h4 className="font-headline text-lg font-extrabold text-primary">Jumbo Heritage</h4>
-                  <span className="font-headline font-bold text-secondary">$32.00</span>
-                </div>
-                <p className="text-on-surface-variant text-sm mb-4 leading-relaxed">Tamaño extraordinario para precisión en repostería y excelencia culinaria. Grado profesional.</p>
-                <button className="w-full py-3 rounded-full border border-outline-variant/30 text-primary font-bold text-sm hover:bg-primary-fixed transition-colors">Añadir al carrito</button>
-              </div>
-            </div>
-
-            {/* Card 4 */}
-            <div className="group bg-surface-container-low rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="aspect-[4/5] egg-shape overflow-hidden mb-5 bg-surface-container-high relative isolate">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLQE-0GqCPtSObHndEPfMZnQ4oHU9QW-gDplCpsSy3l26XWv5vMjB2rctSSBB4YG-7hDEw-EKYVdhmrvgnaDPAl8wgvVE-xSofbweFfIT3Nxc26sTZJXxFT22PLpdLTxuhVnXweCsS_Qs4fOOfM_W47jKEqV4fhfzhpzzW3mZ2Wcz05c8fqNmGe2zDKgQ3QVTHEVgzNjOg6JUtWGO5IFiJszJgo1jZ0IFsi9o3466pLdyoPU75J5zYnrRNJSNoCVXCRGXplazhBXI" alt="Heritage Variety — colección artesanal" loading="lazy" />
-                <span className="absolute top-6 left-1/2 -translate-x-1/2 bg-primary-fixed text-on-primary-fixed text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Heirloom</span>
-              </div>
-              <div className="px-2 pb-2">
-                <div className="flex justify-between items-start mb-1">
-                  <h4 className="font-headline text-lg font-extrabold text-primary">Heritage Variety</h4>
-                  <span className="font-headline font-bold text-secondary">$38.00</span>
-                </div>
-                <p className="text-on-surface-variant text-sm mb-4 leading-relaxed">Razas únicas de herencia para artes culinarias especializadas.</p>
-                <button className="w-full py-3 rounded-full border border-outline-variant/30 text-primary font-bold text-sm hover:bg-primary-fixed transition-colors">Añadir al carrito</button>
-              </div>
-            </div>
+            ))}
 
             {/* Wholesale Banner */}
             <div className="group sm:col-span-2 bg-primary p-8 md:p-10 rounded-xl flex flex-col md:flex-row items-center gap-8 overflow-hidden relative">
