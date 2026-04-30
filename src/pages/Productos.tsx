@@ -1,6 +1,54 @@
 import { Link } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
 
+function ProductCartButton({
+  productId,
+  onAdd,
+}: {
+  productId: string;
+  onAdd: () => void;
+}) {
+  const { items, updateQuantity } = useCart();
+  const inCart = items.find((i) => i.id === productId);
+  const qty = inCart?.quantity ?? 0;
+
+  if (qty === 0) {
+    return (
+      <button
+        onClick={onAdd}
+        className="w-full py-3 rounded-full border border-outline-variant/30 text-primary font-bold text-sm hover:bg-primary-fixed transition-colors"
+      >
+        Añadir al carrito
+      </button>
+    );
+  }
+
+  return (
+    <div className="w-full flex items-center justify-between gap-2 py-1.5 pl-2 pr-1.5 rounded-full bg-primary text-on-primary">
+      <button
+        onClick={() => updateQuantity(productId, qty - 1)}
+        aria-label={qty === 1 ? "Eliminar del carrito" : "Disminuir cantidad"}
+        className="w-9 h-9 rounded-full bg-on-primary/15 hover:bg-on-primary/25 flex items-center justify-center transition-colors"
+      >
+        <span className="material-symbols-outlined text-lg">
+          {qty === 1 ? "delete" : "remove"}
+        </span>
+      </button>
+      <span className="font-headline font-bold text-sm flex items-center gap-2">
+        <span className="opacity-70 text-xs uppercase tracking-widest">En carrito</span>
+        <span className="text-base">{qty}</span>
+      </span>
+      <button
+        onClick={() => updateQuantity(productId, qty + 1)}
+        aria-label="Aumentar cantidad"
+        className="w-9 h-9 rounded-full bg-on-primary/15 hover:bg-on-primary/25 flex items-center justify-center transition-colors"
+      >
+        <span className="material-symbols-outlined text-lg">add</span>
+      </button>
+    </div>
+  );
+}
+
 type Product = {
   id: string;
   name: string;
@@ -149,14 +197,12 @@ export default function Productos() {
                     <span className="font-headline font-bold text-secondary">${p.price.toFixed(2)}</span>
                   </div>
                   <p className="text-on-surface-variant text-sm mb-4 leading-relaxed">{p.description}</p>
-                  <button
-                    onClick={() =>
+                  <ProductCartButton
+                    productId={p.id}
+                    onAdd={() =>
                       addItem({ id: p.id, name: p.name, price: p.price, image: p.image })
                     }
-                    className="w-full py-3 rounded-full border border-outline-variant/30 text-primary font-bold text-sm hover:bg-primary-fixed transition-colors"
-                  >
-                    Añadir al carrito
-                  </button>
+                  />
                 </div>
               </div>
             ))}
