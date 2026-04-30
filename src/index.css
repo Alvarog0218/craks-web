@@ -34,69 +34,12 @@
   }
 
   .yolk-gradient {
-    background: radial-gradient(circle at 30% 30%, #FFE680 0%, #FFC500 60%, #E8B923 100%);
-    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.4);
+    background: radial-gradient(circle at 30% 30%, #ffddb4 0%, #ffb953 100%);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.3);
   }
 
   .yolk-gradient:hover {
-    background: radial-gradient(circle at 30% 30%, #FFF0A8 0%, #FFD12E 60%, #F5C634 100%);
-  }
-
-  /* ── Turquesa / Petróleo (manual de marca CRACKS) ── */
-  .turquoise-gradient {
-    background: linear-gradient(135deg, #15c6d2 0%, #428488 100%);
-  }
-
-  .petrol-gradient {
-    background: radial-gradient(circle at 20% 20%, #4FB8C0 0%, #2E6E73 60%, #1F4F54 100%);
-  }
-
-  .turquoise-yolk-gradient {
-    background: linear-gradient(120deg, #15c6d2 0%, #428488 55%, #FFC500 100%);
-  }
-
-  .turquoise-band {
-    background: linear-gradient(90deg, #15c6d2 0%, #2EAEB8 50%, #428488 100%);
-  }
-
-  /* ── Patrón de huevos repetidos (campo de fondo) ── */
-  .egg-pattern {
-    background-color: transparent;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='140' viewBox='0 0 120 140'><g fill='none' stroke='%23428488' stroke-width='2.5' opacity='0.35'><path d='M30 30 C 12 30 6 60 18 80 C 28 96 50 96 56 80 C 64 60 50 30 30 30 Z'/><path d='M88 78 C 70 78 64 108 76 128 C 86 144 108 144 114 128 C 122 108 108 78 88 78 Z'/></g></svg>");
-    background-repeat: repeat;
-    background-size: 160px 186px;
-  }
-
-  .egg-pattern-turquoise {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='140' viewBox='0 0 120 140'><g fill='none' stroke='%2315c6d2' stroke-width='2.5' opacity='0.55'><path d='M30 30 C 12 30 6 60 18 80 C 28 96 50 96 56 80 C 64 60 50 30 30 30 Z'/><path d='M88 78 C 70 78 64 108 76 128 C 86 144 108 144 114 128 C 122 108 108 78 88 78 Z'/></g></svg>");
-    background-repeat: repeat;
-    background-size: 160px 186px;
-  }
-
-  /* ── Patrón "garabatos" / huellas estilo manual CRACKS (swirls ear-like) ── */
-  .swirl-pattern {
-    background-color: #F4D04E;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><g fill='none' stroke='%23E0B838' stroke-width='2.2' stroke-linecap='round' opacity='0.85'><path d='M20 40 q14 -18 28 0 q-14 18 -28 0 z'/><path d='M90 30 q12 -16 24 0 q-12 16 -24 0 z'/><path d='M40 100 q16 -20 32 0 q-16 20 -32 0 z'/><path d='M110 110 q14 -18 28 0 q-14 18 -28 0 z'/><path d='M130 60 q-10 8 0 18 q10 -10 0 -18 z'/><path d='M20 130 q-8 6 0 14 q8 -8 0 -14 z'/></g></svg>");
-    background-repeat: repeat;
-    background-size: 180px 180px;
-  }
-
-  .swirl-pattern-soft {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><g fill='none' stroke='%23428488' stroke-width='2' stroke-linecap='round' opacity='0.25'><path d='M20 40 q14 -18 28 0 q-14 18 -28 0 z'/><path d='M90 30 q12 -16 24 0 q-12 16 -24 0 z'/><path d='M40 100 q16 -20 32 0 q-16 20 -32 0 z'/><path d='M110 110 q14 -18 28 0 q-14 18 -28 0 z'/></g></svg>");
-    background-repeat: repeat;
-    background-size: 200px 200px;
-  }
-
-  /* ── Bandas/ondas del manual (mostaza + turquesa + petróleo) ── */
-  .brand-wave-bg {
-    background:
-      radial-gradient(ellipse at 10% 0%, #15c6d2 0%, transparent 38%),
-      radial-gradient(ellipse at 100% 100%, #428488 0%, transparent 45%),
-      #F4D04E;
-  }
-
-  .pink-accent {
-    background-color: #ebbed3;
+    background: radial-gradient(circle at 30% 30%, #fff1e0 0%, #ffb953 100%);
   }
 
   .glass-nav {

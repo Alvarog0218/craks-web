@@ -5,78 +5,61 @@ export default {
   theme: {
     extend: {
       colors: {
-        // ── Superficies (mostaza/crema del manual CRACKS) ──
-        'surface':                   '#F4D04E',  // mostaza fondo manual
-        'surface-bright':            '#F9E37B',
-        'surface-dim':               '#E0B838',
-        'surface-variant':           '#F7E8B0',
-        'surface-container-lowest':  '#FFFBE8',
-        'surface-container-low':     '#F8E596',
-        'surface-container':         '#F4D04E',
-        'surface-container-high':    '#EBC033',
-        'surface-container-highest': '#D9AC1F',
-        'surface-tint':              '#15c6d2',
-        'on-surface':                '#1F4F54',  // petróleo (texto)
-        'on-surface-variant':        '#428488',
-        'inverse-surface':           '#1F4F54',
-        'inverse-on-surface':        '#F4D04E',
+        'surface':                   '#fcf9f0',
+        'surface-bright':            '#fcf9f0',
+        'surface-dim':               '#dddad1',
+        'surface-variant':           '#e5e2da',
+        'surface-container-lowest':  '#ffffff',
+        'surface-container-low':     '#f6f3ea',
+        'surface-container':         '#f1eee5',
+        'surface-container-high':    '#ebe8df',
+        'surface-container-highest': '#e5e2da',
+        'surface-tint':              '#825500',
+        'on-surface':                '#1c1c17',
+        'on-surface-variant':        '#40484a',
+        'inverse-surface':           '#31312b',
+        'inverse-on-surface':        '#f4f1e8',
 
-        'background':                '#F4D04E',
-        'on-background':             '#1F4F54',
+        'background':                '#fcf9f0',
+        'on-background':             '#1c1c17',
 
-        // ── Primary: TURQUESA del manual (protagonista) ──
-        'primary':                   '#15c6d2',  // turquesa oficial CRACKS
-        'primary-container':         '#7DE0E8',
-        'primary-fixed':             '#B5EEF3',
-        'primary-fixed-dim':         '#15c6d2',
+        'primary':                   '#412800',
+        'primary-container':         '#5f3d00',
+        'primary-fixed':             '#ffddb4',
+        'primary-fixed-dim':         '#ffb953',
         'on-primary':                '#ffffff',
-        'on-primary-container':      '#003E45',
-        'on-primary-fixed':          '#001F23',
-        'on-primary-fixed-variant':  '#005662',
-        'inverse-primary':           '#7DE0E8',
+        'on-primary-container':      '#eba22d',
+        'on-primary-fixed':          '#291800',
+        'on-primary-fixed-variant':  '#633f00',
+        'inverse-primary':           '#ffb953',
 
-        // ── Secondary: PETRÓLEO del manual ──
-        'secondary':                 '#428488',  // petróleo oficial
-        'secondary-container':       '#6FB0B5',
-        'secondary-fixed':           '#A8D4D8',
-        'secondary-fixed-dim':       '#2E6E73',
+        'secondary':                 '#2a6673',
+        'secondary-container':       '#afe9f8',
+        'secondary-fixed':           '#b2ecfa',
+        'secondary-fixed-dim':       '#96d0de',
         'on-secondary':              '#ffffff',
-        'on-secondary-container':    '#001F23',
-        'on-secondary-fixed':        '#001012',
-        'on-secondary-fixed-variant':'#1F4F54',
+        'on-secondary-container':    '#2f6a77',
+        'on-secondary-fixed':        '#001f25',
+        'on-secondary-fixed-variant':'#064e5a',
 
-        // ── Tertiary: AMARILLO YEMA fuerte (manual) ──
-        'tertiary':                  '#F5C634',  // amarillo yema fuerte
-        'tertiary-container':        '#FFD84D',
-        'tertiary-fixed':            '#FFE680',
-        'tertiary-fixed-dim':        '#E8B923',
-        'on-tertiary':               '#2A1E00',
-        'on-tertiary-container':     '#5C4500',
-        'on-tertiary-fixed':         '#2A1E00',
-        'on-tertiary-fixed-variant': '#7A5C00',
+        'tertiary':                  '#4d2100',
+        'tertiary-container':        '#6f3300',
+        'tertiary-fixed':            '#ffdbc8',
+        'tertiary-fixed-dim':        '#ffb689',
+        'on-tertiary':               '#ffffff',
+        'on-tertiary-container':     '#ff9750',
+        'on-tertiary-fixed':         '#321300',
+        'on-tertiary-fixed-variant': '#743500',
 
-        'outline':                   '#5A8488',
-        'outline-variant':           '#A8C8CC',
+        'outline':                   '#70787b',
+        'outline-variant':           '#bfc8ca',
 
         'error':                     '#ba1a1a',
         'error-container':           '#ffdad6',
         'on-error':                  '#ffffff',
         'on-error-container':        '#93000a',
 
-        // ── Colores oficiales del manual de marca ──
-        'brand-turquoise':           '#15c6d2',
-        'brand-petrol':              '#428488',
-        'brand-pink':                '#ebbed3',
-        'petrol':                    '#428488',
-        'petrol-deep':               '#1F4F54',
-        'turquoise':                 '#15c6d2',
-        'turquoise-light':           '#7DE0E8',
-
-        // ── Amarillos yema (refuerzo) ──
-        'yolk':                      '#F5C634',
-        'yolk-deep':                 '#E8B923',
-        'yolk-strong':               '#FFC500',  // amarillo intenso manual
-        'yolk-light':                '#FFE680',
+        'petrol':                    '#004B57',
       },
       borderRadius: {
         DEFAULT: '1rem',
