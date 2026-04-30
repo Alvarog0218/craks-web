@@ -1,71 +1,58 @@
 import { useState } from "react";
-import { z } from "zod";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Separator } from "@/components/ui/separator";
 import { useCart } from "@/contexts/CartContext";
-import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
-import { toast } from "sonner";
 
 // TODO: Reemplazar con número real de WhatsApp del negocio (formato internacional sin "+")
 const WHATSAPP_NUMBER = "528112345678";
 
-const checkoutSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .nonempty({ message: "El nombre es requerido" })
-    .max(100, { message: "Máximo 100 caracteres" }),
-  address: z
-    .string()
-    .trim()
-    .nonempty({ message: "La dirección es requerida" })
-    .max(300, { message: "Máximo 300 caracteres" }),
-  phone: z
-    .string()
-    .trim()
-    .nonempty({ message: "El teléfono es requerido" })
-    .max(30, { message: "Máximo 30 caracteres" }),
-  notes: z.string().trim().max(500, { message: "Máximo 500 caracteres" }).optional(),
-});
-
 const formatCurrency = (n: number) =>
   new Intl.NumberFormat("es-MX", { style: "currency", currency: "USD" }).format(n);
 
+type FormState = { name: string; phone: string; address: string; notes: string };
+
+function validate(form: FormState): Record<string, string> {
+  const errors: Record<string, string> = {};
+  const name = form.name.trim();
+  const phone = form.phone.trim();
+  const address = form.address.trim();
+  const notes = form.notes.trim();
+
+  if (!name) errors.name = "El nombre es requerido";
+  else if (name.length > 100) errors.name = "Máximo 100 caracteres";
+
+  if (!phone) errors.phone = "El teléfono es requerido";
+  else if (phone.length > 30) errors.phone = "Máximo 30 caracteres";
+  else if (!/^[\d\s+()-]+$/.test(phone)) errors.phone = "Formato inválido";
+
+  if (!address) errors.address = "La dirección es requerida";
+  else if (address.length > 300) errors.address = "Máximo 300 caracteres";
+
+  if (notes.length > 500) errors.notes = "Máximo 500 caracteres";
+
+  return errors;
+}
+
 export default function CartDrawer() {
   const { items, isOpen, setIsOpen, updateQuantity, removeItem, totalPrice, clear } = useCart();
-  const [form, setForm] = useState({ name: "", address: "", phone: "", notes: "" });
+  const [form, setForm] = useState<FormState>({ name: "", phone: "", address: "", notes: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleCheckout = () => {
-    if (items.length === 0) {
-      toast.error("Tu carrito está vacío");
-      return;
-    }
+    if (items.length === 0) return;
 
-    const result = checkoutSchema.safeParse(form);
-    if (!result.success) {
-      const fieldErrors: Record<string, string> = {};
-      result.error.issues.forEach((iss) => {
-        if (iss.path[0]) fieldErrors[String(iss.path[0])] = iss.message;
-      });
+    const fieldErrors = validate(form);
+    if (Object.keys(fieldErrors).length > 0) {
       setErrors(fieldErrors);
-      toast.error("Revisa los datos del formulario");
       return;
     }
     setErrors({});
 
-    const data = result.data;
     const lines: string[] = [];
     lines.push("*🥚 Nuevo Pedido — Craks*");
     lines.push("");
     lines.push("*Cliente:*");
-    lines.push(`• Nombre: ${data.name}`);
-    lines.push(`• Teléfono: ${data.phone}`);
-    lines.push(`• Dirección: ${data.address}`);
+    lines.push(`• Nombre: ${form.name.trim()}`);
+    lines.push(`• Teléfono: ${form.phone.trim()}`);
+    lines.push(`• Dirección: ${form.address.trim()}`);
     lines.push("");
     lines.push("*Productos:*");
     items.forEach((it) => {
@@ -74,35 +61,64 @@ export default function CartDrawer() {
     });
     lines.push("");
     lines.push(`*Total: ${formatCurrency(totalPrice)}*`);
-    if (data.notes) {
+    if (form.notes.trim()) {
       lines.push("");
       lines.push("*Notas:*");
-      lines.push(data.notes);
+      lines.push(form.notes.trim());
     }
 
     const message = encodeURIComponent(lines.join("\n"));
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
     window.open(url, "_blank", "noopener,noreferrer");
-    toast.success("Abriendo WhatsApp con tu pedido");
   };
 
   return (
-    <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetContent className="w-full sm:max-w-md flex flex-col p-0">
-        <SheetHeader className="px-6 pt-6 pb-4 border-b">
-          <SheetTitle className="font-headline text-2xl text-primary flex items-center gap-2">
-            <ShoppingBag className="h-5 w-5" />
-            Tu Carrito
-          </SheetTitle>
-          <SheetDescription>
-            Finaliza tu pedido por WhatsApp
-          </SheetDescription>
-        </SheetHeader>
+    <>
+      {/* Backdrop */}
+      <div
+        onClick={() => setIsOpen(false)}
+        aria-hidden="true"
+        className={`fixed inset-0 z-50 bg-black/40 transition-opacity duration-300 ${
+          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      />
 
+      {/* Drawer */}
+      <aside
+        role="dialog"
+        aria-modal="true"
+        aria-label="Carrito de compra"
+        className={`fixed top-0 right-0 z-50 h-full w-full sm:w-[420px] bg-background shadow-2xl flex flex-col transition-transform duration-300 ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Header */}
+        <header className="px-6 pt-6 pb-4 border-b border-outline-variant/30 flex items-start justify-between">
+          <div>
+            <h2 className="font-headline text-2xl font-extrabold text-primary tracking-tight flex items-center gap-2">
+              <span className="material-symbols-outlined">shopping_bag</span>
+              Tu Carrito
+            </h2>
+            <p className="text-sm text-on-surface-variant mt-1">
+              Finaliza tu pedido por WhatsApp
+            </p>
+          </div>
+          <button
+            onClick={() => setIsOpen(false)}
+            aria-label="Cerrar carrito"
+            className="w-8 h-8 rounded-full hover:bg-surface-container-high flex items-center justify-center transition-colors"
+          >
+            <span className="material-symbols-outlined text-on-surface-variant">close</span>
+          </button>
+        </header>
+
+        {/* Body */}
         <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4">
           {items.length === 0 ? (
-            <div className="text-center py-12 text-on-surface-variant">
-              <ShoppingBag className="h-12 w-12 mx-auto mb-3 opacity-30" />
+            <div className="text-center py-16 text-on-surface-variant">
+              <span className="material-symbols-outlined text-5xl opacity-30 mb-3 block">
+                shopping_bag
+              </span>
               <p>Tu carrito está vacío</p>
             </div>
           ) : (
@@ -129,121 +145,133 @@ export default function CartDrawer() {
                     <div className="flex items-center gap-2 mt-2">
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        className="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center hover:bg-primary-fixed transition-colors"
+                        className="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center hover:bg-primary-fixed transition-colors"
                         aria-label="Disminuir cantidad"
                       >
-                        <Minus className="h-3 w-3" />
+                        <span className="material-symbols-outlined text-sm">remove</span>
                       </button>
                       <span className="text-sm font-semibold w-6 text-center">
                         {item.quantity}
                       </span>
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        className="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center hover:bg-primary-fixed transition-colors"
+                        className="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center hover:bg-primary-fixed transition-colors"
                         aria-label="Aumentar cantidad"
                       >
-                        <Plus className="h-3 w-3" />
+                        <span className="material-symbols-outlined text-sm">add</span>
                       </button>
                       <button
                         onClick={() => removeItem(item.id)}
-                        className="ml-auto w-7 h-7 rounded-full text-on-surface-variant hover:text-destructive flex items-center justify-center transition-colors"
+                        className="ml-auto w-7 h-7 rounded-full text-on-surface-variant hover:text-error flex items-center justify-center transition-colors"
                         aria-label="Eliminar"
                       >
-                        <Trash2 className="h-4 w-4" />
+                        <span className="material-symbols-outlined text-base">delete</span>
                       </button>
                     </div>
                   </div>
                   <div className="text-right">
-                    <span className="font-headline font-bold text-secondary">
+                    <span className="font-headline font-bold text-secondary text-sm">
                       {formatCurrency(item.price * item.quantity)}
                     </span>
                   </div>
                 </div>
               ))}
 
-              <Separator className="my-4" />
-
-              <div className="space-y-3">
+              <div className="pt-4 border-t border-outline-variant/30 space-y-3">
                 <h3 className="font-headline font-bold text-primary">Datos de envío</h3>
+
                 <div>
-                  <Label htmlFor="cart-name">Nombre *</Label>
-                  <Input
+                  <label htmlFor="cart-name" className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1 block">
+                    Nombre *
+                  </label>
+                  <input
                     id="cart-name"
+                    type="text"
                     value={form.name}
                     maxLength={100}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    className="w-full px-4 py-2.5 rounded-full bg-surface-container-low border border-outline-variant/30 text-sm focus:outline-none focus:border-primary"
                   />
-                  {errors.name && (
-                    <p className="text-xs text-destructive mt-1">{errors.name}</p>
-                  )}
+                  {errors.name && <p className="text-xs text-error mt-1 px-3">{errors.name}</p>}
                 </div>
+
                 <div>
-                  <Label htmlFor="cart-phone">Teléfono *</Label>
-                  <Input
+                  <label htmlFor="cart-phone" className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1 block">
+                    Teléfono *
+                  </label>
+                  <input
                     id="cart-phone"
+                    type="tel"
                     value={form.phone}
                     maxLength={30}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    className="w-full px-4 py-2.5 rounded-full bg-surface-container-low border border-outline-variant/30 text-sm focus:outline-none focus:border-primary"
                   />
-                  {errors.phone && (
-                    <p className="text-xs text-destructive mt-1">{errors.phone}</p>
-                  )}
+                  {errors.phone && <p className="text-xs text-error mt-1 px-3">{errors.phone}</p>}
                 </div>
+
                 <div>
-                  <Label htmlFor="cart-address">Dirección *</Label>
-                  <Textarea
+                  <label htmlFor="cart-address" className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1 block">
+                    Dirección *
+                  </label>
+                  <textarea
                     id="cart-address"
                     value={form.address}
                     maxLength={300}
                     rows={2}
                     onChange={(e) => setForm({ ...form, address: e.target.value })}
+                    className="w-full px-4 py-2.5 rounded-2xl bg-surface-container-low border border-outline-variant/30 text-sm focus:outline-none focus:border-primary resize-none"
                   />
-                  {errors.address && (
-                    <p className="text-xs text-destructive mt-1">{errors.address}</p>
-                  )}
+                  {errors.address && <p className="text-xs text-error mt-1 px-3">{errors.address}</p>}
                 </div>
+
                 <div>
-                  <Label htmlFor="cart-notes">Notas adicionales</Label>
-                  <Textarea
+                  <label htmlFor="cart-notes" className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1 block">
+                    Notas adicionales
+                  </label>
+                  <textarea
                     id="cart-notes"
                     value={form.notes}
                     maxLength={500}
                     rows={2}
                     placeholder="Comentarios sobre tu pedido (opcional)"
                     onChange={(e) => setForm({ ...form, notes: e.target.value })}
+                    className="w-full px-4 py-2.5 rounded-2xl bg-surface-container-low border border-outline-variant/30 text-sm focus:outline-none focus:border-primary resize-none"
                   />
-                  {errors.notes && (
-                    <p className="text-xs text-destructive mt-1">{errors.notes}</p>
-                  )}
+                  {errors.notes && <p className="text-xs text-error mt-1 px-3">{errors.notes}</p>}
                 </div>
               </div>
             </>
           )}
         </div>
 
+        {/* Footer */}
         {items.length > 0 && (
-          <div className="border-t px-6 py-4 space-y-3 bg-surface-container-low">
+          <footer className="border-t border-outline-variant/30 px-6 py-4 space-y-3 bg-surface-container-low">
             <div className="flex justify-between items-center">
-              <span className="font-semibold text-on-surface-variant">Total</span>
+              <span className="font-semibold text-on-surface-variant text-sm uppercase tracking-widest">
+                Total
+              </span>
               <span className="font-headline text-2xl font-extrabold text-secondary">
                 {formatCurrency(totalPrice)}
               </span>
             </div>
-            <Button
+            <button
               onClick={handleCheckout}
-              className="w-full bg-[#25D366] hover:bg-[#1ebe57] text-white font-bold rounded-full py-6"
+              className="w-full py-3.5 rounded-full bg-[#25D366] hover:bg-[#1ebe57] text-white font-bold text-sm transition-colors flex items-center justify-center gap-2"
             >
+              <span className="material-symbols-outlined text-lg">send</span>
               Finalizar por WhatsApp
-            </Button>
+            </button>
             <button
               onClick={clear}
-              className="w-full text-xs text-on-surface-variant hover:text-destructive transition-colors"
+              className="w-full text-xs text-on-surface-variant hover:text-error transition-colors"
             >
               Vaciar carrito
             </button>
-          </div>
+          </footer>
         )}
-      </SheetContent>
-    </Sheet>
+      </aside>
+    </>
   );
 }
