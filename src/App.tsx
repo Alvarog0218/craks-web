@@ -1,7 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
+import { CartProvider } from "@/contexts/CartContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CartFab from "@/components/CartFab";
+import CartDrawer from "@/components/CartDrawer";
 import Index from "@/pages/Index";
 import Productos from "@/pages/Productos";
 import Nosotros from "@/pages/Nosotros";
@@ -14,6 +17,8 @@ function Layout({ children }: { children: React.ReactNode }) {
       <Navbar />
       {children}
       <Footer />
+      <CartFab />
+      <CartDrawer />
     </div>
   );
 }
@@ -22,15 +27,17 @@ export default function App() {
   return (
     <BrowserRouter>
       <LanguageProvider>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/productos" element={<Productos />} />
-            <Route path="/nosotros" element={<Nosotros />} />
-            <Route path="/distribuidores" element={<Distribuidores />} />
-            <Route path="/logistica" element={<Logistica />} />
-          </Routes>
-        </Layout>
+        <CartProvider>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/productos" element={<Productos />} />
+              <Route path="/nosotros" element={<Nosotros />} />
+              <Route path="/distribuidores" element={<Distribuidores />} />
+              <Route path="/logistica" element={<Logistica />} />
+            </Routes>
+          </Layout>
+        </CartProvider>
       </LanguageProvider>
     </BrowserRouter>
   );
