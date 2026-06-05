@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 type Product = {
@@ -66,7 +67,38 @@ const products: Product[] = [
   },
 ];
 
+const CLASIFICACIONES = ["B", "A", "AA", "AAA", "Jumbo"];
+const TIPOS = ["Tradicional", "Blanco"] as const;
+
 export default function Productos() {
+  const [selectedClasificaciones, setSelectedClasificaciones] = useState<string[]>([]);
+  const [selectedTipo, setSelectedTipo] = useState<string | null>(null);
+
+  const toggleClasificacion = (c: string) => {
+    setSelectedClasificaciones((prev) =>
+      prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]
+    );
+  };
+
+  const toggleTipo = (t: string) => {
+    setSelectedTipo((prev) => (prev === t ? null : t));
+  };
+
+  const resetFilters = () => {
+    setSelectedClasificaciones([]);
+    setSelectedTipo(null);
+  };
+
+  const filtered = products.filter((p) => {
+    const matchesClasificacion =
+      selectedClasificaciones.length === 0 ||
+      selectedClasificaciones.some((c) => p.clasificacion.includes(c));
+    const matchesTipo = !selectedTipo || p.tipo === selectedTipo;
+    return matchesClasificacion && matchesTipo;
+  });
+
+  const hasFilters = selectedClasificaciones.length > 0 || selectedTipo !== null;
+
   return (
     <main className="flex-1 max-w-7xl mx-auto w-full px-6 md:px-12 pt-12 pb-20">
       {/* Page Header */}
@@ -88,36 +120,55 @@ export default function Productos() {
         {/* Sidebar Filter */}
         <aside className="w-full lg:w-64 flex-shrink-0">
           <div className="bg-surface-container-low rounded-xl p-6 lg:sticky lg:top-28">
-            <h3 className="font-headline text-lg font-bold text-primary mb-6 tracking-tight">Filtrar</h3>
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="font-headline text-lg font-bold text-primary tracking-tight">Filtrar</h3>
+              {hasFilters && (
+                <button onClick={resetFilters} className="text-xs font-bold text-secondary hover:underline">
+                  Limpiar
+                </button>
+              )}
+            </div>
             <div className="space-y-6">
-              <div>
-                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 block">Tipo de Cliente</label>
-                <div className="flex flex-col gap-2">
-                  <button className="flex items-center justify-between px-4 py-3 rounded-full bg-secondary text-on-secondary font-semibold text-sm shadow-sm">
-                    Todos
-                    <span className="material-symbols-outlined text-base">check</span>
-                  </button>
-                  <button className="flex items-center justify-between px-4 py-3 rounded-full bg-surface-container-highest text-on-surface-variant font-semibold text-sm hover:bg-surface-container-high transition-colors">
-                    Mayorista
-                  </button>
-                  <button className="flex items-center justify-between px-4 py-3 rounded-full bg-surface-container-highest text-on-surface-variant font-semibold text-sm hover:bg-surface-container-high transition-colors">
-                    Detal
-                  </button>
-                </div>
-              </div>
               <div>
                 <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 block">Clasificación</label>
                 <div className="flex flex-wrap gap-2">
-                  {["B", "A", "AA", "AAA", "Jumbo"].map((c) => (
-                    <span key={c} className="px-3 py-1.5 bg-surface-container-highest text-on-surface-variant text-xs font-bold rounded-full cursor-pointer hover:bg-primary-fixed/50 transition-colors">{c}</span>
-                  ))}
+                  {CLASIFICACIONES.map((c) => {
+                    const active = selectedClasificaciones.includes(c);
+                    return (
+                      <button
+                        key={c}
+                        onClick={() => toggleClasificacion(c)}
+                        className={`px-3 py-1.5 text-xs font-bold rounded-full transition-colors ${
+                          active
+                            ? "bg-secondary text-on-secondary"
+                            : "bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed/50"
+                        }`}
+                      >
+                        {c}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
               <div>
                 <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 block">Tipo</label>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1.5 bg-primary-fixed text-on-primary-fixed text-xs font-bold rounded-full cursor-pointer">Tradicional</span>
-                  <span className="px-3 py-1.5 bg-surface-container-highest text-on-surface-variant text-xs font-bold rounded-full cursor-pointer hover:bg-primary-fixed/50 transition-colors">Blanco</span>
+                  {TIPOS.map((t) => {
+                    const active = selectedTipo === t;
+                    return (
+                      <button
+                        key={t}
+                        onClick={() => toggleTipo(t)}
+                        className={`px-3 py-1.5 text-xs font-bold rounded-full transition-colors ${
+                          active
+                            ? "bg-secondary text-on-secondary"
+                            : "bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed/50"
+                        }`}
+                      >
+                        {t}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -131,8 +182,15 @@ export default function Productos() {
 
         {/* Product Grid */}
         <section className="flex-grow">
+          {filtered.length === 0 && (
+            <div className="flex flex-col items-center justify-center py-24 text-center">
+              <span className="material-symbols-outlined text-5xl text-on-surface-variant mb-4">search_off</span>
+              <p className="font-bold text-on-surface-variant">Sin resultados para ese filtro.</p>
+              <button onClick={resetFilters} className="mt-4 text-sm font-bold text-secondary hover:underline">Limpiar filtros</button>
+            </div>
+          )}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-            {products.map((p) => (
+            {filtered.map((p) => (
               <div
                 key={p.id}
                 className="group bg-surface-container-low rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300"
