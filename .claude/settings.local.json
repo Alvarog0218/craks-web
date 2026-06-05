@@ -22,7 +22,8 @@
       "Bash(npx tsc:*)",
       "Bash(timeout 8 npx vite --host)",
       "Bash(git commit *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git add *)"
     ]
   }
 }
