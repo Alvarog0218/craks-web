@@ -241,37 +241,39 @@ export default function Productos() {
                 </div>
               );
             })}
-
-            {/* Wholesale Banner */}
-            <div className="group sm:col-span-2 bg-primary p-8 md:p-10 rounded-xl flex flex-col md:flex-row items-center gap-8 overflow-hidden relative">
-              <div className="relative z-10 flex-1">
-                <h3 className="font-headline text-2xl md:text-3xl font-extrabold text-primary-fixed mb-3">{t.prod_wholesale_h3}</h3>
-                <p className="text-surface-container-low/80 mb-6">{t.prod_wholesale_p}</p>
-                <ul className="space-y-2 mb-6 text-surface-bright text-sm">
-                  <li className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-primary-fixed-dim text-lg">inventory</span>
-                    {t.prod_wholesale_item1}
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-primary-fixed-dim text-lg">public</span>
-                    {t.prod_wholesale_item2}
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-primary-fixed-dim text-lg">storefront</span>
-                    {t.prod_wholesale_item3}
-                  </li>
-                </ul>
-                <Link to="/distribuidores" className="yolk-gradient inline-block px-8 py-3 rounded-full text-on-primary-fixed font-bold text-sm">
-                  {t.prod_wholesale_btn}
-                </Link>
-              </div>
-              <div className="w-full md:w-64 h-48 md:h-56 relative">
-                <img className="w-full h-full object-cover rounded-xl shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDvcQMiGT_MUjo82QLjoGwiQd7dWvJSYVNzIx_ZUHBV1uSKHWGvExs5FIQvHB6g0_GMapXrYig3d-pyrxQtbDmI1WXsuXDJ45xP_SFOM2TvpHvaEyBxK_1TocDy-_OiOKZ38WtG_3jK2wl5yI7iSd7fDDnTDRiF-q4OI_2nYpPYcr6Ocn0syB7d8eDvIj5vf1IrW_3ZjNrKYh9_f6V-4ZeI1v5WvcSf4m7Y6SAOfKcfrEuBK24PCqR6K2JN6A3LB1flASIeX4O2Vw" alt="Distribución mayorista de huevo" loading="lazy" />
-              </div>
-            </div>
           </div>
         </section>
       </div>
+
+      {/* Wholesale Section */}
+      <section className="mt-14">
+        <div className="bg-secondary p-8 md:p-10 rounded-xl flex flex-col md:flex-row items-center gap-8 overflow-hidden relative">
+          <div className="relative z-10 flex-1">
+            <h3 className="font-headline text-2xl md:text-3xl font-extrabold text-secondary-fixed mb-3">{t.prod_wholesale_h3}</h3>
+            <p className="text-secondary-container/85 mb-6">{t.prod_wholesale_p}</p>
+            <ul className="space-y-2 mb-6 text-on-secondary text-sm">
+              <li className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-secondary-fixed-dim text-lg">inventory</span>
+                {t.prod_wholesale_item1}
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-secondary-fixed-dim text-lg">public</span>
+                {t.prod_wholesale_item2}
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-secondary-fixed-dim text-lg">storefront</span>
+                {t.prod_wholesale_item3}
+              </li>
+            </ul>
+            <Link to="/distribuidores" className="inline-block px-8 py-3 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold text-sm hover:bg-secondary-fixed-dim transition-colors">
+              {t.prod_wholesale_btn}
+            </Link>
+          </div>
+          <div className="w-full md:w-64 h-48 md:h-56 relative">
+            <img className="w-full h-full object-cover rounded-xl shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDvcQMiGT_MUjo82QLjoGwiQd7dWvJSYVNzIx_ZUHBV1uSKHWGvExs5FIQvHB6g0_GMapXrYig3d-pyrxQtbDmI1WXsuXDJ45xP_SFOM2TvpHvaEyBxK_1TocDy-_OiOKZ38WtG_3jK2wl5yI7iSd7fDDnTDRiF-q4OI_2nYpPYcr6Ocn0syB7d8eDvIj5vf1IrW_3ZjNrKYh9_f6V-4ZeI1v5WvcSf4m7Y6SAOfKcfrEuBK24PCqR6K2JN6A3LB1flASIeX4O2Vw" alt="Distribución mayorista de huevo" loading="lazy" />
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
