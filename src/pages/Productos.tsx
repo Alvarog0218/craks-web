@@ -1,88 +1,41 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-type Product = {
-  id: string;
-  clasificacion: string;
-  tipo: "Tradicional" | "Blanco";
-  description: string;
-  image: string;
-  alt: string;
-  badge: string;
-  badgeStyle: "secondary" | "primary";
-};
+import { useTranslation } from "@/i18n/LanguageContext";
 
 const EGG_IMAGE = "/assets/huevo.png/huevo.png";
-
-const products: Product[] = [
-  {
-    id: "b-tradicional",
-    clasificacion: "Clasificación B",
-    tipo: "Tradicional",
-    description: "46.0 g – 49.9 g por unidad. Huevo pequeño, ideal para recetas ligeras, snacks y preparaciones donde el tamaño exacto no es crítico.",
-    image: EGG_IMAGE,
-    alt: "Huevo Clasificación B",
-    badge: "Clase B",
-    badgeStyle: "secondary",
-  },
-  {
-    id: "a-tradicional",
-    clasificacion: "Clasificación A",
-    tipo: "Tradicional",
-    description: "50.0 g – 53.9 g por unidad. Huevo estándar pequeño, de alta rotación. Equilibrio entre tamaño y precio para distribución y consumo cotidiano.",
-    image: EGG_IMAGE,
-    alt: "Huevo Clasificación A",
-    badge: "Clase A",
-    badgeStyle: "secondary",
-  },
-  {
-    id: "aa-tradicional",
-    clasificacion: "Clasificación AA",
-    tipo: "Tradicional",
-    description: "54.0 g – 59.9 g por unidad. El estándar más común para el consumo diario. Preferido por hogares, restaurantes y distribuidores por su tamaño y rendimiento.",
-    image: EGG_IMAGE,
-    alt: "Huevo Clasificación AA",
-    badge: "Clase AA",
-    badgeStyle: "secondary",
-  },
-  {
-    id: "aaa-blanco",
-    clasificacion: "Clasificación AAA",
-    tipo: "Blanco",
-    description: "60.0 g – 66.9 g por unidad. Huevo grande, excelente para repostería, desayunos abundantes y cocina profesional. Alta demanda en supermercados y exportación.",
-    image: EGG_IMAGE,
-    alt: "Huevo Clasificación AAA",
-    badge: "Clase AAA",
-    badgeStyle: "primary",
-  },
-  {
-    id: "jumbo-tradicional",
-    clasificacion: "Jumbo",
-    tipo: "Tradicional",
-    description: "67.0 g o más por unidad. Huevo premium de máximo rendimiento. La opción de mayor tamaño para gastronomía de alto nivel, repostería de precisión y clientes que exigen lo mejor.",
-    image: EGG_IMAGE,
-    alt: "Huevo Jumbo",
-    badge: "Jumbo",
-    badgeStyle: "primary",
-  },
-];
-
 const CLASIFICACIONES = ["B", "A", "AA", "AAA", "Jumbo"];
-const TIPOS = ["Tradicional", "Blanco"] as const;
 
 export default function Productos() {
+  const { t } = useTranslation();
   const [selectedClasificaciones, setSelectedClasificaciones] = useState<string[]>([]);
   const [selectedTipo, setSelectedTipo] = useState<string | null>(null);
 
-  const toggleClasificacion = (c: string) => {
+  const TIPOS = [t.prod_tipo_trad, t.prod_tipo_blanco];
+
+  type Product = {
+    id: string;
+    clasificacion: string;
+    tipo: string;
+    description: string;
+    badge: string;
+    badgeStyle: "secondary" | "primary";
+  };
+
+  const products: Product[] = [
+    { id: "b-tradicional",  clasificacion: t.prod_clase_b,    tipo: t.prod_tipo_trad,   description: t.prod_desc_b,    badge: "Clase B",   badgeStyle: "secondary" },
+    { id: "a-tradicional",  clasificacion: t.prod_clase_a,    tipo: t.prod_tipo_trad,   description: t.prod_desc_a,    badge: "Clase A",   badgeStyle: "secondary" },
+    { id: "aa-tradicional", clasificacion: t.prod_clase_aa,   tipo: t.prod_tipo_trad,   description: t.prod_desc_aa,   badge: "Clase AA",  badgeStyle: "secondary" },
+    { id: "aaa-blanco",     clasificacion: t.prod_clase_aaa,  tipo: t.prod_tipo_blanco, description: t.prod_desc_aaa,  badge: "Clase AAA", badgeStyle: "primary"   },
+    { id: "jumbo-trad",     clasificacion: t.prod_clase_jumbo,tipo: t.prod_tipo_trad,   description: t.prod_desc_jumbo,badge: "Jumbo",      badgeStyle: "primary"   },
+  ];
+
+  const toggleClasificacion = (c: string) =>
     setSelectedClasificaciones((prev) =>
       prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]
     );
-  };
 
-  const toggleTipo = (t: string) => {
-    setSelectedTipo((prev) => (prev === t ? null : t));
-  };
+  const toggleTipo = (tp: string) =>
+    setSelectedTipo((prev) => (prev === tp ? null : tp));
 
   const resetFilters = () => {
     setSelectedClasificaciones([]);
@@ -105,14 +58,12 @@ export default function Productos() {
       <section className="mb-12">
         <div className="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full mb-4">
           <span className="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
-          <span className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Catálogo de Productos</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">{t.prod_badge}</span>
         </div>
         <h1 className="font-headline text-4xl md:text-6xl font-extrabold text-primary tracking-tighter mb-3">
-          Huevo Colombiano<br /><span className="text-secondary opacity-80">Todas las Categorías</span>
+          {t.prod_h1_1}<br /><span className="text-secondary opacity-80">{t.prod_h1_2}</span>
         </h1>
-        <p className="text-on-surface-variant max-w-xl text-base md:text-lg">
-          Clasificación B · A · AA · AAA · Jumbo. Tradicional o blanco. Precios según volumen y temporada — consúltenos.
-        </p>
+        <p className="text-on-surface-variant max-w-xl text-base md:text-lg">{t.prod_subtitle}</p>
       </section>
 
       {/* Layout: Filter + Grid */}
@@ -121,16 +72,16 @@ export default function Productos() {
         <aside className="w-full lg:w-64 flex-shrink-0">
           <div className="bg-surface-container-low rounded-xl p-6 lg:sticky lg:top-28">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="font-headline text-lg font-bold text-primary tracking-tight">Filtrar</h3>
+              <h3 className="font-headline text-lg font-bold text-primary tracking-tight">{t.prod_filter_title}</h3>
               {hasFilters && (
                 <button onClick={resetFilters} className="text-xs font-bold text-secondary hover:underline">
-                  Limpiar
+                  {t.prod_filter_clear}
                 </button>
               )}
             </div>
             <div className="space-y-6">
               <div>
-                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 block">Clasificación</label>
+                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 block">{t.prod_filter_clasificacion}</label>
                 <div className="flex flex-wrap gap-2">
                   {CLASIFICACIONES.map((c) => {
                     const active = selectedClasificaciones.includes(c);
@@ -151,21 +102,21 @@ export default function Productos() {
                 </div>
               </div>
               <div>
-                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 block">Tipo</label>
+                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 block">{t.prod_filter_tipo}</label>
                 <div className="flex flex-wrap gap-2">
-                  {TIPOS.map((t) => {
-                    const active = selectedTipo === t;
+                  {TIPOS.map((tp) => {
+                    const active = selectedTipo === tp;
                     return (
                       <button
-                        key={t}
-                        onClick={() => toggleTipo(t)}
+                        key={tp}
+                        onClick={() => toggleTipo(tp)}
                         className={`px-3 py-1.5 text-xs font-bold rounded-full transition-colors ${
                           active
                             ? "bg-secondary text-on-secondary"
                             : "bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed/50"
                         }`}
                       >
-                        {t}
+                        {tp}
                       </button>
                     );
                   })}
@@ -173,8 +124,8 @@ export default function Productos() {
               </div>
             </div>
             <div className="mt-10 yolk-gradient rounded-xl p-5 relative overflow-hidden">
-              <p className="text-on-primary-fixed font-bold text-sm relative z-10">¿Necesitas cotización para volumen mayor?</p>
-              <Link to="/distribuidores" className="mt-3 inline-block bg-primary text-on-primary px-4 py-2 rounded-full text-xs font-bold relative z-10">Solicitar Cotización</Link>
+              <p className="text-on-primary-fixed font-bold text-sm relative z-10">{t.prod_cta_question}</p>
+              <Link to="/distribuidores" className="mt-3 inline-block bg-primary text-on-primary px-4 py-2 rounded-full text-xs font-bold relative z-10">{t.prod_cta_btn}</Link>
               <div className="absolute -right-3 -bottom-3 w-16 h-16 bg-white/20 rounded-full blur-xl"></div>
             </div>
           </div>
@@ -185,8 +136,8 @@ export default function Productos() {
           {filtered.length === 0 && (
             <div className="flex flex-col items-center justify-center py-24 text-center">
               <span className="material-symbols-outlined text-5xl text-on-surface-variant mb-4">search_off</span>
-              <p className="font-bold text-on-surface-variant">Sin resultados para ese filtro.</p>
-              <button onClick={resetFilters} className="mt-4 text-sm font-bold text-secondary hover:underline">Limpiar filtros</button>
+              <p className="font-bold text-on-surface-variant">{t.prod_no_results}</p>
+              <button onClick={resetFilters} className="mt-4 text-sm font-bold text-secondary hover:underline">{t.prod_clear_filters}</button>
             </div>
           )}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -198,8 +149,8 @@ export default function Productos() {
                 <div className="aspect-[4/5] egg-shape overflow-hidden mb-5 bg-surface-container-high relative isolate">
                   <img
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    src={p.image}
-                    alt={p.alt}
+                    src={EGG_IMAGE}
+                    alt={p.clasificacion}
                     loading="lazy"
                   />
                   <span
@@ -222,7 +173,7 @@ export default function Productos() {
                     to="/distribuidores"
                     className="w-full py-3 rounded-full border border-outline-variant/30 text-primary font-bold text-sm hover:bg-primary-fixed transition-colors block text-center"
                   >
-                    Consultar precio
+                    {t.prod_consult}
                   </Link>
                 </div>
               </div>
@@ -231,24 +182,24 @@ export default function Productos() {
             {/* Wholesale Banner */}
             <div className="group sm:col-span-2 bg-primary p-8 md:p-10 rounded-xl flex flex-col md:flex-row items-center gap-8 overflow-hidden relative">
               <div className="relative z-10 flex-1">
-                <h3 className="font-headline text-2xl md:text-3xl font-extrabold text-primary-fixed mb-3">Venta al por Mayor</h3>
-                <p className="text-surface-container-low/80 mb-6">Para supermercados, restaurantes, hoteles y distribuidores — en Colombia y el Caribe. Producto enzunchado y asegurado para exportación.</p>
+                <h3 className="font-headline text-2xl md:text-3xl font-extrabold text-primary-fixed mb-3">{t.prod_wholesale_h3}</h3>
+                <p className="text-surface-container-low/80 mb-6">{t.prod_wholesale_p}</p>
                 <ul className="space-y-2 mb-6 text-surface-bright text-sm">
                   <li className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-primary-fixed-dim text-lg">inventory</span>
-                    Granel · Patineta · Estibas palletizadas
+                    {t.prod_wholesale_item1}
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-primary-fixed-dim text-lg">public</span>
-                    Supermercados · Restaurantes · Hoteles (Caribe)
+                    {t.prod_wholesale_item2}
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-primary-fixed-dim text-lg">storefront</span>
-                    Marca propia (private label) disponible
+                    {t.prod_wholesale_item3}
                   </li>
                 </ul>
                 <Link to="/distribuidores" className="yolk-gradient inline-block px-8 py-3 rounded-full text-on-primary-fixed font-bold text-sm">
-                  Solicitar Cotización
+                  {t.prod_wholesale_btn}
                 </Link>
               </div>
               <div className="w-full md:w-64 h-48 md:h-56 relative">

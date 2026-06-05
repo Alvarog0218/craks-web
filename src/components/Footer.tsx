@@ -69,7 +69,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-outline-variant/20 max-w-7xl mx-auto px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-on-surface-variant">&copy; 2026 Craks Egg Distribution Ltd. International Standards Certified.</p>
+        <p className="text-xs text-on-surface-variant">{t.footer_copyright}</p>
         <div className="flex gap-6 text-xs font-bold uppercase text-on-surface-variant">
           <a href="#" className="hover:text-petrol transition-colors">Instagram</a>
           <a href="#" className="hover:text-petrol transition-colors">LinkedIn</a>

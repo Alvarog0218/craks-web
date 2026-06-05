@@ -37,7 +37,7 @@ export default function Nosotros() {
             {/* 2005 */}
             <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="md:text-right md:pr-16">
-                <h3 className="font-headline text-2xl font-bold text-primary mb-3">Inicio de Operaciones</h3>
+                <h3 className="font-headline text-2xl font-bold text-primary mb-3">{t.about_timeline_2005_h}</h3>
                 <p className="text-on-surface-variant">{t.about_1992_p}</p>
               </div>
               <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 yolk-gradient rounded-full shadow-lg border-4 border-surface-container-low items-center justify-center font-bold text-on-primary-fixed text-xs">2005</div>
@@ -51,7 +51,7 @@ export default function Nosotros() {
             {/* 2018 */}
             <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="md:order-2 md:pl-16">
-                <h3 className="font-headline text-2xl font-bold text-primary mb-3">Consolidación Empresarial</h3>
+                <h3 className="font-headline text-2xl font-bold text-primary mb-3">{t.about_timeline_2018_h}</h3>
                 <p className="text-on-surface-variant">{t.about_2010_p}</p>
               </div>
               <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 yolk-gradient rounded-full shadow-lg border-4 border-surface-container-low items-center justify-center font-bold text-on-primary-fixed text-xs">2018</div>
@@ -65,7 +65,7 @@ export default function Nosotros() {
             {/* Proyección */}
             <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="md:text-right md:pr-16">
-                <h3 className="font-headline text-2xl font-bold text-primary mb-3">Proyección Internacional</h3>
+                <h3 className="font-headline text-2xl font-bold text-primary mb-3">{t.about_timeline_hoy_h}</h3>
                 <p className="text-on-surface-variant">{t.about_2026_p}</p>
               </div>
               <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-14 h-12 yolk-gradient rounded-full shadow-lg border-4 border-surface-container-low items-center justify-center font-bold text-on-primary-fixed text-[10px] text-center leading-tight px-1">Hoy</div>
@@ -82,27 +82,27 @@ export default function Nosotros() {
       {/* Values */}
       <section className="py-20 px-6 bg-surface">
         <div className="max-w-5xl mx-auto">
-          <h2 className="font-headline text-3xl md:text-5xl font-extrabold text-primary tracking-tighter mb-16 text-center">Nuestros Valores</h2>
+          <h2 className="font-headline text-3xl md:text-5xl font-extrabold text-primary tracking-tighter mb-16 text-center">{t.about_val_h2}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="flex flex-col items-center text-center">
               <div className="w-36 h-36 yolk-gradient rounded-full flex items-center justify-center mb-6 shadow-xl">
                 <span className="material-symbols-outlined text-on-primary-fixed text-5xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
               </div>
-              <h4 className="font-headline text-xl font-bold text-primary mb-3">Cumplimiento</h4>
+              <h4 className="font-headline text-xl font-bold text-primary mb-3">{t.about_val1_h}</h4>
               <p className="text-on-surface-variant">{t.about_val1_p}</p>
             </div>
             <div className="flex flex-col items-center text-center">
               <div className="w-36 h-36 yolk-gradient rounded-full flex items-center justify-center mb-6 shadow-xl">
                 <span className="material-symbols-outlined text-on-primary-fixed text-5xl" style={{ fontVariationSettings: "'FILL' 1" }}>local_shipping</span>
               </div>
-              <h4 className="font-headline text-xl font-bold text-primary mb-3">Eficiencia Logística</h4>
+              <h4 className="font-headline text-xl font-bold text-primary mb-3">{t.about_val2_h}</h4>
               <p className="text-on-surface-variant">{t.about_val2_p}</p>
             </div>
             <div className="flex flex-col items-center text-center">
               <div className="w-36 h-36 yolk-gradient rounded-full flex items-center justify-center mb-6 shadow-xl">
                 <span className="material-symbols-outlined text-on-primary-fixed text-5xl" style={{ fontVariationSettings: "'FILL' 1" }}>handshake</span>
               </div>
-              <h4 className="font-headline text-xl font-bold text-primary mb-3">Equipo Comprometido</h4>
+              <h4 className="font-headline text-xl font-bold text-primary mb-3">{t.about_val3_h}</h4>
               <p className="text-on-surface-variant">{t.about_val3_p}</p>
             </div>
           </div>
@@ -113,8 +113,8 @@ export default function Nosotros() {
       <section className="py-20 px-6 bg-surface-container-low">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-headline text-3xl md:text-5xl font-extrabold text-primary tracking-tighter">Nuestro Equipo</h2>
-            <p className="text-on-surface-variant mt-3">28 colaboradores comprometidos con la excelencia operativa y comercial.</p>
+            <h2 className="font-headline text-3xl md:text-5xl font-extrabold text-primary tracking-tighter">{t.about_team_h2}</h2>
+            <p className="text-on-surface-variant mt-3">{t.about_team_p}</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
@@ -142,8 +142,8 @@ export default function Nosotros() {
       {/* Allies */}
       <section className="py-16 px-6 bg-surface">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="font-headline text-2xl md:text-3xl font-extrabold text-primary tracking-tighter mb-4">Aliados Comerciales</h2>
-          <p className="text-on-surface-variant mb-10">Empresas que confían en nosotros como su proveedor de huevo colombiano.</p>
+          <h2 className="font-headline text-2xl md:text-3xl font-extrabold text-primary tracking-tighter mb-4">{t.about_allies_h2}</h2>
+          <p className="text-on-surface-variant mb-10">{t.about_allies_p}</p>
           <div className="flex flex-wrap justify-center gap-4">
             {["Ara – Jerónimo Martins", "Fonsepan", "Industrias de Alimentos del Fonse", "Alimentos Naturales del Campo", "Agrodelo"].map((ally) => (
               <span key={ally} className="px-5 py-3 bg-surface-container-high rounded-full font-semibold text-on-surface-variant text-sm">{ally}</span>
