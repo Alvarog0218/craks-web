@@ -11,7 +11,7 @@ type Product = {
   badgeStyle: "secondary" | "primary";
 };
 
-const EGG_IMAGE = "/assets/huevo.png/screen.png";
+const EGG_IMAGE = "https://lh3.googleusercontent.com/aida-public/AB6AXuDD0_buhm0zE9QZoI0KD2M2aDtEvHuThGgw5XlBo_eiaYOCweZ8XvXbkWStp6h7ddZ4ZflJib_VLPyusLA2C0B_zvKcI4wQib7HMHgS6nZOX0AAERKYh5CvDaJAmG7NhIWd3f2wimQEcSeKqmh33XoHOM7itkhBNnXGZUpTI8Y6XpCcuHObF-jy8KDUIHo2ib3oAUpMmfh7db6kAGWed6RNcworO7rPEX4ZOMGFgqOfTDluj8btmJvKSV6haNCJYVIlNvyAIxAJSDI";
 
 const products: Product[] = [
   {
