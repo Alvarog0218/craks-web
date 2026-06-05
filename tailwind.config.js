@@ -5,22 +5,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        'surface':                   '#fcf9f0',
-        'surface-bright':            '#fcf9f0',
-        'surface-dim':               '#dddad1',
-        'surface-variant':           '#e5e2da',
+        'surface':                   '#f8f4e6',
+        'surface-bright':            '#f8f4e6',
+        'surface-dim':               '#d8d4c6',
+        'surface-variant':           '#e0dcd0',
         'surface-container-lowest':  '#ffffff',
-        'surface-container-low':     '#f6f3ea',
-        'surface-container':         '#f1eee5',
-        'surface-container-high':    '#ebe8df',
-        'surface-container-highest': '#e5e2da',
+        'surface-container-low':     '#f2eee0',
+        'surface-container':         '#ede9db',
+        'surface-container-high':    '#e7e3d5',
+        'surface-container-highest': '#e0dcd0',
         'surface-tint':              '#825500',
         'on-surface':                '#1c1c17',
         'on-surface-variant':        '#40484a',
         'inverse-surface':           '#31312b',
         'inverse-on-surface':        '#f4f1e8',
 
-        'background':                '#fcf9f0',
+        'background':                '#f8f4e6',
         'on-background':             '#1c1c17',
 
         'primary':                   '#412800',
