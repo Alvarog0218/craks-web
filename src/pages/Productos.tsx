@@ -1,58 +1,9 @@
 import { Link } from "react-router-dom";
-import { useCart } from "@/contexts/CartContext";
-
-function ProductCartButton({
-  productId,
-  onAdd,
-}: {
-  productId: string;
-  onAdd: () => void;
-}) {
-  const { items, updateQuantity } = useCart();
-  const inCart = items.find((i) => i.id === productId);
-  const qty = inCart?.quantity ?? 0;
-
-  if (qty === 0) {
-    return (
-      <button
-        onClick={onAdd}
-        className="w-full py-3 rounded-full border border-outline-variant/30 text-primary font-bold text-sm hover:bg-primary-fixed transition-colors"
-      >
-        Añadir al carrito
-      </button>
-    );
-  }
-
-  return (
-    <div className="w-full flex items-center justify-between gap-2 py-1.5 pl-2 pr-1.5 rounded-full bg-primary text-on-primary">
-      <button
-        onClick={() => updateQuantity(productId, qty - 1)}
-        aria-label={qty === 1 ? "Eliminar del carrito" : "Disminuir cantidad"}
-        className="w-9 h-9 rounded-full bg-on-primary/15 hover:bg-on-primary/25 flex items-center justify-center transition-colors"
-      >
-        <span className="material-symbols-outlined text-lg">
-          {qty === 1 ? "delete" : "remove"}
-        </span>
-      </button>
-      <span className="font-headline font-bold text-sm flex items-center gap-2">
-        <span className="opacity-70 text-xs uppercase tracking-widest">En carrito</span>
-        <span className="text-base">{qty}</span>
-      </span>
-      <button
-        onClick={() => updateQuantity(productId, qty + 1)}
-        aria-label="Aumentar cantidad"
-        className="w-9 h-9 rounded-full bg-on-primary/15 hover:bg-on-primary/25 flex items-center justify-center transition-colors"
-      >
-        <span className="material-symbols-outlined text-lg">add</span>
-      </button>
-    </div>
-  );
-}
 
 type Product = {
   id: string;
-  name: string;
-  price: number;
+  clasificacion: string;
+  tipo: "Tradicional" | "Blanco";
   description: string;
   image: string;
   alt: string;
@@ -62,70 +13,71 @@ type Product = {
 
 const products: Product[] = [
   {
-    id: "craks-reserve",
-    name: "Craks Reserve",
-    price: 24.0,
-    description:
-      "Huevos marrones de gallinas criadas en pastoreo. Certificados non-GMO y ricos en nutrientes.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAzCT0QhrH4DNNZUb9noTNaXWR-wB9GMMchgEHWvIUAJVZiVc2Gu8VnO__dTbQ-6hyuuLKSS406RTrzF3QqXMRxQZn2JztRy_Cm7SymFfspCLUcmVvffSXYtWpYvwrEchu2yCdUIePv-aHqjufOIkiSJXSo9NMBl4Fjv-Rcygy5kVqR2j3hHzBLSQMQ1jiWxfHnUrEbXgAPwG21nTgOIo3RASDPooDecjMgysMZUTRp1VaiEY9HmURYqrHVTB0GOrZwICnknHYije8",
-    alt: "Craks Reserve — huevos marrones orgánicos",
-    badge: "Orgánico",
+    id: "b-tradicional",
+    clasificacion: "Clasificación B",
+    tipo: "Tradicional",
+    description: "Huevo tradicional de menor calibre. Ideal para consumo doméstico y uso en panadería e industria alimentaria.",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAzCT0QhrH4DNNZUb9noTNaXWR-wB9GMMchgEHWvIUAJVZiVc2Gu8VnO__dTbQ-6hyuuLKSS406RTrzF3QqXMRxQZn2JztRy_Cm7SymFfspCLUcmVvffSXYtWpYvwrEchu2yCdUIePv-aHqjufOIkiSJXSo9NMBl4Fjv-Rcygy5kVqR2j3hHzBLSQMQ1jiWxfHnUrEbXgAPwG21nTgOIo3RASDPooDecjMgysMZUTRp1VaiEY9HmURYqrHRVTB0GOrZwICnknHYije8",
+    alt: "Huevo Clasificación B Tradicional",
+    badge: "Clase B",
     badgeStyle: "secondary",
   },
   {
-    id: "standard-excellence",
-    name: "Standard Excellence",
-    price: 18.5,
-    description:
-      "La base de la cocina doméstica. Huevos Grade A con densidad de yema consistente.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDr3skdAhyyGdwwST7rSw0wBhSQXBGo3s4IpQWBnmUQUVZuQ3tRBzSys6zmQT0FV7ORTrooTNYpH_qmrsBfaOnrOo55TPQgoAcxJXHF6E7-YNdDpxIm-5YFU14EuoHdiwiX6z9SaxsOVQemXhuPpvScJJ6k0qWkYvXnNVbx9zDwmmpqv1mBHAd3sGt32Po0FRRrwwGbX2iWK-Hp45iHKjRVs2w-cFD63FeWqRmXbVbx3QWXMI4uTqj7k-SDehazHopE3dPU0fz2dnU",
-    alt: "Standard Excellence — huevos blancos grandes",
-    badge: "Grande",
+    id: "a-tradicional",
+    clasificacion: "Clasificación A",
+    tipo: "Tradicional",
+    description: "Huevo estándar de alta rotación en el mercado. Equilibrio perfecto entre tamaño y precio para distribución masiva.",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDr3skdAhyyGdwwST7rSw0wBhSQXBGo3s4IpQWBnmUQUVZuQ3tRBzSys6zmQT0FV7ORTrooTNYpH_qmrsBfaOnrOo55TPQgoAcxJXHF6E7-YNdDpxIm-5YFU14EuoHdiwiX6z9SaxsOVQemXhuPpScJJ6k0qWkYvXnNVbx9zDwmmpqv1mBHAd3sGt32Po0FRRrwwGbX2iWK-Hp45iHKjRVs2w-cFD63FeWqRmXbVbx3QWXMI4uTqj7k-SDehazHopE3dPU0fz2dnU",
+    alt: "Huevo Clasificación A Tradicional",
+    badge: "Clase A",
     badgeStyle: "secondary",
   },
   {
-    id: "jumbo-heritage",
-    name: "Jumbo Heritage",
-    price: 32.0,
-    description:
-      "Tamaño extraordinario para precisión en repostería y excelencia culinaria. Grado profesional.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDD0_buhm0zE9QZoI0KD2M2aDtEvHuThGgw5XlBo_eiaYOCweZ8XvXbkWStp6h7ddZ4ZflJih_VLPyusLA2C0B_zvKcI4wQib7HMHgS6nZOX0AAERKYh5CvDaJAmG7NhIWd3f2wimQEcSeKqmh33XoHOM7itkhBNnXGZUpTI8Y6XpCcuHObF-jy8KDUIHo2ib3oAUpMmfh7db6kAGWed6RNcworO7rPEX4ZOMGFgqOfTDluj8btmJvKSV6haNCJYVIlNvyAIxAJSDI",
-    alt: "Jumbo Heritage — selección artesanal",
+    id: "aa-tradicional",
+    clasificacion: "Clasificación AA",
+    tipo: "Tradicional",
+    description: "Huevo de calibre superior. Preferido por restaurantes, hoteles y distribuidores exigentes.",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDD0_buhm0zE9QZoI0KD2M2aDtEvHuThGgw5XlBo_eiaYOCweZ8XvXbkWStp6h7ddZ4ZflJib_VLPyusLA2C0B_zvKcI4wQib7HMHgS6nZOX0AAERKYh5CvDaJAmG7NhIWd3f2wimQEcSeKqmh33XoHOM7itkhBNnXGZUpTI8Y6XpCcuHObF-jy8KDUIHo2ib3oAUpMmfh7db6kAGWed6RNcworO7rPEX4ZOMGFgqOfTDluj8btmJvKSV6haNCJYVIlNvyAIxAJSDI",
+    alt: "Huevo Clasificación AA Tradicional",
+    badge: "Clase AA",
+    badgeStyle: "secondary",
+  },
+  {
+    id: "aaa-blanco",
+    clasificacion: "Clasificación AAA",
+    tipo: "Blanco",
+    description: "Huevo blanco de alta clasificación. Presentación impecable para retail, cadenas de supermercados y exportación.",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDLQE-0GqCPtSObHndEPfMZnQ4oHU9QW-gDplCpsSy3l26XWv5vMjB2rctSSBB4YG-7hDEw-EHlmrvgnaDPAl8wgvVE-xSofbweFfIT3Nxc26sTZJXxFT22PLpdLTxuhVnXweCsS_Qs4fOOfM_W47jKEqV4fhfzhpzzW3mZ2Wcz05c8fqNmGe2zDKgQ3QVTHEVgzNjOg6JUtWGO5IFiJszJgo1jZ0IFsi9o3466pLdyoPU75J5zYnrRNJSNoCVXCRGXplazhBXI",
+    alt: "Huevo Clasificación AAA Blanco",
+    badge: "Clase AAA",
+    badgeStyle: "primary",
+  },
+  {
+    id: "jumbo-tradicional",
+    clasificacion: "Jumbo",
+    tipo: "Tradicional",
+    description: "El mayor calibre disponible. Para repostería de precisión, gastronomía profesional y presentaciones premium.",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBjCSsICqI9TFkeNPaCqkRiHtz7z3fzipx9BnZtRrLrhs1Zktgxxguqu00bOSlXkDjqXSctgTxhLFa4_xiguJUANSzUmCdpXoBUPeadum24VBp8mO1_JdACWA5_xRKbid-fRxNuS-uBiBr6cDH-LTQg_nh2By8mm3yFxtfjjOnRpfmIv1SEOiJqUu1Xql7ECKduYi_pbrrjNkk7zi25RJSLzSP65lrB8S-oDky-eyEbQWYAhbCGN2Ght5TPxeq6TtPw2PqEjol_yUY",
+    alt: "Huevo Jumbo Tradicional",
     badge: "Jumbo",
-    badgeStyle: "secondary",
-  },
-  {
-    id: "heritage-variety",
-    name: "Heritage Variety",
-    price: 38.0,
-    description: "Razas únicas de herencia para artes culinarias especializadas.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDLQE-0GqCPtSObHndEPfMZnQ4oHU9QW-gDplCpsSy3l26XWv5vMjB2rctSSBB4YG-7hDEw-EKYVdhmrvgnaDPAl8wgvVE-xSofbweFfIT3Nxc26sTZJXxFT22PLpdLTxuhVnXweCsS_Qs4fOOfM_W47jKEqV4fhfzhpzzW3mZ2Wcz05c8fqNmGe2zDKgQ3QVTHEVgzNjOg6JUtWGO5IFiJszJgo1jZ0IFsi9o3466pLdyoPU75J5zYnrRNJSNoCVXCRGXplazhBXI",
-    alt: "Heritage Variety — colección artesanal",
-    badge: "Heirloom",
     badgeStyle: "primary",
   },
 ];
 
 export default function Productos() {
-  const { addItem } = useCart();
-
   return (
     <main className="flex-1 max-w-7xl mx-auto w-full px-6 md:px-12 pt-12 pb-20">
       {/* Page Header */}
       <section className="mb-12">
         <div className="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full mb-4">
           <span className="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
-          <span className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Catálogo 2026</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Catálogo de Productos</span>
         </div>
         <h1 className="font-headline text-4xl md:text-6xl font-extrabold text-primary tracking-tighter mb-3">
-          Organic Precision<br /><span className="text-secondary opacity-80">Catalog</span>
+          Huevo Colombiano<br /><span className="text-secondary opacity-80">Todas las Categorías</span>
         </h1>
         <p className="text-on-surface-variant max-w-xl text-base md:text-lg">
-          Desde nuestras granjas a tu red de distribución. Excelencia en cada cáscara.
+          Clasificación B · A · AA · AAA · Jumbo. Tradicional o blanco. Precios según volumen y temporada — consúltenos.
         </p>
       </section>
 
@@ -134,33 +86,42 @@ export default function Productos() {
         {/* Sidebar Filter */}
         <aside className="w-full lg:w-64 flex-shrink-0">
           <div className="bg-surface-container-low rounded-xl p-6 lg:sticky lg:top-28">
-            <h3 className="font-headline text-lg font-bold text-primary mb-6 tracking-tight">Curation</h3>
+            <h3 className="font-headline text-lg font-bold text-primary mb-6 tracking-tight">Filtrar</h3>
             <div className="space-y-6">
               <div>
-                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 block">Categoría</label>
+                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 block">Tipo de Cliente</label>
                 <div className="flex flex-col gap-2">
                   <button className="flex items-center justify-between px-4 py-3 rounded-full bg-secondary text-on-secondary font-semibold text-sm shadow-sm">
-                    Para el Hogar
+                    Todos
                     <span className="material-symbols-outlined text-base">check</span>
                   </button>
                   <button className="flex items-center justify-between px-4 py-3 rounded-full bg-surface-container-highest text-on-surface-variant font-semibold text-sm hover:bg-surface-container-high transition-colors">
-                    Venta al por Mayor
+                    Mayorista
+                  </button>
+                  <button className="flex items-center justify-between px-4 py-3 rounded-full bg-surface-container-highest text-on-surface-variant font-semibold text-sm hover:bg-surface-container-high transition-colors">
+                    Detal
                   </button>
                 </div>
               </div>
               <div>
-                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 block">Tipo de Producto</label>
+                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 block">Clasificación</label>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1.5 bg-primary-fixed text-on-primary-fixed text-xs font-bold rounded-full cursor-pointer">Orgánico</span>
-                  <span className="px-3 py-1.5 bg-surface-container-highest text-on-surface-variant text-xs font-bold rounded-full cursor-pointer hover:bg-primary-fixed/50 transition-colors">Grande</span>
-                  <span className="px-3 py-1.5 bg-surface-container-highest text-on-surface-variant text-xs font-bold rounded-full cursor-pointer hover:bg-primary-fixed/50 transition-colors">Jumbo</span>
-                  <span className="px-3 py-1.5 bg-surface-container-highest text-on-surface-variant text-xs font-bold rounded-full cursor-pointer hover:bg-primary-fixed/50 transition-colors">Pasture Raised</span>
+                  {["B", "A", "AA", "AAA", "Jumbo"].map((c) => (
+                    <span key={c} className="px-3 py-1.5 bg-surface-container-highest text-on-surface-variant text-xs font-bold rounded-full cursor-pointer hover:bg-primary-fixed/50 transition-colors">{c}</span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 block">Tipo</label>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1.5 bg-primary-fixed text-on-primary-fixed text-xs font-bold rounded-full cursor-pointer">Tradicional</span>
+                  <span className="px-3 py-1.5 bg-surface-container-highest text-on-surface-variant text-xs font-bold rounded-full cursor-pointer hover:bg-primary-fixed/50 transition-colors">Blanco</span>
                 </div>
               </div>
             </div>
             <div className="mt-10 yolk-gradient rounded-xl p-5 relative overflow-hidden">
-              <p className="text-on-primary-fixed font-bold text-sm relative z-10">¿Necesitas una cotización logística personalizada?</p>
-              <Link to="/distribuidores" className="mt-3 inline-block bg-primary text-on-primary px-4 py-2 rounded-full text-xs font-bold relative z-10">Contactar Supply Chain</Link>
+              <p className="text-on-primary-fixed font-bold text-sm relative z-10">¿Necesitas cotización para volumen mayor?</p>
+              <Link to="/distribuidores" className="mt-3 inline-block bg-primary text-on-primary px-4 py-2 rounded-full text-xs font-bold relative z-10">Solicitar Cotización</Link>
               <div className="absolute -right-3 -bottom-3 w-16 h-16 bg-white/20 rounded-full blur-xl"></div>
             </div>
           </div>
@@ -193,16 +154,16 @@ export default function Productos() {
                 </div>
                 <div className="px-2 pb-2">
                   <div className="flex justify-between items-start mb-1">
-                    <h4 className="font-headline text-lg font-extrabold text-primary">{p.name}</h4>
-                    <span className="font-headline font-bold text-secondary">${p.price.toFixed(2)}</span>
+                    <h4 className="font-headline text-lg font-extrabold text-primary">{p.clasificacion}</h4>
+                    <span className="text-xs font-bold px-2 py-1 rounded-full bg-surface-container-high text-on-surface-variant">{p.tipo}</span>
                   </div>
                   <p className="text-on-surface-variant text-sm mb-4 leading-relaxed">{p.description}</p>
-                  <ProductCartButton
-                    productId={p.id}
-                    onAdd={() =>
-                      addItem({ id: p.id, name: p.name, price: p.price, image: p.image })
-                    }
-                  />
+                  <Link
+                    to="/distribuidores"
+                    className="w-full py-3 rounded-full border border-outline-variant/30 text-primary font-bold text-sm hover:bg-primary-fixed transition-colors block text-center"
+                  >
+                    Consultar precio
+                  </Link>
                 </div>
               </div>
             ))}
@@ -211,27 +172,27 @@ export default function Productos() {
             <div className="group sm:col-span-2 bg-primary p-8 md:p-10 rounded-xl flex flex-col md:flex-row items-center gap-8 overflow-hidden relative">
               <div className="relative z-10 flex-1">
                 <h3 className="font-headline text-2xl md:text-3xl font-extrabold text-primary-fixed mb-3">Venta al por Mayor</h3>
-                <p className="text-surface-container-low/80 mb-6">Soluciones de distribución a granel para comercio internacional. Precisión paletizada, alcance global.</p>
+                <p className="text-surface-container-low/80 mb-6">Para supermercados, restaurantes, hoteles y distribuidores — en Colombia y el Caribe. Producto enzunchado y asegurado para exportación.</p>
                 <ul className="space-y-2 mb-6 text-surface-bright text-sm">
                   <li className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-primary-fixed-dim text-lg">verified</span>
-                    Estándares de seguridad internacionales
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-primary-fixed-dim text-lg">local_shipping</span>
-                    Red logística global
-                  </li>
-                  <li className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-primary-fixed-dim text-lg">inventory</span>
-                    Cadenas de suministro automatizadas
+                    Granel · Patineta · Estibas palletizadas
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-primary-fixed-dim text-lg">public</span>
+                    Supermercados · Restaurantes · Hoteles (Caribe)
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-primary-fixed-dim text-lg">storefront</span>
+                    Marca propia (private label) disponible
                   </li>
                 </ul>
                 <Link to="/distribuidores" className="yolk-gradient inline-block px-8 py-3 rounded-full text-on-primary-fixed font-bold text-sm">
-                  Solicitar Especificaciones
+                  Solicitar Cotización
                 </Link>
               </div>
               <div className="w-full md:w-64 h-48 md:h-56 relative">
-                <img className="w-full h-full object-cover rounded-xl shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDvcQMiGT_MUjo82QLjoGwiQd7dWvJSYVNzIx_ZUHBV1uSKHWGvExs5FIQvHB6g0_GMapXrYig3d-pyrxQtbDmI1WXsuXDJ45xP_SFOM2TvpHvaEyBxK_1TocDy-_OiOKZ38WtG_3jK2wl5yI7iSd7fDDnTDRiF-q4OI_2nYpPYcr6Ocn0syB7d8eDvIj5vf1IrW_3ZjNrKYh9_f6V-4ZeI1v5WvcSf4m7Y6SAOfKcfrEuBK24PCqR6K2JN6A3LB1flASIeX4O2Vw" alt="Instalación de clasificación industrial" loading="lazy" />
+                <img className="w-full h-full object-cover rounded-xl shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDvcQMiGT_MUjo82QLjoGwiQd7dWvJSYVNzIx_ZUHBV1uSKHWGvExs5FIQvHB6g0_GMapXrYig3d-pyrxQtbDmI1WXsuXDJ45xP_SFOM2TvpHvaEyBxK_1TocDy-_OiOKZ38WtG_3jK2wl5yI7iSd7fDDnTDRiF-q4OI_2nYpPYcr6Ocn0syB7d8eDvIj5vf1IrW_3ZjNrKYh9_f6V-4ZeI1v5WvcSf4m7Y6SAOfKcfrEuBK24PCqR6K2JN6A3LB1flASIeX4O2Vw" alt="Distribución mayorista de huevo" loading="lazy" />
               </div>
             </div>
           </div>

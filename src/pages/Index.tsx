@@ -25,23 +25,12 @@ export default function Index() {
                 {t.hero_cta}
                 <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </Link>
-              <div className="flex -space-x-4">
-                <div className="w-12 h-12 rounded-full border-4 border-surface overflow-hidden">
-                  <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCClIGyT5V7KexLDMTygcayC4y3gRGurs0Xt3pKCaNEUb8beiwHswlCDBJDnm8ponqraFn8jEl6oKo2DFgjPzPRqCQgO5zhIOV6qsZSbWChkpYp-EuDIXvpxg8qu_Z7IUuI9Xh5poDRetVP_aGegUyn8WpVaW47Oo7kGwJFWErvZVGd2pnCqbmcUnTSYtPNAo5Ye7MO6W1thGi9GoCoKeuCZhFA6mcw581bkb8BT7P7LtWmkonVgWKbmb4SBz9Tl169Vb_i-Rwtl74" alt="Chef" />
-                </div>
-                <div className="w-12 h-12 rounded-full border-4 border-surface overflow-hidden">
-                  <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy4KSXh5dxPCK8M_XQxItTck6K6Ktumz9VwiH8jFtbQuzOHyBjVFD83dl4E-0Sew0n46oPp6KHBb4Ke3bRD4QAC4WKq4gkuzae7sbhDaIK_XApZCF4f4qQ1reBy22za8leROoaoF9a7Cx-4KmPJ-BKEA2K5KLo7tUUAB16CD8npSpGqkVUUVDQICYeWwoaeLxAXTZskeCrBbW4Eoyvsno2C9MiaVndSVSLRrhjmrtEq7ayMiXD0NzpVGJr7As1CxZy5rL4rjZplRc" alt="Partner" />
-                </div>
-                <div className="w-12 h-12 rounded-full border-4 border-surface bg-surface-container-highest flex items-center justify-center text-xs font-bold">
-                  +2k
-                </div>
-              </div>
               <span className="text-sm font-bold text-on-surface-variant">{t.hero_trust}</span>
             </div>
             {/* Stats */}
             <div className="pt-12 grid grid-cols-2 gap-8">
               <div>
-                <span className="block text-4xl font-black text-primary font-headline tracking-tighter">1.2M+</span>
+                <span className="block text-4xl font-black text-primary font-headline tracking-tighter">20+</span>
                 <span className="text-sm uppercase tracking-widest text-on-surface-variant font-label">{t.hero_stat1}</span>
               </div>
               <div>
@@ -173,11 +162,11 @@ export default function Index() {
           </div>
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-7 bg-surface-container-lowest p-10 rounded-xl relative overflow-hidden group">
-              <h3 className="font-headline text-2xl font-bold text-primary mb-4">Organic Precision</h3>
+              <h3 className="font-headline text-2xl font-bold text-primary mb-4">Abastecimiento Sólido</h3>
               <p className="text-on-surface-variant max-w-md">{t.quality_c1_p}</p>
               <div className="mt-8 flex items-center gap-3">
                 <span className="material-symbols-outlined text-3xl text-secondary">verified</span>
-                <span className="font-bold text-primary text-sm">Certified International Standards</span>
+                <span className="font-bold text-primary text-sm">Red confiable de productores colombianos</span>
               </div>
               <div className="absolute right-[-10%] bottom-[-10%] w-64 h-64 opacity-10 group-hover:opacity-20 transition-opacity">
                 <span className="material-symbols-outlined text-[12rem] text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>egg</span>
@@ -185,7 +174,7 @@ export default function Index() {
             </div>
             <div className="col-span-5 bg-secondary text-on-secondary p-10 rounded-xl flex flex-col justify-center">
               <span className="material-symbols-outlined text-5xl mb-6">public</span>
-              <h3 className="font-headline text-2xl font-bold mb-3">Global Reach</h3>
+              <h3 className="font-headline text-2xl font-bold mb-3">Proyección Internacional</h3>
               <p className="opacity-80">{t.quality_c2_p}</p>
             </div>
             <div className="col-span-4 bg-surface-container-highest p-8 rounded-xl">
@@ -195,12 +184,12 @@ export default function Index() {
             </div>
             <div className="col-span-4 bg-surface-container-highest p-8 rounded-xl">
               <span className="material-symbols-outlined text-primary text-4xl mb-4 block">local_shipping</span>
-              <h4 className="font-headline text-lg font-bold mb-2">Rapid Logistics</h4>
+              <h4 className="font-headline text-lg font-bold mb-2">Logística Nacional</h4>
               <p className="text-on-surface-variant text-sm">{t.organic_cert4}</p>
             </div>
             <div className="col-span-4 bg-surface-container-highest p-8 rounded-xl">
               <span className="material-symbols-outlined text-primary text-4xl mb-4 block">health_and_safety</span>
-              <h4 className="font-headline text-lg font-bold mb-2">Pure Integrity</h4>
+              <h4 className="font-headline text-lg font-bold mb-2">Cumplimiento Empresarial</h4>
               <p className="text-on-surface-variant text-sm">{t.quality_c5_p}</p>
             </div>
           </div>
@@ -222,12 +211,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* FAB */}
-      <div className="fixed bottom-6 right-5 z-40 md:hidden">
-        <Link to="/productos" className="yolk-gradient w-14 h-14 rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform">
-          <span className="material-symbols-outlined text-on-primary-fixed text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>shopping_cart</span>
-        </Link>
-      </div>
     </main>
   );
 }
