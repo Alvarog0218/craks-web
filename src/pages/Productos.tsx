@@ -11,14 +11,16 @@ type Product = {
   badgeStyle: "secondary" | "primary";
 };
 
+const EGG_IMAGE = "https://lh3.googleusercontent.com/aida-public/AB6AXuDD0_buhm0zE9QZoI0KD2M2aDtEvHuThGgw5XlBo_eiaYOCweZ8XvXbkWStp6h7ddZ4ZflJib_VLPyusLA2C0B_zvKcI4wQib7HMHgS6nZOX0AAERKYh5CvDaJAmG7NhIWd3f2wimQEcSeKqmh33XoHOM7itkhBNnXGZUpTI8Y6XpCcuHObF-jy8KDUIHo2ib3oAUpMmfh7db6kAGWed6RNcworO7rPEX4ZOMGFgqOfTDluj8btmJvKSV6haNCJYVIlNvyAIxAJSDI";
+
 const products: Product[] = [
   {
     id: "b-tradicional",
     clasificacion: "Clasificación B",
     tipo: "Tradicional",
     description: "46.0 g – 49.9 g por unidad. Huevo pequeño, ideal para recetas ligeras, snacks y preparaciones donde el tamaño exacto no es crítico.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAzCT0QhrH4DNNZUb9noTNaXWR-wB9GMMchgEHWvIUAJVZiVc2Gu8VnO__dTbQ-6hyuuLKSS406RTrzF3QqXMRxQZn2JztRy_Cm7SymFfspCLUcmVvffSXYtWpYvwrEchu2yCdUIePv-aHqjufOIkiSJXSo9NMBl4Fjv-Rcygy5kVqR2j3hHzBLSQMQ1jiWxfHnUrEbXgAPwG21nTgOIo3RASDPooDecjMgysMZUTRp1VaiEY9HmURYqrHRVTB0GOrZwICnknHYije8",
-    alt: "Huevo Clasificación B Tradicional",
+    image: EGG_IMAGE,
+    alt: "Huevo Clasificación B",
     badge: "Clase B",
     badgeStyle: "secondary",
   },
@@ -27,8 +29,8 @@ const products: Product[] = [
     clasificacion: "Clasificación A",
     tipo: "Tradicional",
     description: "50.0 g – 53.9 g por unidad. Huevo estándar pequeño, de alta rotación. Equilibrio entre tamaño y precio para distribución y consumo cotidiano.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDr3skdAhyyGdwwST7rSw0wBhSQXBGo3s4IpQWBnmUQUVZuQ3tRBzSys6zmQT0FV7ORTrooTNYpH_qmrsBfaOnrOo55TPQgoAcxJXHF6E7-YNdDpxIm-5YFU14EuoHdiwiX6z9SaxsOVQemXhuPpScJJ6k0qWkYvXnNVbx9zDwmmpqv1mBHAd3sGt32Po0FRRrwwGbX2iWK-Hp45iHKjRVs2w-cFD63FeWqRmXbVbx3QWXMI4uTqj7k-SDehazHopE3dPU0fz2dnU",
-    alt: "Huevo Clasificación A Tradicional",
+    image: EGG_IMAGE,
+    alt: "Huevo Clasificación A",
     badge: "Clase A",
     badgeStyle: "secondary",
   },
@@ -37,8 +39,8 @@ const products: Product[] = [
     clasificacion: "Clasificación AA",
     tipo: "Tradicional",
     description: "54.0 g – 59.9 g por unidad. El estándar más común para el consumo diario. Preferido por hogares, restaurantes y distribuidores por su tamaño y rendimiento.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDD0_buhm0zE9QZoI0KD2M2aDtEvHuThGgw5XlBo_eiaYOCweZ8XvXbkWStp6h7ddZ4ZflJib_VLPyusLA2C0B_zvKcI4wQib7HMHgS6nZOX0AAERKYh5CvDaJAmG7NhIWd3f2wimQEcSeKqmh33XoHOM7itkhBNnXGZUpTI8Y6XpCcuHObF-jy8KDUIHo2ib3oAUpMmfh7db6kAGWed6RNcworO7rPEX4ZOMGFgqOfTDluj8btmJvKSV6haNCJYVIlNvyAIxAJSDI",
-    alt: "Huevo Clasificación AA Tradicional",
+    image: EGG_IMAGE,
+    alt: "Huevo Clasificación AA",
     badge: "Clase AA",
     badgeStyle: "secondary",
   },
@@ -47,8 +49,8 @@ const products: Product[] = [
     clasificacion: "Clasificación AAA",
     tipo: "Blanco",
     description: "60.0 g – 66.9 g por unidad. Huevo grande, excelente para repostería, desayunos abundantes y cocina profesional. Alta demanda en supermercados y exportación.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDLQE-0GqCPtSObHndEPfMZnQ4oHU9QW-gDplCpsSy3l26XWv5vMjB2rctSSBB4YG-7hDEw-EHlmrvgnaDPAl8wgvVE-xSofbweFfIT3Nxc26sTZJXxFT22PLpdLTxuhVnXweCsS_Qs4fOOfM_W47jKEqV4fhfzhpzzW3mZ2Wcz05c8fqNmGe2zDKgQ3QVTHEVgzNjOg6JUtWGO5IFiJszJgo1jZ0IFsi9o3466pLdyoPU75J5zYnrRNJSNoCVXCRGXplazhBXI",
-    alt: "Huevo Clasificación AAA Blanco",
+    image: EGG_IMAGE,
+    alt: "Huevo Clasificación AAA",
     badge: "Clase AAA",
     badgeStyle: "primary",
   },
@@ -57,8 +59,8 @@ const products: Product[] = [
     clasificacion: "Jumbo",
     tipo: "Tradicional",
     description: "67.0 g o más por unidad. Huevo premium de máximo rendimiento. La opción de mayor tamaño para gastronomía de alto nivel, repostería de precisión y clientes que exigen lo mejor.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBjCSsICqI9TFkeNPaCqkRiHtz7z3fzipx9BnZtRrLrhs1Zktgxxguqu00bOSlXkDjqXSctgTxhLFa4_xiguJUANSzUmCdpXoBUPeadum24VBp8mO1_JdACWA5_xRKbid-fRxNuS-uBiBr6cDH-LTQg_nh2By8mm3yFxtfjjOnRpfmIv1SEOiJqUu1Xql7ECKduYi_pbrrjNkk7zi25RJSLzSP65lrB8S-oDky-eyEbQWYAhbCGN2Ght5TPxeq6TtPw2PqEjol_yUY",
-    alt: "Huevo Jumbo Tradicional",
+    image: EGG_IMAGE,
+    alt: "Huevo Jumbo",
     badge: "Jumbo",
     badgeStyle: "primary",
   },
