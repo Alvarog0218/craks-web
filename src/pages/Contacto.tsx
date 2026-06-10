@@ -1,6 +1,6 @@
 import { useTranslation } from "@/i18n/LanguageContext";
 
-export default function Distribuidores() {
+export default function Contacto() {
   const { t } = useTranslation();
 
   const clients = [

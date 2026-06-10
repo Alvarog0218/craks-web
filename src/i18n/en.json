@@ -3,14 +3,14 @@
     "inicio": "Home",
     "productos": "Products",
     "nosotros": "About Us",
-    "distribuidores": "Distributors",
+    "contacto": "Contact",
     "logistica": "Logistics"
   },
 
   "nav_home": "Home",
   "nav_products": "Products",
   "nav_about": "About Us",
-  "nav_distributors": "Distributors",
+  "nav_contact": "Contact",
   "nav_logistics": "Logistics",
   "nav_orders": "Orders",
   "nav_partner": "Work with Us",
@@ -58,7 +58,7 @@
   "cta_h2": "Ready to do business?",
   "cta_p": "We serve distributors, restaurants, supermarkets and hotels in Colombia and the Caribbean. Contact us via WhatsApp or visit us in Bucaramanga.",
   "cta_btn1": "Contact via WhatsApp",
-  "cta_btn2": "View distributors",
+  "cta_btn2": "View contact",
 
   "about_badge": "Our Story",
   "about_h1_1": "Trusted",

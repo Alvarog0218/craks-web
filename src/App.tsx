@@ -9,7 +9,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Index from "@/pages/Index";
 import Productos from "@/pages/Productos";
 import Nosotros from "@/pages/Nosotros";
-import Distribuidores from "@/pages/Distribuidores";
+import Contacto from "@/pages/Contacto";
 import Logistica from "@/pages/Logistica";
 
 function Layout({ children }: { children: React.ReactNode }) {
@@ -35,7 +35,7 @@ export default function App() {
               <Route path="/" element={<Index />} />
               <Route path="/productos" element={<Productos />} />
               <Route path="/nosotros" element={<Nosotros />} />
-              <Route path="/distribuidores" element={<Distribuidores />} />
+              <Route path="/contacto" element={<Contacto />} />
               <Route path="/logistica" element={<Logistica />} />
             </Routes>
           </Layout>

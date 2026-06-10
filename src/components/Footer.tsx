@@ -32,7 +32,7 @@ export default function Footer() {
         <div>
           <h5 className="font-headline font-bold text-petrol text-xs uppercase tracking-widest mb-6">{t.footer_resources}</h5>
           <ul className="space-y-3">
-            <li><Link to="/distribuidores" className="text-on-surface-variant text-sm hover:text-petrol transition-colors">{t.footer_supply}</Link></li>
+            <li><Link to="/contacto" className="text-on-surface-variant text-sm hover:text-petrol transition-colors">{t.footer_supply}</Link></li>
             <li><Link to="/logistica" className="text-on-surface-variant text-sm hover:text-petrol transition-colors">{t.footer_global}</Link></li>
             <li><Link to="/nosotros" className="text-on-surface-variant text-sm hover:text-petrol transition-colors">{t.footer_sustain}</Link></li>
           </ul>

@@ -164,7 +164,7 @@ export default function Productos() {
             </div>
             <div className="mt-10 yolk-gradient rounded-xl p-5 relative overflow-hidden">
               <p className="text-on-primary-fixed font-bold text-sm relative z-10">{t.prod_cta_question}</p>
-              <Link to="/distribuidores" className="mt-3 inline-block bg-primary text-on-primary px-4 py-2 rounded-full text-xs font-bold relative z-10">{t.prod_cta_btn}</Link>
+              <Link to="/contacto" className="mt-3 inline-block bg-primary text-on-primary px-4 py-2 rounded-full text-xs font-bold relative z-10">{t.prod_cta_btn}</Link>
               <div className="absolute -right-3 -bottom-3 w-16 h-16 bg-white/20 rounded-full blur-xl"></div>
             </div>
           </div>
@@ -285,7 +285,7 @@ export default function Productos() {
                 {t.prod_wholesale_item3}
               </li>
             </ul>
-            <Link to="/distribuidores" className="inline-block px-8 py-3 rounded-full bg-secondary text-primary font-bold text-sm hover:brightness-110 transition-all shadow-lg shadow-secondary/20">
+            <Link to="/contacto" className="inline-block px-8 py-3 rounded-full bg-secondary text-primary font-bold text-sm hover:brightness-110 transition-all shadow-lg shadow-secondary/20">
               {t.prod_wholesale_btn}
             </Link>
           </div>

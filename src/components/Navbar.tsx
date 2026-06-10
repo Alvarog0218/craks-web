@@ -6,7 +6,7 @@ const navLinks = [
   { path: "/", page: "inicio", icon: "home", key: "nav_home" },
   { path: "/nosotros", page: "nosotros", icon: "group", key: "nav_about" },
   { path: "/logistica", page: "logistica", icon: "local_shipping", key: "nav_logistics" },
-  { path: "/distribuidores", page: "distribuidores", icon: "hub", key: "nav_distributors" },
+  { path: "/contacto", page: "contacto", icon: "hub", key: "nav_contact" },
   { path: "/productos", page: "productos", icon: "egg", key: "nav_products" },
 ] as const;
 
@@ -79,7 +79,7 @@ export default function Navbar() {
 
         <div className="mt-auto pt-8">
           <Link
-            to="/distribuidores"
+            to="/contacto"
             onClick={() => setOpen(false)}
             className="yolk-gradient block w-full text-center py-4 rounded-full font-bold text-on-primary-fixed text-sm uppercase tracking-wide"
           >
@@ -129,7 +129,7 @@ export default function Navbar() {
               </button>
             </div>
             <Link
-              to="/distribuidores"
+              to="/contacto"
               className="hidden sm:block yolk-gradient text-on-primary-fixed px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide transition-all active:scale-95"
             >
               {t.nav_orders}

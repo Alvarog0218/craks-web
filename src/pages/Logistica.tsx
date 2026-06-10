@@ -18,7 +18,7 @@ export default function Logistica() {
           </h1>
           <p className="text-on-surface-variant text-lg max-w-xl mb-10 leading-relaxed">{t.log_hero_p}</p>
           <div className="flex flex-wrap gap-4">
-            <Link to="/distribuidores" className="yolk-gradient px-8 py-4 rounded-full font-headline font-black text-base text-on-primary-fixed shadow-xl shadow-primary-fixed/20 hover:-translate-y-0.5 transition-all active:scale-95">
+            <Link to="/contacto" className="yolk-gradient px-8 py-4 rounded-full font-headline font-black text-base text-on-primary-fixed shadow-xl shadow-primary-fixed/20 hover:-translate-y-0.5 transition-all active:scale-95">
               {t.log_cta1}
             </Link>
             <a href="#soluciones" className="px-8 py-4 rounded-full font-headline font-bold text-base border-2 border-outline-variant text-on-background hover:bg-surface-container-low transition-all">

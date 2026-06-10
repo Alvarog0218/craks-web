@@ -3,14 +3,14 @@
     "inicio": "Inicio",
     "productos": "Productos",
     "nosotros": "Nosotros",
-    "distribuidores": "Distribuidores",
+    "contacto": "Contacto",
     "logistica": "Logística"
   },
 
   "nav_home": "Inicio",
   "nav_products": "Productos",
   "nav_about": "Nosotros",
-  "nav_distributors": "Distribuidores",
+  "nav_contact": "Contacto",
   "nav_logistics": "Logística",
   "nav_orders": "Pedidos",
   "nav_partner": "Trabaja con Nosotros",
@@ -58,7 +58,7 @@
   "cta_h2": "¿Listo para hacer negocios?",
   "cta_p": "Atendemos distribuidores, restaurantes, supermercados y hoteles en Colombia y el Caribe. Contáctanos por WhatsApp o visítanos en Bucaramanga.",
   "cta_btn1": "Contactar por WhatsApp",
-  "cta_btn2": "Ver distribuidores",
+  "cta_btn2": "Ver contacto",
 
   "about_badge": "Nuestra Historia",
   "about_h1_1": "Comercializadores",
