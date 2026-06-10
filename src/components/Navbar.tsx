@@ -4,10 +4,10 @@ import { useTranslation } from "@/i18n/LanguageContext";
 
 const navLinks = [
   { path: "/", page: "inicio", icon: "home", key: "nav_home" },
-  { path: "/productos", page: "productos", icon: "egg", key: "nav_products" },
   { path: "/nosotros", page: "nosotros", icon: "group", key: "nav_about" },
-  { path: "/distribuidores", page: "distribuidores", icon: "hub", key: "nav_distributors" },
   { path: "/logistica", page: "logistica", icon: "local_shipping", key: "nav_logistics" },
+  { path: "/distribuidores", page: "distribuidores", icon: "hub", key: "nav_distributors" },
+  { path: "/productos", page: "productos", icon: "egg", key: "nav_products" },
 ] as const;
 
 function getPage(pathname: string) {
@@ -90,9 +90,9 @@ export default function Navbar() {
 
       {/* Top Nav Bar */}
       <header className="bg-surface/80 glass-nav sticky top-0 z-30 w-full">
-        <div className="flex items-center justify-between max-w-7xl mx-auto px-6 py-4">
+        <div className="flex items-center justify-between max-w-7xl mx-auto px-6 py-3">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/assets/logo_azul.png" alt="Craks" className="h-20 w-auto" />
+            <img src="/assets/logo_azul.png" alt="Craks" className="h-16 w-auto" />
           </Link>
 
           {/* Desktop Links */}

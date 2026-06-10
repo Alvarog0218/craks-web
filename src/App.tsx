@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CartFab from "@/components/CartFab";
 import CartDrawer from "@/components/CartDrawer";
+import ScrollToTop from "@/components/ScrollToTop";
 import Index from "@/pages/Index";
 import Productos from "@/pages/Productos";
 import Nosotros from "@/pages/Nosotros";
@@ -13,7 +14,8 @@ import Logistica from "@/pages/Logistica";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-surface">
+      <ScrollToTop />
       <Navbar />
       {children}
       <Footer />

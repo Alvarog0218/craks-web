@@ -15,11 +15,11 @@ export default function Nosotros() {
             </h1>
             <p className="text-lg text-on-surface-variant max-w-xl leading-relaxed">{t.about_hero_p}</p>
           </div>
-          <div className="relative">
-            <div className="w-full aspect-square rounded-xl overflow-hidden bg-surface-container-high shadow-2xl md:rotate-2">
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="w-full max-w-md aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high shadow-2xl md:rotate-2">
               <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsNfHmjmVY_HG4g8VKMpJIQSWtSkmPHPCCCPbvJ8OGf3cYqC_SsgN9xlKVDyX_Cwy1ToEzT1lD5Mt7Te6a74xvihplVfjdZIIPoGH_RqRfcohuo8avweOL7JKomz6nWiIDnGwT9pTrwksdosQQiRw1fpk9E3jcq74wD5tFJ7A_v_VwgqTpJcExlw7JG3mBoe2JwGg5SIlstMiveO9RSM_Az7-UmphcUHUXrfDT8e0yvLbTMGl75lfN1OrpQIi7znGrpNo8gKZl44U" alt="Huevos colombianos frescos" loading="lazy" />
             </div>
-            <div className="absolute -bottom-10 -left-10 w-64 h-64 yolk-gradient rounded-full opacity-30 blur-3xl pointer-events-none"></div>
+            <div className="absolute -bottom-10 -right-10 w-64 h-64 yolk-gradient rounded-full opacity-20 blur-3xl pointer-events-none"></div>
           </div>
         </div>
       </section>
@@ -74,6 +74,50 @@ export default function Nosotros() {
                   <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCocjZFjU_mitcy618AS6LIs5Q08thlYUheAHxcdopgrRzw1Eb--fxcj-QfGvn_K8g_reXLYMkSvICuS-JldekGojhLbK-TlpOHARFj1ERAMHW09oJf8UibCjmYCl2cjDEhthO27xSOmO4kG9RrHrxyc8CvM8z70VkAOQLW-sRfci8C75-KxIUZmTjecINXkzi5XgcwvxQ2IliXFjJpRDlvdWFRVYOosRD_uN0mMSCiJu60KefyK_0MRaLUM_aQrtVmEy_DOXeUkog" alt="Exportación Caribe" loading="lazy" />
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nuestra Calidad / Desktop Quality Bento */}
+      <section className="py-20 px-6 bg-surface">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="font-headline font-bold text-secondary uppercase tracking-[0.3em] text-sm">{t.quality_sub}</span>
+            <h2 className="font-headline text-5xl font-extrabold text-primary mt-4">{t.quality_h2}</h2>
+            <div className="w-24 h-1 bg-primary-fixed mx-auto mt-6 rounded-full"></div>
+          </div>
+          <div className="grid grid-cols-12 gap-6">
+            <div className="col-span-7 bg-surface-container-lowest p-10 rounded-xl relative overflow-hidden group shadow-sm border border-outline-variant/10">
+              <h3 className="font-headline text-2xl font-bold text-primary mb-4">Abastecimiento Sólido</h3>
+              <p className="text-on-surface-variant max-w-md">{t.quality_c1_p}</p>
+              <div className="mt-8 flex items-center gap-3">
+                <span className="material-symbols-outlined text-3xl text-secondary">verified</span>
+                <span className="font-bold text-primary text-sm">Red confiable de productores colombianos</span>
+              </div>
+              <div className="absolute right-[-10%] bottom-[-10%] w-64 h-64 opacity-10 group-hover:opacity-20 transition-opacity">
+                <span className="material-symbols-outlined text-[12rem] text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>egg</span>
+              </div>
+            </div>
+            <div className="col-span-5 bg-secondary text-primary p-10 rounded-xl flex flex-col justify-center shadow-sm">
+              <span className="material-symbols-outlined text-5xl mb-6">public</span>
+              <h3 className="font-headline text-2xl font-bold mb-3">Proyección Internacional</h3>
+              <p className="opacity-80">{t.quality_c2_p}</p>
+            </div>
+            <div className="col-span-4 bg-surface-container-highest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+              <span className="material-symbols-outlined text-primary text-4xl mb-4 block">eco</span>
+              <h4 className="font-headline text-lg font-bold mb-2">{t.quality_c3_h4}</h4>
+              <p className="text-on-surface-variant text-sm">{t.quality_c3_p}</p>
+            </div>
+            <div className="col-span-4 bg-surface-container-highest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+              <span className="material-symbols-outlined text-primary text-4xl mb-4 block">local_shipping</span>
+              <h4 className="font-headline text-lg font-bold mb-2">Logística Nacional</h4>
+              <p className="text-on-surface-variant text-sm">{t.organic_cert4}</p>
+            </div>
+            <div className="col-span-4 bg-surface-container-highest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+              <span className="material-symbols-outlined text-primary text-4xl mb-4 block">health_and_safety</span>
+              <h4 className="font-headline text-lg font-bold mb-2">Cumplimiento Empresarial</h4>
+              <p className="text-on-surface-variant text-sm">{t.quality_c5_p}</p>
             </div>
           </div>
         </div>
