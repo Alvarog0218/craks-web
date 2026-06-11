@@ -4,14 +4,14 @@
     "productos": "Products",
     "nosotros": "About Us",
     "contacto": "Contact",
-    "logistica": "Logistics"
+    "logistica": "Operations"
   },
 
   "nav_home": "Home",
   "nav_products": "Products",
   "nav_about": "About Us",
   "nav_contact": "Contact",
-  "nav_logistics": "Logistics",
+  "nav_logistics": "Operations",
   "nav_orders": "Orders",
   "nav_partner": "Work with Us",
 
@@ -88,6 +88,10 @@
   "about_timeline_2018_h": "Business Consolidation",
   "about_timeline_hoy_h": "International Projection",
 
+  "about_mission_h2": "Our Mission",
+  "about_mission_p": "To commercialize high-quality Colombian eggs, ensuring compliance, efficiency, and solid commercial relationships in the national market, while strengthening our capacity to serve international markets with competitive standards.",
+  "about_vision_h2": "Our Vision",
+  "about_vision_p": "To consolidate ourselves as a national leader in egg commercialization and position ourselves as a reliable supplier in international markets, delivering excellence in Colombian products to new destinations.",
   "footer_tagline": "Colombian egg commercialization from Bucaramanga. Operating since 2005.",
   "footer_resources": "Resources",
   "footer_supply": "Supply",

@@ -4,14 +4,14 @@
     "productos": "Productos",
     "nosotros": "Nosotros",
     "contacto": "Contacto",
-    "logistica": "Logística"
+    "logistica": "Operaciones"
   },
 
   "nav_home": "Inicio",
   "nav_products": "Productos",
   "nav_about": "Nosotros",
   "nav_contact": "Contacto",
-  "nav_logistics": "Logística",
+  "nav_logistics": "Operaciones",
   "nav_orders": "Pedidos",
   "nav_partner": "Trabaja con Nosotros",
 
@@ -88,6 +88,10 @@
   "about_timeline_2018_h": "Consolidación Empresarial",
   "about_timeline_hoy_h": "Proyección Internacional",
 
+  "about_mission_h2": "Misión",
+  "about_mission_p": "Comercializar huevo colombiano de alta calidad, garantizando cumplimiento, eficiencia y relaciones comerciales sólidas en el mercado nacional, mientras fortalecemos nuestra capacidad para atender mercados internacionales con estándares competitivos.",
+  "about_vision_h2": "Visión",
+  "about_vision_p": "Consolidarnos como un referente nacional en comercialización de huevo y posicionarnos como proveedor confiable en mercados internacionales, llevando el producto colombiano de excelencia a nuevos destinos.",
   "footer_tagline": "Comercialización de huevo colombiano desde Bucaramanga. Con operación desde 2005.",
   "footer_resources": "Recursos",
   "footer_supply": "Abastecimiento",

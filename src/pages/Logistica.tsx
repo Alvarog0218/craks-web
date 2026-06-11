@@ -4,6 +4,15 @@ import { useTranslation } from "@/i18n/LanguageContext";
 export default function Logistica() {
   const { t } = useTranslation();
 
+  const clients = [
+    { icon: "storefront",      label: t.dist_who_supermarket },
+    { icon: "restaurant",      label: t.dist_who_restaurant  },
+    { icon: "hotel",           label: t.dist_who_hotel       },
+    { icon: "local_shipping",  label: t.dist_who_distributor },
+    { icon: "public",          label: t.dist_who_export      },
+    { icon: "shopping_basket", label: t.dist_who_consumer    },
+  ];
+
   return (
     <main className="flex-1">
       {/* Hero */}
@@ -48,7 +57,7 @@ export default function Logistica() {
             <h2 className="font-headline text-3xl md:text-5xl font-extrabold tracking-tight mb-4">{t.log_network_h2}</h2>
             <p className="text-on-surface-variant text-lg">{t.log_network_p}</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="p-6 bg-surface rounded-xl">
               <div className="text-3xl md:text-4xl font-black text-secondary mb-1 font-headline">{t.log_stat1_val}</div>
               <div className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">{t.log_stat1_label}</div>
@@ -66,18 +75,60 @@ export default function Logistica() {
               <div className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">{t.log_stat4_label}</div>
             </div>
           </div>
-          <div className="rounded-xl overflow-hidden aspect-video md:aspect-[21/9] bg-surface-variant relative group">
-            <img alt="Mapa de cobertura nacional" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEEz7aUwGikMRoNe_bM369g7E3YmegaTIB758-Dbp1MP4Kfxai5uZqkpvmNpML_N6sYY46mxbcHHAC86R5QWIloOl-lVjWjWwqLH35NU3TPHBD6kpmjWzVR34Z5qT6nsWk0mZOVG65jpGi1lCOPb2MEDHqKgMvYXvoj_HgDufE_84sXx2zMy-s3PYVTwjcz5MuQQVcNOxSpSyG6gLjlF-InsZT_51H-sxyiF_rboUkEL6GqL3oqQuTu3fiGOdBvA16zLNVyeluvXw" loading="lazy" />
-            <div className="absolute bottom-5 left-5 bg-surface/90 backdrop-blur-sm p-3 rounded-xl">
-              <p className="text-xs font-bold text-secondary uppercase tracking-widest">{t.log_map_label}</p>
-              <p className="text-[10px] text-on-surface-variant">{t.log_map_sub}</p>
+        </div>
+      </section>
+
+      {/* Coverage */}
+      <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="bg-surface-container-low rounded-xl p-8 md:p-12 overflow-hidden relative border border-outline-variant/10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div>
+              <h2 className="font-headline text-3xl font-bold text-secondary mb-5">{t.dist_coverage_h2}</h2>
+              <p className="text-on-surface-variant mb-8">{t.dist_coverage_p}</p>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between p-4 bg-surface rounded-xl shadow-sm">
+                  <span className="font-semibold text-secondary">{t.dist_coverage_row1}</span>
+                  <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase">{t.dist_coverage_status1}</span>
+                </div>
+                <div className="flex items-center justify-between p-4 bg-surface rounded-xl shadow-sm">
+                  <span className="font-semibold text-secondary">{t.dist_coverage_row2}</span>
+                  <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase">{t.dist_coverage_status2}</span>
+                </div>
+                <div className="flex items-center justify-between p-4 bg-surface rounded-xl shadow-sm">
+                  <span className="font-semibold text-secondary">{t.dist_coverage_row3}</span>
+                  <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase">{t.dist_coverage_status3}</span>
+                </div>
+              </div>
+            </div>
+            <div className="lg:col-span-2 min-h-64 md:min-h-80 bg-surface-container-high rounded-xl relative overflow-hidden group">
+              <img alt="Mapa de cobertura" className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEEz7aUwGikMRoNe_bM369g7E3YmegaTIB758-Dbp1MP4Kfxai5uZqkpvmNpML_N6sYY46mxbcHHAC86R5QWIloOl-lVjWjWwqLH35NU3TPHBD6kpmjWzVR34Z5qT6nsWk0mZOVG65jpGi1lCOPb2MEDHqKgMvYXvoj_HgDufE_84sXx2zMy-s3PYVTwjcz5MuQQVcNOxSpSyG6gLjlF-InsZT_51H-sxyiF_rboUkEL6GqL3oqQuTu3fiGOdBvA16zLNVyeluvXw" loading="lazy" />
+              <div className="absolute bottom-5 left-5 bg-surface/90 backdrop-blur-sm p-3 rounded-xl">
+                <p className="text-xs font-bold text-secondary uppercase tracking-widest">{t.dist_coverage_map1}</p>
+                <p className="text-[10px] text-on-surface-variant">{t.dist_coverage_map2}</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Service Section */}
-      <section id="soluciones" className="py-16 md:py-24 bg-surface px-6 md:px-12">
+      {/* Target Clients */}
+      <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="text-center mb-10">
+          <h2 className="font-headline text-2xl md:text-4xl font-extrabold text-secondary tracking-tight">{t.dist_who_h2}</h2>
+          <p className="text-on-surface-variant mt-2 max-w-2xl mx-auto">{t.dist_who_p}</p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {clients.map((item) => (
+            <div key={item.label} className="bg-surface-container-low rounded-xl p-6 flex flex-col items-center text-center gap-3 hover:bg-surface-container transition-colors shadow-sm border border-outline-variant/10">
+              <span className="material-symbols-outlined text-secondary text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>{item.icon}</span>
+              <span className="font-bold text-on-surface text-sm">{item.label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Service Section (Transport) */}
+      <section id="soluciones" className="py-20 md:py-24 bg-surface px-6 md:px-12">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative order-2 lg:order-1">
             <div className="egg-curve bg-secondary-container w-full aspect-square absolute -z-10 scale-110 opacity-20"></div>
@@ -107,13 +158,11 @@ export default function Logistica() {
       </section>
 
       {/* Partner Benefits */}
-      <section className="py-16 bg-surface-container-low px-6 md:px-12">
+      <section className="py-20 bg-surface-container-low px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div className="max-w-2xl">
-              <h2 className="font-headline text-3xl md:text-5xl font-extrabold tracking-tight mb-3">{t.log_benefits_h2}</h2>
-              <p className="text-on-surface-variant text-lg">{t.log_benefits_p}</p>
-            </div>
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="font-headline text-3xl md:text-5xl font-extrabold tracking-tight mb-3">{t.log_benefits_h2}</h2>
+            <p className="text-on-surface-variant text-lg">{t.log_benefits_p}</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -121,7 +170,7 @@ export default function Logistica() {
               { icon: "support_agent",h: t.log_benefit2_h, p: t.log_benefit2_p },
               { icon: "verified_user",h: t.log_benefit3_h, p: t.log_benefit3_p },
             ].map((item) => (
-              <div key={item.h} className="bg-surface p-8 md:p-10 rounded-xl group hover:bg-secondary transition-all duration-500 ghost-border">
+              <div key={item.h} className="bg-surface p-8 md:p-10 rounded-xl group hover:bg-secondary transition-all duration-500 shadow-sm border border-outline-variant/10">
                 <span className="material-symbols-outlined text-5xl text-secondary group-hover:text-primary-fixed transition-colors mb-6 block" style={{ fontVariationSettings: "'FILL' 1" }}>{item.icon}</span>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-white transition-colors">{item.h}</h3>
                 <p className="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm">{item.p}</p>
@@ -131,60 +180,40 @@ export default function Logistica() {
         </div>
       </section>
 
-      {/* Form CTA */}
-      <section className="py-16 px-6 md:px-12 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-secondary-container/20 translate-x-1/2 rounded-full blur-[100px] pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <h2 className="font-headline text-3xl md:text-5xl font-extrabold tracking-tighter mb-6">{t.log_form_h2}</h2>
-            <p className="text-on-surface-variant text-lg mb-10 leading-relaxed">{t.log_form_p}</p>
-            <div className="p-7 bg-surface-container rounded-xl border-l-4 border-secondary">
-              <p className="italic text-on-surface font-medium leading-relaxed">"{t.log_quote}"</p>
-              <div className="mt-5 flex items-center gap-4">
-                <div className="w-11 h-11 rounded-full yolk-gradient flex items-center justify-center">
-                  <span className="material-symbols-outlined text-on-primary-fixed text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>egg</span>
-                </div>
-                <div>
-                  <div className="font-bold text-sm">{t.log_quote_name}</div>
-                  <div className="text-xs text-on-surface-variant">{t.log_quote_role}</div>
-                </div>
-              </div>
+      {/* Final CTA Card */}
+      <section className="py-20 px-6 md:px-12 bg-surface">
+        <div className="max-w-5xl mx-auto bg-surface-container rounded-3xl p-12 md:p-16 text-center relative overflow-hidden border border-outline-variant/10 shadow-2xl shadow-on-surface/5">
+          <div className="absolute top-0 left-0 w-64 h-64 bg-primary-fixed/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="relative z-10 space-y-8">
+            <h2 className="font-headline text-3xl md:text-5xl font-extrabold tracking-tighter text-secondary leading-tight">
+              {t.log_form_h2}
+            </h2>
+            <p className="text-on-surface-variant text-lg max-w-2xl mx-auto leading-relaxed">
+              {t.log_form_p}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-5 justify-center pt-4">
+              <Link to="/contacto" className="yolk-gradient px-10 py-5 rounded-full font-headline font-black text-lg text-on-primary-fixed shadow-xl shadow-primary-fixed/20 hover:brightness-105 transition-all active:scale-95">
+                {t.log_cta1}
+              </Link>
+              <Link to="/nosotros" className="px-10 py-5 rounded-full font-headline font-bold text-lg border-2 border-outline-variant text-on-background hover:bg-surface-container-low transition-all">
+                {t.nav_about}
+              </Link>
             </div>
-          </div>
-
-          <div className="bg-surface-container-low p-8 md:p-10 rounded-xl shadow-xl shadow-on-surface/5">
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase text-on-surface-variant tracking-widest ml-4">{t.log_form_company}</label>
-                  <input type="text" placeholder={t.log_form_company_ph} className="w-full bg-surface-container-high rounded-full px-6 py-4 text-on-surface focus:ring-2 focus:ring-secondary/30 focus:bg-surface-bright outline-none transition-all" />
-                </div>
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase text-on-surface-variant tracking-widest ml-4">{t.log_form_country}</label>
-                  <input type="text" placeholder={t.log_form_country_ph} className="w-full bg-surface-container-high rounded-full px-6 py-4 text-on-surface focus:ring-2 focus:ring-secondary/30 focus:bg-surface-bright outline-none transition-all" />
-                </div>
-              </div>
-              <div className="space-y-1.5">
-                <label className="text-xs font-bold uppercase text-on-surface-variant tracking-widest ml-4">{t.log_form_email}</label>
-                <input type="email" placeholder="email@empresa.com" className="w-full bg-surface-container-high rounded-full px-6 py-4 text-on-surface focus:ring-2 focus:ring-secondary/30 focus:bg-surface-bright outline-none transition-all" />
-              </div>
-              <div className="space-y-1.5">
-                <label className="text-xs font-bold uppercase text-on-surface-variant tracking-widest ml-4">{t.log_form_volume}</label>
-                <select className="w-full bg-surface-container-high rounded-full px-6 py-4 text-on-surface focus:ring-2 focus:ring-secondary/30 outline-none transition-all appearance-none">
-                  <option>{t.log_form_vol_1}</option>
-                  <option>{t.log_form_vol_2}</option>
-                  <option>{t.log_form_vol_3}</option>
-                  <option>{t.log_form_vol_4}</option>
-                </select>
-              </div>
-              <div className="space-y-1.5">
-                <label className="text-xs font-bold uppercase text-on-surface-variant tracking-widest ml-4">{t.log_form_message}</label>
-                <textarea rows={3} placeholder={t.log_form_message_ph} className="w-full bg-surface-container-high rounded-xl px-6 py-4 text-on-surface focus:ring-2 focus:ring-secondary/30 focus:bg-surface-bright outline-none transition-all resize-none"></textarea>
-              </div>
-              <button type="submit" className="w-full yolk-gradient text-on-primary-fixed py-5 rounded-full font-bold text-lg shadow-xl active:scale-[0.99] transition-all hover:brightness-105">
-                {t.log_form_btn}
-              </button>
-            </form>
+            
+            <div className="pt-10 flex flex-wrap justify-center gap-10 opacity-60">
+               <div className="flex items-center gap-2">
+                 <span className="material-symbols-outlined text-sm">verified</span>
+                 <span className="text-xs font-bold uppercase tracking-widest">{t.dist_badge3}</span>
+               </div>
+               <div className="flex items-center gap-2">
+                 <span className="material-symbols-outlined text-sm">public</span>
+                 <span className="text-xs font-bold uppercase tracking-widest">{t.dist_badge1}</span>
+               </div>
+               <div className="flex items-center gap-2">
+                 <span className="material-symbols-outlined text-sm">local_shipping</span>
+                 <span className="text-xs font-bold uppercase tracking-widest">{t.dist_badge2}</span>
+               </div>
+            </div>
           </div>
         </div>
       </section>

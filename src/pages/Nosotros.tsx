@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useTranslation } from "@/i18n/LanguageContext";
 
 export default function Nosotros() {
@@ -79,6 +80,28 @@ export default function Nosotros() {
         </div>
       </section>
 
+      {/* Mission & Vision */}
+      <section className="py-20 px-6 bg-surface">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-surface-container-low p-10 md:p-14 rounded-3xl border border-outline-variant/10 relative overflow-hidden group hover:bg-surface-container transition-colors duration-500">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary-fixed/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div className="w-16 h-16 rounded-2xl yolk-gradient flex items-center justify-center mb-8 shadow-lg">
+              <span className="material-symbols-outlined text-on-primary-fixed text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>target</span>
+            </div>
+            <h2 className="font-headline text-3xl font-extrabold text-primary mb-6">{t.about_mission_h2}</h2>
+            <p className="text-on-surface-variant text-lg leading-relaxed">{t.about_mission_p}</p>
+          </div>
+          <div className="bg-primary p-10 md:p-14 rounded-3xl shadow-2xl relative overflow-hidden group">
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+            <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-8 shadow-lg border border-white/10">
+              <span className="material-symbols-outlined text-white text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>visibility</span>
+            </div>
+            <h2 className="font-headline text-3xl font-extrabold text-primary-fixed mb-6">{t.about_vision_h2}</h2>
+            <p className="text-primary-fixed/80 text-lg leading-relaxed">{t.about_vision_p}</p>
+          </div>
+        </div>
+      </section>
+
       {/* Nuestra Calidad / Desktop Quality Bento */}
       <section className="py-20 px-6 bg-surface">
         <div className="max-w-5xl mx-auto">
@@ -88,7 +111,7 @@ export default function Nosotros() {
             <div className="w-24 h-1 bg-primary-fixed mx-auto mt-6 rounded-full"></div>
           </div>
           <div className="grid grid-cols-12 gap-6">
-            <div className="col-span-7 bg-surface-container-lowest p-10 rounded-xl relative overflow-hidden group shadow-sm border border-outline-variant/10">
+            <div className="col-span-12 lg:col-span-7 bg-surface-container-lowest p-10 rounded-xl relative overflow-hidden group shadow-sm border border-outline-variant/10">
               <h3 className="font-headline text-2xl font-bold text-primary mb-4">Abastecimiento Sólido</h3>
               <p className="text-on-surface-variant max-w-md">{t.quality_c1_p}</p>
               <div className="mt-8 flex items-center gap-3">
@@ -99,22 +122,22 @@ export default function Nosotros() {
                 <span className="material-symbols-outlined text-[12rem] text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>egg</span>
               </div>
             </div>
-            <div className="col-span-5 bg-secondary text-primary p-10 rounded-xl flex flex-col justify-center shadow-sm">
+            <div className="col-span-12 lg:col-span-5 bg-secondary text-primary p-10 rounded-xl flex flex-col justify-center shadow-sm">
               <span className="material-symbols-outlined text-5xl mb-6">public</span>
               <h3 className="font-headline text-2xl font-bold mb-3">Proyección Internacional</h3>
               <p className="opacity-80">{t.quality_c2_p}</p>
             </div>
-            <div className="col-span-4 bg-surface-container-highest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+            <div className="col-span-12 lg:col-span-4 bg-surface-container-highest p-8 rounded-xl shadow-sm border border-outline-variant/10">
               <span className="material-symbols-outlined text-primary text-4xl mb-4 block">eco</span>
               <h4 className="font-headline text-lg font-bold mb-2">{t.quality_c3_h4}</h4>
               <p className="text-on-surface-variant text-sm">{t.quality_c3_p}</p>
             </div>
-            <div className="col-span-4 bg-surface-container-highest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+            <div className="col-span-12 lg:col-span-4 bg-surface-container-highest p-8 rounded-xl shadow-sm border border-outline-variant/10">
               <span className="material-symbols-outlined text-primary text-4xl mb-4 block">local_shipping</span>
               <h4 className="font-headline text-lg font-bold mb-2">Logística Nacional</h4>
               <p className="text-on-surface-variant text-sm">{t.organic_cert4}</p>
             </div>
-            <div className="col-span-4 bg-surface-container-highest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+            <div className="col-span-12 lg:col-span-4 bg-surface-container-highest p-8 rounded-xl shadow-sm border border-outline-variant/10">
               <span className="material-symbols-outlined text-primary text-4xl mb-4 block">health_and_safety</span>
               <h4 className="font-headline text-lg font-bold mb-2">Cumplimiento Empresarial</h4>
               <p className="text-on-surface-variant text-sm">{t.quality_c5_p}</p>
@@ -160,25 +183,13 @@ export default function Nosotros() {
             <h2 className="font-headline text-3xl md:text-5xl font-extrabold text-primary tracking-tighter">{t.about_team_h2}</h2>
             <p className="text-on-surface-variant mt-3">{t.about_team_p}</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[
-              { name: "Agustín Navarro", role: "Fundador & Gerente General", icon: "person" },
-              { name: "Yenny Navarro", role: "Gerente Comercial", icon: "storefront" },
-              { name: "Evelio Galvis", role: "Gerente Logístico", icon: "local_shipping" },
-              { name: "Johan Jaimes", role: "Coordinador de Exportaciones", icon: "public" },
-              { name: "Camila Durán", role: "Área Administrativa", icon: "admin_panel_settings" },
-              { name: "Maribel Guardiola", role: "Contabilidad y Finanzas", icon: "account_balance" },
-            ].map((member) => (
-              <div key={member.name} className="bg-surface rounded-xl p-6 flex flex-col items-center text-center gap-4">
-                <div className="w-20 h-20 yolk-gradient rounded-full flex items-center justify-center shadow-lg">
-                  <span className="material-symbols-outlined text-on-primary-fixed text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>{member.icon}</span>
-                </div>
-                <div>
-                  <p className="font-headline font-bold text-primary text-lg leading-tight">{member.name}</p>
-                  <p className="text-on-surface-variant text-sm mt-1">{member.role}</p>
-                </div>
-              </div>
-            ))}
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/10">
+            <img 
+              src="/DSC00634.jpg" 
+              alt="Equipo Craks" 
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
@@ -196,18 +207,19 @@ export default function Nosotros() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-6 pb-20">
-        <div className="max-w-5xl mx-auto bg-primary rounded-xl p-10 md:p-16 relative overflow-hidden">
-          <div className="relative z-10">
-            <h2 className="font-headline text-3xl md:text-5xl font-extrabold text-primary-fixed mb-6">{t.about_cta_h2}</h2>
-            <p className="text-primary-fixed/80 text-lg max-w-2xl mb-8">{t.about_cta_p}</p>
-            <div className="flex flex-wrap gap-4">
-              <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" className="bg-primary-fixed text-on-primary-fixed px-8 py-3 rounded-full font-bold hover:opacity-90 transition-all">{t.about_cta_btn1}</a>
-              <a href="/productos" className="border border-primary-fixed/30 text-primary-fixed px-8 py-3 rounded-full font-bold hover:bg-primary-fixed/10 transition-all">{t.about_cta_btn2}</a>
-            </div>
+      {/* CTA Final Simple */}
+      <section className="px-6 pb-24">
+        <div className="max-w-5xl mx-auto text-center py-16 bg-surface-container-low rounded-3xl border border-outline-variant/10 shadow-sm">
+          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-primary mb-6">{t.cta_h2}</h2>
+          <p className="text-on-surface-variant text-lg max-w-xl mx-auto mb-10">{t.cta_p}</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link to="/contacto" className="yolk-gradient text-on-primary-fixed px-10 py-4 rounded-full font-bold hover:brightness-105 transition-all active:scale-95 shadow-lg shadow-primary-fixed/20">
+              {t.nav_contact}
+            </Link>
+            <Link to="/productos" className="bg-primary text-on-primary px-10 py-4 rounded-full font-bold hover:opacity-90 transition-all active:scale-95">
+              {t.hero_cta}
+            </Link>
           </div>
-          <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-primary-fixed/10 rounded-full blur-3xl pointer-events-none"></div>
         </div>
       </section>
     </main>
