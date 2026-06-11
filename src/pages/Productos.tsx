@@ -20,8 +20,6 @@ export default function Productos() {
   const [selectedClasificaciones, setSelectedClasificaciones] = useState<string[]>([]);
   const [selectedTipo, setSelectedTipo] = useState<string | null>(null);
 
-  const TIPOS = [t.prod_tipo_trad, t.prod_tipo_blanco];
-
   type Product = {
     id: string;
     clasificacion: string;
@@ -54,9 +52,6 @@ export default function Productos() {
     setSelectedClasificaciones((prev) =>
       prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]
     );
-
-  const toggleTipo = (tp: string) =>
-    setSelectedTipo((prev) => (prev === tp ? null : tp));
 
   const resetFilters = () => {
     setSelectedClasificaciones([]);
