@@ -43,8 +43,8 @@ export default function Nosotros() {
               </div>
               <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 yolk-gradient rounded-full shadow-lg border-4 border-surface-container-low items-center justify-center font-bold text-on-primary-fixed text-xs">2005</div>
               <div className="md:pl-16">
-                <div className="h-56 rounded-xl overflow-hidden">
-                  <img className="w-full h-full object-cover" src="/trayectoria1.png" alt="Inicio de operaciones Craks" loading="lazy" />
+                <div className="h-64 md:h-80 rounded-xl overflow-hidden">
+                  <img className="w-full h-full object-cover object-center" src="/trayectoria1.png" alt="Inicio de operaciones Craks" loading="lazy" />
                 </div>
               </div>
             </div>
@@ -58,7 +58,7 @@ export default function Nosotros() {
               <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 yolk-gradient rounded-full shadow-lg border-4 border-surface-container-low items-center justify-center font-bold text-on-primary-fixed text-xs">2018</div>
               <div className="md:order-1 md:pr-16">
                 <div className="h-56 rounded-xl overflow-hidden">
-                  <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAre5Qp6WNWOBkMbj2aIUJbiYBF9wvqrGj4Ik_rkdxyomB8o7HYGaTRW_pJc4OvCRsqWTqE-J-1VEqxwrToAb6U31A-UJ8-2w7Ke6-LQCVXAgRTrFvSrzYoHmx5UT0HihKSQ2fFxOG8Ct7u6O90sQDSDcJVkoOt4-4x4jdncyvipCLiiV5RitAxkYBFXIJh3NUvJwuyoGDobvh-G5kTt6IEt6uaO7IWB94OO62jYlukQRx5neoQ1Vw1Wq9JDJl0hW6f3FtHpexJNFU" alt="Bodega de distribución" loading="lazy" />
+                  <img className="w-full h-full object-cover" src="/trayectoria2.png" alt="Bodega de distribución" loading="lazy" />
                 </div>
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function Nosotros() {
               <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-14 h-12 yolk-gradient rounded-full shadow-lg border-4 border-surface-container-low items-center justify-center font-bold text-on-primary-fixed text-[10px] text-center leading-tight px-1">Hoy</div>
               <div className="md:pl-16">
                 <div className="h-56 rounded-xl overflow-hidden">
-                  <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCocjZFjU_mitcy618AS6LIs5Q08thlYUheAHxcdopgrRzw1Eb--fxcj-QfGvn_K8g_reXLYMkSvICuS-JldekGojhLbK-TlpOHARFj1ERAMHW09oJf8UibCjmYCl2cjDEhthO27xSOmO4kG9RrHrxyc8CvM8z70VkAOQLW-sRfci8C75-KxIUZmTjecINXkzi5XgcwvxQ2IliXFjJpRDlvdWFRVYOosRD_uN0mMSCiJu60KefyK_0MRaLUM_aQrtVmEy_DOXeUkog" alt="Exportación Caribe" loading="lazy" />
+                  <img className="w-full h-full object-cover" src="/trayectoria3.png" alt="Exportación Caribe" loading="lazy" />
                 </div>
               </div>
             </div>
