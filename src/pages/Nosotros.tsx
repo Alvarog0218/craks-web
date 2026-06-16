@@ -44,7 +44,7 @@ export default function Nosotros() {
               <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 yolk-gradient rounded-full shadow-lg border-4 border-surface-container-low items-center justify-center font-bold text-on-primary-fixed text-xs">2005</div>
               <div className="md:pl-16">
                 <div className="h-56 rounded-xl overflow-hidden">
-                  <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjCSsICqI9TFkeNPaCqkRiHtz7z3fzipx9BnZtRrLrhs1Zktgxxguqu00bOSlXkDjqXSctgTxhLFa4_xiguJUANSzUmCdpXoBUPeadum24VBp8mO1_JdACWA5_xRKbid-fRxNuS-uBiBr6cDH-LTQg_nh2By8mm3yFxtfjjOnRpfmIv1SEOiJqUu1Xql7ECKduYi_pbrrjNkk7zi25RJSLzSP65lrB8S-oDky-eyEbQWYAhbCGN2Ght5TPxeq6TtPw2PqEjol_yUY" alt="Bucaramanga Santander" loading="lazy" />
+                  <img className="w-full h-full object-cover" src="/trayectoria1.png" alt="Inicio de operaciones Craks" loading="lazy" />
                 </div>
               </div>
             </div>
