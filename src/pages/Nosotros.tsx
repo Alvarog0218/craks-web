@@ -43,8 +43,8 @@ export default function Nosotros() {
               </div>
               <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 yolk-gradient rounded-full shadow-lg border-4 border-surface-container-low items-center justify-center font-bold text-on-primary-fixed text-xs">2005</div>
               <div className="md:pl-16">
-                <div className="h-64 md:h-80 rounded-xl overflow-hidden">
-                  <img className="w-full h-full object-cover object-center" src="/trayectoria1.png" alt="Inicio de operaciones Craks" loading="lazy" />
+                <div className="h-64 md:h-80 rounded-xl overflow-hidden shadow-md">
+                  <img className="w-full h-full object-cover" src="/trayectoria1.png" alt="Inicio de operaciones Craks" loading="lazy" />
                 </div>
               </div>
             </div>
@@ -57,7 +57,7 @@ export default function Nosotros() {
               </div>
               <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 yolk-gradient rounded-full shadow-lg border-4 border-surface-container-low items-center justify-center font-bold text-on-primary-fixed text-xs">2018</div>
               <div className="md:order-1 md:pr-16">
-                <div className="h-56 rounded-xl overflow-hidden">
+                <div className="h-64 md:h-80 rounded-xl overflow-hidden shadow-md">
                   <img className="w-full h-full object-cover" src="/trayectoria2.png" alt="Bodega de distribución" loading="lazy" />
                 </div>
               </div>
@@ -71,7 +71,7 @@ export default function Nosotros() {
               </div>
               <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-14 h-12 yolk-gradient rounded-full shadow-lg border-4 border-surface-container-low items-center justify-center font-bold text-on-primary-fixed text-[10px] text-center leading-tight px-1">Hoy</div>
               <div className="md:pl-16">
-                <div className="h-56 rounded-xl overflow-hidden">
+                <div className="h-64 md:h-80 rounded-xl overflow-hidden shadow-md">
                   <img className="w-full h-full object-cover" src="/trayectoria3.png" alt="Exportación Caribe" loading="lazy" />
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function Nosotros() {
       </section>
 
       {/* Nuestra Calidad / Desktop Quality Bento */}
-      <section className="py-20 px-6 bg-surface">
+      <section id="calidad" className="py-20 px-6 bg-surface">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <span className="font-headline font-bold text-secondary uppercase tracking-[0.3em] text-sm">{t.quality_sub}</span>

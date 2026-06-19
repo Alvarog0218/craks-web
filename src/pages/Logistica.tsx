@@ -38,7 +38,7 @@ export default function Logistica() {
         <div className="relative">
           <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary-fixed/30 blur-3xl rounded-full pointer-events-none"></div>
           <div className="relative bg-surface-container-low rounded-xl overflow-hidden p-3 shadow-2xl">
-            <img alt="Centro logístico" className="w-full aspect-square object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIIXjzj-e3ZhDVn_UETbrudsuFY70ChF0YJgD5IInoajIrbnq0aTYyxJPUOPgQwnBmp36BdGKwK5Sdem33auTp2y2pO47CklZkZMqR_BfMTQG2TphPa94kUlOqoRqw9B38_5E3fEARLbE2z8WbVv99LLXIgpcJzXTrAnG8TBMkHQ4oKmTi5tq_Lztr8m3W3UBASw1Wpdflav6ZlLL8zZibCbmewf0wUkNdhnj8avFwYZ0yLfIrSSTJks1duqB8jWWuS5QuXKsXpHU" loading="lazy" />
+            <img alt="Centro logístico" className="w-full aspect-square object-cover rounded-lg" src="/Bodega.jpg" loading="lazy" />
             <div className="absolute bottom-8 left-8 p-5 bg-surface/90 backdrop-blur-md rounded-xl max-w-xs shadow-lg">
               <div className="flex items-center gap-3 mb-1">
                 <span className="material-symbols-outlined text-primary-fixed-dim" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
@@ -132,7 +132,7 @@ export default function Logistica() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative order-2 lg:order-1">
             <div className="egg-curve bg-secondary-container w-full aspect-square absolute -z-10 scale-110 opacity-20"></div>
-            <img alt="Servicio de transporte" className="w-full h-auto egg-curve shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZIeF_tdz1vpIjbNc-aaaW9VaFYgH0t3cTB_frmGR5Xt3RRgvEkCk8FP_3UBSaJFXbXkiHa2JS4JwDBWeE6s65mlInSa393VqAC4TVWo_xKMkrgLtLamzIzqWUyx9xAvvUQKBsg694_rpNKiRQW7DxnbG4K-zvFK-DzdcBLRWERlTYaRkM44aAilRpFQ6TnHf01NzetLa57hq50Am-Bg373630QM56NMRozO6YNfrufeydaWGDhzsOfZbW4FstQPtXefJpC4RxDOY" loading="lazy" />
+            <img alt="Servicio de transporte" className="w-full h-auto egg-curve shadow-2xl" src="/transporte.jpg" loading="lazy" />
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="font-headline text-3xl md:text-5xl font-extrabold tracking-tight mb-10">{t.log_tech_h2}</h2>

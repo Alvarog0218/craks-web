@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 
 // TODO: Reemplazar con número real de WhatsApp del negocio (formato internacional sin "+")
-const WHATSAPP_NUMBER = "528112345678";
+const WHATSAPP_NUMBER = "573152225332";
 
 const formatCurrency = (n: number) =>
   new Intl.NumberFormat("es-MX", { style: "currency", currency: "USD" }).format(n);

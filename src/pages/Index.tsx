@@ -132,7 +132,7 @@ export default function Index() {
             <h2 className="text-3xl md:text-5xl font-black font-headline text-[#428488] tracking-tighter mb-4">{t.cta_h2}</h2>
             <p className="text-[#428488] mb-8 max-w-md mx-auto">{t.cta_p}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/logistica" className="yolk-gradient text-[#428488] px-10 py-4 rounded-full font-bold text-lg transition-all active:scale-95">{t.cta_btn1}</Link>
+              <a href="https://wa.me/573152225332" target="_blank" rel="noopener noreferrer" className="yolk-gradient text-[#428488] px-10 py-4 rounded-full font-bold text-lg transition-all active:scale-95">{t.cta_btn1}</a>
               <Link to="/logistica" className="bg-[#428488] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#428488]/90 transition-all">{t.cta_btn2}</Link>
             </div>
           </div>

@@ -182,7 +182,7 @@ export default function Productos() {
               return (
                 <div
                   key={p.id}
-                  className="group bg-secondary rounded-2xl p-2 hover:-translate-y-1 transition-transform duration-300 flex flex-col relative overflow-hidden isolate shadow-xl"
+                  className="group bg-surface-container-low rounded-2xl p-2 hover:-translate-y-1 transition-transform duration-300 flex flex-col relative overflow-hidden isolate shadow-xl"
                 >
                   <div className="aspect-[4/5] egg-shape overflow-hidden mb-2 bg-white/30 relative isolate border border-white/20 shadow-inner">
                     <img
@@ -285,7 +285,7 @@ export default function Productos() {
             </Link>
           </div>
           <div className="w-full md:w-64 h-48 md:h-56 relative group">
-            <img className="w-full h-full object-cover rounded-xl shadow-2xl group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDvcQMiGT_MUjo82QLjoGwiQd7dWvJSYVNzIx_ZUHBV1uSKHWGvExs5FIQvHB6g0_GMapXrYig3d-pyrxQtbDmI1WXsuXDJ45xP_SFOM2TvpHvaEyBxK_1TocDy-_OiOKZ38WtG_3jK2wl5yI7iSd7fDDnTDRiF-q4OI_2nYpPYcr6Ocn0syB7d8eDvIj5vf1IrW_3ZjNrKYh9_f6V-4ZeI1v5WvcSf4m7Y6SAOfKcfrEuBK24PCqR6K2JN6A3LB1flASIeX4O2Vw" alt="Distribución mayorista de huevo" loading="lazy" />
+            <img className="w-full h-full object-cover rounded-xl shadow-2xl group-hover:scale-105 transition-transform duration-500" src="/al%20por%20mayor.jpg" alt="Distribución mayorista de huevo" loading="lazy" />
             <div className="absolute inset-0 rounded-xl bg-primary/20 group-hover:bg-transparent transition-colors"></div>
           </div>
           {/* Decorative elements */}
