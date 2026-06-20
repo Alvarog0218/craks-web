@@ -5,7 +5,7 @@ import { useTranslation } from "@/i18n/LanguageContext";
 const navLinks = [
   { path: "/", page: "inicio", icon: "home", key: "nav_home" },
   { path: "/nosotros", page: "nosotros", icon: "group", key: "nav_about" },
-  { path: "/logistica", page: "operaciones", icon: "local_shipping", key: "nav_logistics" },
+  { path: "/logistica", page: "logistica", icon: "local_shipping", key: "nav_logistics" },
   { path: "/contacto", page: "contacto", icon: "hub", key: "nav_contact" },
   { path: "/productos", page: "productos", icon: "egg", key: "nav_products" },
 ] as const;
