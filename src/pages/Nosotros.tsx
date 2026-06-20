@@ -7,20 +7,32 @@ export default function Nosotros() {
   return (
     <main className="flex-1">
       {/* Hero */}
-      <section className="relative overflow-hidden px-6 pt-16 pb-24 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="z-10">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-widest mb-6">{t.about_badge}</span>
-            <h1 className="font-headline text-4xl md:text-6xl font-extrabold text-primary leading-tight tracking-tighter mb-6">
-              {t.about_h1_1}<br /><span className="text-on-primary-container italic">{t.about_h1_2}</span>
+      <section className="relative min-h-[75vh] flex items-center px-6 py-20 md:py-32 overflow-hidden bg-surface-container-low">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/DSC00634.jpg" 
+            alt="Equipo Craks" 
+            className="w-full h-full object-cover object-center"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/35 backdrop-blur-[1px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-surface/40 via-transparent to-black/20"></div>
+        </div>
+
+        {/* Content Over background */}
+        <div className="relative z-10 max-w-7xl mx-auto w-full flex justify-start">
+          <div className="max-w-2xl space-y-6">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-white border border-white/20 text-xs font-bold uppercase tracking-widest">
+              {t.about_badge}
+            </span>
+            <h1 className="font-headline text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-tight tracking-tighter">
+              {t.about_h1_1}<br />
+              <span className="text-secondary italic">{t.about_h1_2}</span>
             </h1>
-            <p className="text-lg text-on-surface-variant max-w-xl leading-relaxed">{t.about_hero_p}</p>
-          </div>
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="w-full max-w-md aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high shadow-2xl md:rotate-2">
-              <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsNfHmjmVY_HG4g8VKMpJIQSWtSkmPHPCCCPbvJ8OGf3cYqC_SsgN9xlKVDyX_Cwy1ToEzT1lD5Mt7Te6a74xvihplVfjdZIIPoGH_RqRfcohuo8avweOL7JKomz6nWiIDnGwT9pTrwksdosQQiRw1fpk9E3jcq74wD5tFJ7A_v_VwgqTpJcExlw7JG3mBoe2JwGg5SIlstMiveO9RSM_Az7-UmphcUHUXrfDT8e0yvLbTMGl75lfN1OrpQIi7znGrpNo8gKZl44U" alt="Huevos colombianos frescos" loading="lazy" />
-            </div>
-            <div className="absolute -bottom-10 -right-10 w-64 h-64 yolk-gradient rounded-full opacity-20 blur-3xl pointer-events-none"></div>
+            <p className="text-base md:text-xl text-white/90 leading-relaxed max-w-xl">
+              {t.about_hero_p}
+            </p>
           </div>
         </div>
       </section>
@@ -176,23 +188,6 @@ export default function Nosotros() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20 px-6 bg-surface-container-low">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-headline text-3xl md:text-5xl font-extrabold text-primary tracking-tighter">{t.about_team_h2}</h2>
-            <p className="text-on-surface-variant mt-3">{t.about_team_p}</p>
-          </div>
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/10">
-            <img 
-              src="/DSC00634.jpg" 
-              alt="Equipo Craks" 
-              className="w-full h-auto object-cover"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
 
       {/* Allies */}
       <section className="py-16 px-6 bg-surface">
