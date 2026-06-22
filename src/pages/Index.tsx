@@ -25,7 +25,6 @@ export default function Index() {
                 {t.hero_cta}
                 <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </Link>
-              <span className="text-sm font-bold text-on-surface-variant">{t.hero_trust}</span>
             </div>
             {/* Stats */}
             <div className="pt-12 grid grid-cols-2 gap-8">
@@ -41,7 +40,6 @@ export default function Index() {
           </div>
           {/* Hero Visual */}
           <div className="relative p-4 md:p-8">
-            <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary-fixed/30 rounded-full blur-3xl -z-10"></div>
             <div className="relative w-full aspect-square md:aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden shadow-2xl transform lg:scale-105">
               <img className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcfiHuPSd8f2DdJeklYEMrhEbmOrkgr7P4jme7E897zNHTJkBEaOnwzlgPUltfYVAW5KBom3v-SYMrtNTchGMWnLa9exHcqKN3dmz4YZwcdor2N96aibtENnx5sOQD2fiTXHaAPA2EkL92sCXFKWCV7WVskV4udp5A6U4KC1-vHqJQiSffHVK1qRjT0_VU0bB2yLw5nra4kJ-tLqIH4mOf9oi7RQKjaNmMs-A-oKalbA3U2buFi0Lp-a_c0c3Mo8x4BG_PdtzGx8I" alt="Huevos orgánicos frescos" />
               <div className="absolute bottom-8 left-8 right-8 bg-surface/90 backdrop-blur-md p-6 rounded-lg flex items-center justify-between">

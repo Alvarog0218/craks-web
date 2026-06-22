@@ -132,7 +132,7 @@ export default function Logistica() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative order-2 lg:order-1">
             <div className="egg-curve bg-secondary-container w-full aspect-square absolute -z-10 scale-110 opacity-20"></div>
-            <img alt="Servicio de transporte" className="w-full h-auto egg-curve shadow-2xl" src="/transporte.jpg" loading="lazy" />
+            <img alt="Distribución y logística de huevos" className="w-full h-auto egg-curve shadow-2xl" src="/transporte.jpg" loading="lazy" />
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="font-headline text-3xl md:text-5xl font-extrabold tracking-tight mb-10">{t.log_tech_h2}</h2>

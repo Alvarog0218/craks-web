@@ -38,7 +38,7 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between mb-10 px-2">
-          <img src="/assets/logo_azul.png" alt="Craks" className="h-12 w-auto" />
+          <img src="/assets/logo_azul.png" alt="Craks" className="h-14 w-auto" />
           <button onClick={() => setOpen(false)} className="p-2 text-on-surface-variant hover:text-on-surface transition-colors">
             <span className="material-symbols-outlined">close</span>
           </button>
@@ -92,7 +92,7 @@ export default function Navbar() {
       <header className="bg-surface/80 glass-nav sticky top-0 z-30 w-full">
         <div className="flex items-center justify-between max-w-7xl mx-auto px-6 py-3">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/assets/logo_azul.png" alt="Craks" className="h-16 w-auto" />
+            <img src="/assets/logo_azul.png" alt="Craks" className="h-[72px] w-auto" />
           </Link>
 
           {/* Desktop Links */}
