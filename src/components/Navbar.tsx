@@ -92,7 +92,7 @@ export default function Navbar() {
       <header className="bg-surface/80 glass-nav sticky top-0 z-30 w-full">
         <div className="flex items-center justify-between max-w-7xl mx-auto px-6 py-3">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/assets/logo_azul.png" alt="Craks" className="h-[72px] w-auto" />
+            <img src="/assets/logo_azul.png" alt="Craks" className="h-12 md:h-[72px] w-auto" />
           </Link>
 
           {/* Desktop Links */}

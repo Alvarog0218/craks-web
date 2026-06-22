@@ -6,11 +6,21 @@ import Footer from "@/components/Footer";
 import CartFab from "@/components/CartFab";
 import CartDrawer from "@/components/CartDrawer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { Suspense, lazy } from "react";
 import Index from "@/pages/Index";
-import Productos from "@/pages/Productos";
-import Nosotros from "@/pages/Nosotros";
-import Contacto from "@/pages/Contacto";
-import Logistica from "@/pages/Logistica";
+
+const Productos = lazy(() => import("@/pages/Productos"));
+const Nosotros = lazy(() => import("@/pages/Nosotros"));
+const Contacto = lazy(() => import("@/pages/Contacto"));
+const Logistica = lazy(() => import("@/pages/Logistica"));
+
+function Loader() {
+  return (
+    <div className="flex-1 flex items-center justify-center min-h-[50vh]">
+      <div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+    </div>
+  );
+}
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -31,13 +41,15 @@ export default function App() {
       <LanguageProvider>
         <CartProvider>
           <Layout>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/productos" element={<Productos />} />
-              <Route path="/nosotros" element={<Nosotros />} />
-              <Route path="/contacto" element={<Contacto />} />
-              <Route path="/logistica" element={<Logistica />} />
-            </Routes>
+            <Suspense fallback={<Loader />}>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/productos" element={<Productos />} />
+                <Route path="/nosotros" element={<Nosotros />} />
+                <Route path="/contacto" element={<Contacto />} />
+                <Route path="/logistica" element={<Logistica />} />
+              </Routes>
+            </Suspense>
           </Layout>
         </CartProvider>
       </LanguageProvider>

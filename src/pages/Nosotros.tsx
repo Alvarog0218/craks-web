@@ -9,32 +9,45 @@ export default function Nosotros() {
     <main className="flex-1">
       <SEO title={t.seo_about_title} description={t.seo_about_desc} />
       {/* Hero */}
-      <section className="relative min-h-[75vh] flex items-center px-6 py-20 md:py-32 overflow-hidden bg-surface-container-low">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/DSC00634.jpg" 
-            alt="Equipo Craks" 
-            className="w-full h-full object-cover object-center"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-black/35 backdrop-blur-[1px]"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-surface/40 via-transparent to-black/20"></div>
-        </div>
-
-        {/* Content Over background */}
-        <div className="relative z-10 max-w-7xl mx-auto w-full flex justify-start">
-          <div className="max-w-2xl space-y-6">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-white border border-white/20 text-xs font-bold uppercase tracking-widest">
-              {t.about_badge}
-            </span>
-            <h1 className="font-headline text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-tight tracking-tighter">
+      <section className="relative min-h-[calc(100vh-88px)] flex items-center px-6 md:px-12 py-16 md:py-24 bg-surface overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-16 items-center z-10">
+          <div className="lg:col-span-5 space-y-8">
+            <div className="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+              <span className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">{t.about_badge}</span>
+            </div>
+            <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary leading-[1.1] tracking-tighter">
               {t.about_h1_1}<br />
               <span className="text-secondary italic">{t.about_h1_2}</span>
             </h1>
-            <p className="text-base md:text-xl text-white/90 leading-relaxed max-w-xl">
+            <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed">
               {t.about_hero_p}
             </p>
+          </div>
+
+          <div className="lg:col-span-7 relative">
+            {/* Background blur decoration */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-secondary/10 rounded-full blur-[80px] pointer-events-none"></div>
+            
+            {/* Image Card */}
+            <div className="relative aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] bg-surface-container-low rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/10 group isolate">
+              <img 
+                src="/DSC00634.jpg" 
+                alt="Equipo Craks" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="eager"
+              />
+              {/* Floating element over image */}
+              <div className="absolute bottom-6 left-6 right-6 bg-surface/90 backdrop-blur-md p-5 rounded-2xl flex items-center gap-4 shadow-xl border border-white/20">
+                <div className="w-12 h-12 yolk-gradient rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="material-symbols-outlined text-on-primary-fixed">groups</span>
+                </div>
+                <div>
+                  <p className="font-bold text-primary text-sm">Nuestro Equipo</p>
+                  <p className="text-xs text-on-surface-variant font-medium">Bucaramanga, Santander</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

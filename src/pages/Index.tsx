@@ -16,20 +16,20 @@ export default function Index() {
               <span className="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
               <span className="text-xs font-bold uppercase tracking-widest text-on-surface-variant font-label">{t.hero_badge}</span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-extrabold font-headline leading-[1.1] tracking-tighter text-primary">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-headline leading-[1.1] tracking-tighter text-primary">
               {t.hero_h1_1} <br /><span className="text-[#428488] italic">{t.hero_h1_2}</span>
             </h1>
             <p className="text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed">
               {t.hero_desc}
             </p>
             <div className="flex flex-wrap gap-6 items-center">
-              <Link to="/productos" className="yolk-gradient text-on-primary-fixed px-10 py-5 rounded-full font-bold text-lg shadow-xl shadow-primary-fixed/20 hover:brightness-105 active:scale-95 transition-all flex items-center gap-3 group">
+              <Link to="/productos" className="w-full sm:w-auto justify-center yolk-gradient text-on-primary-fixed px-8 py-4 md:px-10 md:py-5 rounded-full font-bold text-lg shadow-xl shadow-primary-fixed/20 hover:brightness-105 active:scale-95 transition-all flex items-center gap-3 group">
                 {t.hero_cta}
                 <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </Link>
             </div>
             {/* Stats */}
-            <div className="pt-12 grid grid-cols-2 gap-8">
+            <div className="pt-8 md:pt-12 grid grid-cols-2 gap-4 md:gap-8">
               <div>
                 <span className="block text-4xl font-black text-primary font-headline tracking-tighter">20+</span>
                 <span className="text-sm uppercase tracking-widest text-on-surface-variant font-label">{t.hero_stat1}</span>
@@ -57,9 +57,9 @@ export default function Index() {
       </section>
 
       {/* Services Section: Bento */}
-      <section className="py-24 px-8 md:px-20 max-w-7xl mx-auto">
-        <div className="mb-16 text-center max-w-2xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-extrabold font-headline text-primary mb-6 tracking-tight">{t.solutions_h2}</h2>
+      <section className="py-20 md:py-24 px-6 md:px-20 max-w-7xl mx-auto">
+        <div className="mb-12 md:mb-16 text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-extrabold font-headline text-primary mb-4 md:mb-6 tracking-tight">{t.solutions_h2}</h2>
           <p className="text-on-surface-variant">{t.solutions_sub}</p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
@@ -132,8 +132,8 @@ export default function Index() {
             <h2 className="text-3xl md:text-5xl font-black font-headline text-[#428488] tracking-tighter mb-4">{t.cta_h2}</h2>
             <p className="text-[#428488] mb-8 max-w-md mx-auto">{t.cta_p}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://wa.me/573152225332" target="_blank" rel="noopener noreferrer" className="yolk-gradient text-[#428488] px-10 py-4 rounded-full font-bold text-lg transition-all active:scale-95">{t.cta_btn1}</a>
-              <Link to="/logistica" className="bg-[#428488] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#428488]/90 transition-all">{t.cta_btn2}</Link>
+              <a href="https://wa.me/573152225332" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center yolk-gradient text-[#428488] px-8 py-4 md:px-10 rounded-full font-bold text-lg transition-all active:scale-95">{t.cta_btn1}</a>
+              <Link to="/logistica" className="w-full sm:w-auto text-center bg-[#428488] text-white px-8 py-4 md:px-10 rounded-full font-bold text-lg hover:bg-[#428488]/90 transition-all">{t.cta_btn2}</Link>
             </div>
           </div>
         </div>
