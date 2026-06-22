@@ -200,8 +200,8 @@ export default function Productos() {
                     </span>
                   </div>
 
-                  {/* Content Box (Yellow gradient with Blue text/buttons) */}
-                  <div className="yolk-gradient rounded-xl p-5 flex-grow flex flex-col relative overflow-hidden shadow-inner border border-white/20">
+                  {/* Content Box (Cream background with Blue text/buttons) */}
+                  <div className="bg-surface-container rounded-xl p-5 flex-grow flex flex-col relative overflow-hidden shadow-inner border border-white/60">
                     <div className="relative z-10 flex flex-col h-full">
                       <div className="flex justify-between items-start mb-1">
                         <h4 className="font-headline text-lg font-extrabold text-primary">{p.clasificacion}</h4>
