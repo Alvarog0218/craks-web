@@ -12,7 +12,7 @@ import Index from "@/pages/Index";
 const Productos = lazy(() => import("@/pages/Productos"));
 const Nosotros = lazy(() => import("@/pages/Nosotros"));
 const Contacto = lazy(() => import("@/pages/Contacto"));
-const Logistica = lazy(() => import("@/pages/Logistica"));
+const Operaciones = lazy(() => import("@/pages/Operaciones"));
 
 function Loader() {
   return (
@@ -47,7 +47,7 @@ export default function App() {
                 <Route path="/productos" element={<Productos />} />
                 <Route path="/nosotros" element={<Nosotros />} />
                 <Route path="/contacto" element={<Contacto />} />
-                <Route path="/logistica" element={<Logistica />} />
+                <Route path="/operaciones" element={<Operaciones />} />
               </Routes>
             </Suspense>
           </Layout>

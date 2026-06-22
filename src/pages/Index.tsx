@@ -91,7 +91,7 @@ export default function Index() {
               <h3 className="text-2xl font-bold font-headline text-white leading-tight">{t.solutions_log_h3}</h3>
               <p className="text-white/90 text-sm leading-relaxed">{t.solutions_log_p}</p>
             </div>
-            <Link className="mt-8 flex items-center justify-between bg-white/10 hover:bg-white/20 p-4 rounded-full transition-colors" to="/logistica">
+            <Link className="mt-8 flex items-center justify-between bg-white/10 hover:bg-white/20 p-4 rounded-full transition-colors" to="/operaciones">
               <span className="font-bold text-sm text-white">{t.solutions_log_cta}</span>
               <span className="material-symbols-outlined text-xl text-white">north_east</span>
             </Link>
@@ -133,7 +133,7 @@ export default function Index() {
             <p className="text-[#428488] mb-8 max-w-md mx-auto">{t.cta_p}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="https://wa.me/573152225332" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center yolk-gradient text-[#428488] px-8 py-4 md:px-10 rounded-full font-bold text-lg transition-all active:scale-95">{t.cta_btn1}</a>
-              <Link to="/logistica" className="w-full sm:w-auto text-center bg-[#428488] text-white px-8 py-4 md:px-10 rounded-full font-bold text-lg hover:bg-[#428488]/90 transition-all">{t.cta_btn2}</Link>
+              <Link to="/operaciones" className="w-full sm:w-auto text-center bg-[#428488] text-white px-8 py-4 md:px-10 rounded-full font-bold text-lg hover:bg-[#428488]/90 transition-all">{t.cta_btn2}</Link>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "@/i18n/LanguageContext";
 import SEO from "@/components/SEO";
 
-export default function Logistica() {
+export default function Operaciones() {
   const { t } = useTranslation();
 
   const clients = [
