@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "@/i18n/LanguageContext";
+import SEO from "@/components/SEO";
 
 export default function Contacto() {
   const { t } = useTranslation();
@@ -7,6 +8,7 @@ export default function Contacto() {
 
   return (
     <main className="flex-1 max-w-7xl mx-auto w-full px-6 md:px-12 pt-16 pb-20">
+      <SEO title={t.seo_contact_title} description={t.seo_contact_desc} />
       <div className="mb-12">
         <h1 className="font-headline text-4xl md:text-6xl font-extrabold text-secondary tracking-tight mb-6 leading-tight">
           {t.nav_contact}

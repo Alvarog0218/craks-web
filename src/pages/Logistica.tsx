@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "@/i18n/LanguageContext";
+import SEO from "@/components/SEO";
 
 export default function Logistica() {
   const { t } = useTranslation();
@@ -15,6 +16,7 @@ export default function Logistica() {
 
   return (
     <main className="flex-1">
+      <SEO title={t.seo_log_title} description={t.seo_log_desc} />
       {/* Hero */}
       <section className="relative px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center overflow-hidden">
         <div className="relative z-10">

@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "@/i18n/LanguageContext";
+import SEO from "@/components/SEO";
 
 export default function Nosotros() {
   const { t } = useTranslation();
 
   return (
     <main className="flex-1">
+      <SEO title={t.seo_about_title} description={t.seo_about_desc} />
       {/* Hero */}
       <section className="relative min-h-[75vh] flex items-center px-6 py-20 md:py-32 overflow-hidden bg-surface-container-low">
         {/* Background Image with Overlay */}

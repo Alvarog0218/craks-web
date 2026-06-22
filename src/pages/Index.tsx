@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "@/i18n/LanguageContext";
+import SEO from "@/components/SEO";
 
 export default function Index() {
   const { t } = useTranslation();
 
   return (
     <main>
+      <SEO title={t.seo_home_title} description={t.seo_home_desc} />
       {/* Hero Section */}
       <section className="relative min-h-[calc(100vh-88px)] flex items-center px-8 md:px-24 py-6 md:py-10 overflow-hidden">
         <div className="grid lg:grid-cols-2 gap-16 items-center w-full max-w-7xl mx-auto z-10">
