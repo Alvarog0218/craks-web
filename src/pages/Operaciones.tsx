@@ -40,7 +40,7 @@ export default function Operaciones() {
         <div className="relative">
           <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary-fixed/30 blur-3xl rounded-full pointer-events-none"></div>
           <div className="relative bg-surface-container-low rounded-xl overflow-hidden p-3 shadow-2xl">
-            <img alt="Centro logístico" className="w-full aspect-square object-cover rounded-lg" src="/Bodega.jpg" loading="lazy" />
+            <img alt="Centro logístico" className="w-full aspect-square object-cover rounded-lg" src="/Bodega.webp" loading="lazy" />
             <div className="absolute bottom-8 left-8 p-5 bg-surface/90 backdrop-blur-md rounded-xl max-w-xs shadow-lg">
               <div className="flex items-center gap-3 mb-1">
                 <span className="material-symbols-outlined text-primary-fixed-dim" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
@@ -134,7 +134,7 @@ export default function Operaciones() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative order-2 lg:order-1">
             <div className="egg-curve bg-secondary-container w-full aspect-square absolute -z-10 scale-110 opacity-20"></div>
-            <img alt="Distribución y logística de huevos" className="w-full h-auto egg-curve shadow-2xl" src="/transporte.jpg" loading="lazy" />
+            <img alt="Distribución y logística de huevos" className="w-full h-auto egg-curve shadow-2xl" src="/transporte.webp" loading="lazy" />
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="font-headline text-3xl md:text-5xl font-extrabold tracking-tight mb-10">{t.log_tech_h2}</h2>

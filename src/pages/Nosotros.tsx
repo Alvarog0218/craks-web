@@ -32,7 +32,7 @@ export default function Nosotros() {
             {/* Image Card */}
             <div className="relative aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] bg-surface-container-low rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/10 group isolate">
               <img 
-                src="/DSC00634.jpg" 
+                src="/DSC00634.webp" 
                 alt="Equipo Craks" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="eager"
@@ -71,7 +71,7 @@ export default function Nosotros() {
               <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 yolk-gradient rounded-full shadow-lg border-4 border-surface-container-low items-center justify-center font-bold text-on-primary-fixed text-xs">2005</div>
               <div className="md:pl-16">
                 <div className="h-64 md:h-80 rounded-xl overflow-hidden shadow-md">
-                  <img className="w-full h-full object-cover" src="/trayectoria1.png" alt="Inicio de operaciones Craks" loading="lazy" />
+                  <img className="w-full h-full object-cover" src="/trayectoria1.webp" alt="Inicio de operaciones Craks" loading="lazy" />
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function Nosotros() {
               <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 yolk-gradient rounded-full shadow-lg border-4 border-surface-container-low items-center justify-center font-bold text-on-primary-fixed text-xs">2018</div>
               <div className="md:order-1 md:pr-16">
                 <div className="h-64 md:h-80 rounded-xl overflow-hidden shadow-md">
-                  <img className="w-full h-full object-cover" src="/trayectoria2.png" alt="Bodega de distribución" loading="lazy" />
+                  <img className="w-full h-full object-cover" src="/trayectoria2.webp" alt="Bodega de distribución" loading="lazy" />
                 </div>
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function Nosotros() {
               <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-14 h-12 yolk-gradient rounded-full shadow-lg border-4 border-surface-container-low items-center justify-center font-bold text-on-primary-fixed text-[10px] text-center leading-tight px-1">Hoy</div>
               <div className="md:pl-16">
                 <div className="h-64 md:h-80 rounded-xl overflow-hidden shadow-md">
-                  <img className="w-full h-full object-cover" src="/trayectoria3.png" alt="Exportación Caribe" loading="lazy" />
+                  <img className="w-full h-full object-cover" src="/trayectoria3.webp" alt="Exportación Caribe" loading="lazy" />
                 </div>
               </div>
             </div>
