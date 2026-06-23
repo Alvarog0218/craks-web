@@ -43,7 +43,7 @@ export default function Index() {
           {/* Hero Visual */}
           <div className="relative p-4 md:p-8">
             <div className="relative w-full aspect-square md:aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden shadow-2xl transform lg:scale-105">
-              <img className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcfiHuPSd8f2DdJeklYEMrhEbmOrkgr7P4jme7E897zNHTJkBEaOnwzlgPUltfYVAW5KBom3v-SYMrtNTchGMWnLa9exHcqKN3dmz4YZwcdor2N96aibtENnx5sOQD2fiTXHaAPA2EkL92sCXFKWCV7WVskV4udp5A6U4KC1-vHqJQiSffHVK1qRjT0_VU0bB2yLw5nra4kJ-tLqIH4mOf9oi7RQKjaNmMs-A-oKalbA3U2buFi0Lp-a_c0c3Mo8x4BG_PdtzGx8I" alt="Huevos orgánicos frescos" />
+              <img className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcfiHuPSd8f2DdJeklYEMrhEbmOrkgr7P4jme7E897zNHTJkBEaOnwzlgPUltfYVAW5KBom3v-SYMrtNTchGMWnLa9exHcqKN3dmz4YZwcdor2N96aibtENnx5sOQD2fiTXHaAPA2EkL92sCXFKWCV7WVskV4udp5A6U4KC1-vHqJQiSffHVK1qRjT0_VU0bB2yLw5nra4kJ-tLqIH4mOf9oi7RQKjaNmMs-A-oKalbA3U2buFi0Lp-a_c0c3Mo8x4BG_PdtzGx8I" alt="Huevos orgánicos frescos de granjas colombianas Craks" />
               <div className="absolute bottom-8 left-8 right-8 bg-surface/90 backdrop-blur-md p-6 rounded-lg flex items-center justify-between">
                 <div>
                   <p className="font-bold text-primary">{t.hero_farm_name}</p>
@@ -81,7 +81,7 @@ export default function Index() {
               </ul>
             </div>
             <div className="w-full md:w-5/12 aspect-[4/3] md:aspect-square rounded-lg overflow-hidden relative">
-              <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4lKw_FQGIF2WAdm3I7GGuk_mT6oOmS0YVtfmjCi_UAqcecSv8y6ykNSFre9wE_HvNvATHp7TlhZJzK60Jey9LSqYxHgoGzRVHxQnAh-EQut6VZTWaELORkOhueSYojqQQpn6sNOrjxKnTRFc4okNYeAtBE3gbuek7Vl0YHuDyNAVQJEAyR7t-6j4d7cMgFmpfaawl6LUNNlhESd9ph7U4IZUqiCUO_emwbDjE343p3YWNIGubrkjc-eaaFJBYm9hmy8VhYBmaiQo" alt="Desayuno estético" />
+              <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4lKw_FQGIF2WAdm3I7GGuk_mT6oOmS0YVtfmjCi_UAqcecSv8y6ykNSFre9wE_HvNvATHp7TlhZJzK60Jey9LSqYxHgoGzRVHxQnAh-EQut6VZTWaELORkOhueSYojqQQpn6sNOrjxKnTRFc4okNYeAtBE3gbuek7Vl0YHuDyNAVQJEAyR7t-6j4d7cMgFmpfaawl6LUNNlhESd9ph7U4IZUqiCUO_emwbDjE343p3YWNIGubrkjc-eaaFJBYm9hmy8VhYBmaiQo" alt="Desayuno nutritivo con huevos Craks" />
             </div>
           </div>
           {/* Card 2: Logistics Card (Now Yellow) */}
@@ -118,7 +118,7 @@ export default function Index() {
           </div>
           {/* Card 5: Image Gallery Slot (Shorter) */}
           <div className="relative rounded-xl overflow-hidden h-56 shadow-md border border-outline-variant/10">
-            <img className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHHc_Gt--kF8cVaPsc531kuPq1QR97xIUZFHmsEQxJuYCWfDupjLPOb8h2m1iBj8hJNQlLbfWtLXKjufWPB0NDrKReHUwJaCkcpDJDTqvaUhfRcfRE6exqv7SGPV5Y-zIpr4hSkWLROAu2vAz0sCW96U6WyCqc1p2QueZfm3-aZ-IkPk8RU04gJKnQxVM90PWS_-v7k63OhhP60TSD46SMa-6aQgWly9RGuEE3wEIsElJGApo0wHb91tOzGECwsO67W3xy8EPBTvQ" alt="Almacén de distribución" />
+            <img className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHHc_Gt--kF8cVaPsc531kuPq1QR97xIUZFHmsEQxJuYCWfDupjLPOb8h2m1iBj8hJNQlLbfWtLXKjufWPB0NDrKReHUwJaCkcpDJDTqvaUhfRcfRE6exqv7SGPV5Y-zIpr4hSkWLROAu2vAz0sCW96U6WyCqc1p2QueZfm3-aZ-IkPk8RU04gJKnQxVM90PWS_-v7k63OhhP60TSD46SMa-6aQgWly9RGuEE3wEIsElJGApo0wHb91tOzGECwsO67W3xy8EPBTvQ" alt="Almacén de distribución y logística de Craks" />
             <div className="absolute inset-0 bg-primary/20 mix-blend-multiply hover:bg-transparent transition-colors duration-500"></div>
           </div>
         </div>

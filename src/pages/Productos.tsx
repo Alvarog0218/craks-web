@@ -190,7 +190,7 @@ export default function Productos() {
                     <img
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       src={p.image}
-                      alt={p.clasificacion}
+                      alt={`Panal de 30 huevos colombianos ${p.clasificacion} ${p.tipo}`}
                       loading="lazy"
                     />
                     <span
