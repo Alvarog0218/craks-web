@@ -5,7 +5,11 @@ import { useCart } from "@/contexts/CartContext";
 const WHATSAPP_NUMBER = "573152225332";
 
 const formatCurrency = (n: number) =>
-  new Intl.NumberFormat("es-MX", { style: "currency", currency: "USD" }).format(n);
+  new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    minimumFractionDigits: 0,
+  }).format(n);
 
 type FormState = { name: string; phone: string; address: string; notes: string };
 

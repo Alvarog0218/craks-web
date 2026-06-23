@@ -4,8 +4,8 @@ import { useTranslation } from "@/i18n/LanguageContext";
 import { useCart } from "@/contexts/CartContext";
 import SEO from "@/components/SEO";
 
-const EGG_IMAGE = "/assets/huevo.png/huevo.png?v=3";
-const WHITE_EGG_IMAGE = "/assets/huevo.png/huevo-blanco.png?v=3";
+const EGG_IMAGE = "/assets/huevo.png/huevo.webp?v=3";
+const WHITE_EGG_IMAGE = "/assets/huevo.png/huevo-blanco.webp?v=3";
 const CLASIFICACIONES = ["B", "A", "AA", "AAA", "Jumbo"];
 
 const formatCurrency = (n: number) =>
