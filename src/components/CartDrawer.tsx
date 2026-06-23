@@ -1,15 +1,10 @@
 import { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 
+import { useTranslation } from "@/i18n/LanguageContext";
+
 // TODO: Reemplazar con número real de WhatsApp del negocio (formato internacional sin "+")
 const WHATSAPP_NUMBER = "573152225332";
-
-const formatCurrency = (n: number) =>
-  new Intl.NumberFormat("es-CO", {
-    style: "currency",
-    currency: "COP",
-    minimumFractionDigits: 0,
-  }).format(n);
 
 type FormState = { name: string; phone: string; address: string; notes: string };
 
@@ -36,6 +31,7 @@ function validate(form: FormState): Record<string, string> {
 }
 
 export default function CartDrawer() {
+  const { t, formatPrice, currency } = useTranslation();
   const { items, isOpen, setIsOpen, updateQuantity, removeItem, totalPrice, clear } = useCart();
   const [form, setForm] = useState<FormState>({ name: "", phone: "", address: "", notes: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -61,10 +57,10 @@ export default function CartDrawer() {
     lines.push("*Productos:*");
     items.forEach((it) => {
       const subtotal = it.price * it.quantity;
-      lines.push(`• ${it.name} × ${it.quantity} — ${formatCurrency(subtotal)}`);
+      lines.push(`• ${it.name} × ${it.quantity} — ${formatPrice(subtotal)}`);
     });
     lines.push("");
-    lines.push(`*Total: ${formatCurrency(totalPrice)}*`);
+    lines.push(`*Total: ${formatPrice(totalPrice)} ${currency}*`);
     if (form.notes.trim()) {
       lines.push("");
       lines.push("*Notas:*");
@@ -144,7 +140,7 @@ export default function CartDrawer() {
                       {item.name}
                     </h4>
                     <p className="text-xs text-on-surface-variant">
-                      {formatCurrency(item.price)} c/u
+                      {formatPrice(item.price)} c/u
                     </p>
                     <div className="flex items-center gap-2 mt-2">
                       <button
@@ -175,7 +171,7 @@ export default function CartDrawer() {
                   </div>
                   <div className="text-right">
                     <span className="font-headline font-bold text-secondary text-sm">
-                      {formatCurrency(item.price * item.quantity)}
+                      {formatPrice(item.price * item.quantity)}
                     </span>
                   </div>
                 </div>
@@ -257,7 +253,7 @@ export default function CartDrawer() {
                 Total
               </span>
               <span className="font-headline text-2xl font-extrabold text-secondary">
-                {formatCurrency(totalPrice)}
+                {formatPrice(totalPrice)}
               </span>
             </div>
             <button

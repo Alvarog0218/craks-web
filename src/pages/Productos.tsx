@@ -8,15 +8,10 @@ const EGG_IMAGE = "/assets/huevo.png/huevo.webp?v=3";
 const WHITE_EGG_IMAGE = "/assets/huevo.png/huevo-blanco.webp?v=3";
 const CLASIFICACIONES = ["B", "A", "AA", "AAA", "Jumbo"];
 
-const formatCurrency = (n: number) =>
-  new Intl.NumberFormat("es-CO", {
-    style: "currency",
-    currency: "COP",
-    minimumFractionDigits: 0,
-  }).format(n);
+
 
 export default function Productos() {
-  const { t } = useTranslation();
+  const { t, formatPrice } = useTranslation();
   const { items, addItem, updateQuantity } = useCart();
   const [selectedClasificaciones, setSelectedClasificaciones] = useState<string[]>([]);
   const [selectedTipo, setSelectedTipo] = useState<string | null>(null);
@@ -210,7 +205,7 @@ export default function Productos() {
                       <p className="text-primary/80 text-sm mb-4 leading-relaxed flex-grow font-bold">{p.description}</p>
                       
                       <div className="flex justify-between items-center mb-4">
-                        <span className="text-2xl font-black text-primary">{formatCurrency(p.price)}</span>
+                        <span className="text-2xl font-black text-primary">{formatPrice(p.price)}</span>
                         <span className="text-[10px] font-bold text-primary/40 uppercase tracking-widest">Panal x 30</span>
                       </div>
                       
