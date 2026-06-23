@@ -31,7 +31,7 @@ function validate(form: FormState): Record<string, string> {
 }
 
 export default function CartDrawer() {
-  const { t, formatPrice, currency } = useTranslation();
+  const { formatPrice, currency } = useTranslation();
   const { items, isOpen, setIsOpen, updateQuantity, removeItem, totalPrice, clear } = useCart();
   const [form, setForm] = useState<FormState>({ name: "", phone: "", address: "", notes: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
