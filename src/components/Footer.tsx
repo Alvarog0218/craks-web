@@ -16,10 +16,10 @@ export default function Footer() {
             {t.footer_tagline}
           </p>
           <div className="flex gap-3 mt-2">
-            <Link to="/" className="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:text-petrol transition-colors" aria-label="Inicio">
+            <Link to="/" className="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:text-petrol transition-colors" aria-label={t.aria_home}>
               <span className="material-symbols-outlined text-lg">public</span>
             </Link>
-            <Link to="/contacto" className="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:text-petrol transition-colors" aria-label="Contacto">
+            <Link to="/contacto" className="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:text-petrol transition-colors" aria-label={t.aria_contact}>
               <span className="material-symbols-outlined text-lg">mail</span>
             </Link>
             <button 
@@ -30,7 +30,7 @@ export default function Footer() {
                   .catch((err) => console.error("Error al copiar: ", err));
               }}
               className="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:text-petrol transition-colors"
-              aria-label="Compartir"
+              aria-label={t.aria_share}
             >
               <span className="material-symbols-outlined text-lg">share</span>
             </button>

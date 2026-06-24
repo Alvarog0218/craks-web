@@ -26,7 +26,7 @@ export default function SEO({
     "name": "Craks",
     "url": "https://www.crakshuevos.com",
     "logo": "https://www.crakshuevos.com/assets/logo_azul.png",
-    "description": "Comercializamos huevo colombiano de calidad. Distribución nacional y exportación al Caribe desde Bucaramanga.",
+    "description": description,
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+57-315-222-5332",

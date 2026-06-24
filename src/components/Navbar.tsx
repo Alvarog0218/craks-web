@@ -134,7 +134,7 @@ export default function Navbar() {
             >
               {t.nav_orders}
             </Link>
-            <button onClick={() => setOpen(true)} className="md:hidden p-2 text-petrol" aria-label="Abrir menú">
+            <button onClick={() => setOpen(true)} className="md:hidden p-2 text-petrol" aria-label={t.aria_open_menu}>
               <span className="material-symbols-outlined text-3xl">menu</span>
             </button>
           </div>

@@ -8,30 +8,30 @@ const WHATSAPP_NUMBER = "573152225332";
 
 type FormState = { name: string; phone: string; address: string; notes: string };
 
-function validate(form: FormState): Record<string, string> {
+function validate(form: FormState, t: any): Record<string, string> {
   const errors: Record<string, string> = {};
   const name = form.name.trim();
   const phone = form.phone.trim();
   const address = form.address.trim();
   const notes = form.notes.trim();
 
-  if (!name) errors.name = "El nombre es requerido";
-  else if (name.length > 100) errors.name = "Máximo 100 caracteres";
+  if (!name) errors.name = t.cart_val_name_req;
+  else if (name.length > 100) errors.name = t.cart_val_name_max;
 
-  if (!phone) errors.phone = "El teléfono es requerido";
-  else if (phone.length > 30) errors.phone = "Máximo 30 caracteres";
-  else if (!/^[\d\s+()-]+$/.test(phone)) errors.phone = "Formato inválido";
+  if (!phone) errors.phone = t.cart_val_phone_req;
+  else if (phone.length > 30) errors.phone = t.cart_val_phone_max;
+  else if (!/^[\d\s+()-]+$/.test(phone)) errors.phone = t.cart_val_phone_inv;
 
-  if (!address) errors.address = "La dirección es requerida";
-  else if (address.length > 300) errors.address = "Máximo 300 caracteres";
+  if (!address) errors.address = t.cart_val_addr_req;
+  else if (address.length > 300) errors.address = t.cart_val_addr_max;
 
-  if (notes.length > 500) errors.notes = "Máximo 500 caracteres";
+  if (notes.length > 500) errors.notes = t.cart_val_notes_max;
 
   return errors;
 }
 
 export default function CartDrawer() {
-  const { formatPrice, currency } = useTranslation();
+  const { t, formatPrice, currency } = useTranslation();
   const { items, isOpen, setIsOpen, updateQuantity, removeItem, totalPrice, clear } = useCart();
   const [form, setForm] = useState<FormState>({ name: "", phone: "", address: "", notes: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -39,7 +39,7 @@ export default function CartDrawer() {
   const handleCheckout = () => {
     if (items.length === 0) return;
 
-    const fieldErrors = validate(form);
+    const fieldErrors = validate(form, t);
     if (Object.keys(fieldErrors).length > 0) {
       setErrors(fieldErrors);
       return;
@@ -47,23 +47,23 @@ export default function CartDrawer() {
     setErrors({});
 
     const lines: string[] = [];
-    lines.push("*🥚 Nuevo Pedido — Craks*");
+    lines.push(t.cart_msg_new);
     lines.push("");
-    lines.push("*Cliente:*");
-    lines.push(`• Nombre: ${form.name.trim()}`);
-    lines.push(`• Teléfono: ${form.phone.trim()}`);
-    lines.push(`• Dirección: ${form.address.trim()}`);
+    lines.push(t.cart_msg_client);
+    lines.push(`${t.cart_msg_name} ${form.name.trim()}`);
+    lines.push(`${t.cart_msg_phone} ${form.phone.trim()}`);
+    lines.push(`${t.cart_msg_address} ${form.address.trim()}`);
     lines.push("");
-    lines.push("*Productos:*");
+    lines.push(t.cart_msg_products);
     items.forEach((it) => {
       const subtotal = it.price * it.quantity;
       lines.push(`• ${it.name} × ${it.quantity} — ${formatPrice(subtotal)}`);
     });
     lines.push("");
-    lines.push(`*Total: ${formatPrice(totalPrice)} ${currency}*`);
+    lines.push(`${t.cart_msg_total} ${formatPrice(totalPrice)} ${currency}*`);
     if (form.notes.trim()) {
       lines.push("");
-      lines.push("*Notas:*");
+      lines.push(t.cart_msg_notes);
       lines.push(form.notes.trim());
     }
 
@@ -97,15 +97,15 @@ export default function CartDrawer() {
           <div>
             <h2 className="font-headline text-2xl font-extrabold text-primary tracking-tight flex items-center gap-2">
               <span className="material-symbols-outlined">shopping_bag</span>
-              Tu Carrito
+              {t.cart_title}
             </h2>
             <p className="text-sm text-on-surface-variant mt-1">
-              Finaliza tu pedido por WhatsApp
+              {t.cart_subtitle}
             </p>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            aria-label="Cerrar carrito"
+            aria-label={t.cart_close}
             className="w-8 h-8 rounded-full hover:bg-surface-container-high flex items-center justify-center transition-colors"
           >
             <span className="material-symbols-outlined text-on-surface-variant">close</span>
@@ -119,7 +119,7 @@ export default function CartDrawer() {
               <span className="material-symbols-outlined text-5xl opacity-30 mb-3 block">
                 shopping_bag
               </span>
-              <p>Tu carrito está vacío</p>
+              <p>{t.cart_empty}</p>
             </div>
           ) : (
             <>
@@ -140,13 +140,13 @@ export default function CartDrawer() {
                       {item.name}
                     </h4>
                     <p className="text-xs text-on-surface-variant">
-                      {formatPrice(item.price)} c/u
+                      {formatPrice(item.price)} {t.cart_each}
                     </p>
                     <div className="flex items-center gap-2 mt-2">
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
                         className="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center hover:bg-primary-fixed transition-colors"
-                        aria-label="Disminuir cantidad"
+                        aria-label={t.cart_decrease}
                       >
                         <span className="material-symbols-outlined text-sm">remove</span>
                       </button>
@@ -156,14 +156,14 @@ export default function CartDrawer() {
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
                         className="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center hover:bg-primary-fixed transition-colors"
-                        aria-label="Aumentar cantidad"
+                        aria-label={t.cart_increase}
                       >
                         <span className="material-symbols-outlined text-sm">add</span>
                       </button>
                       <button
                         onClick={() => removeItem(item.id)}
                         className="ml-auto w-7 h-7 rounded-full text-on-surface-variant hover:text-error flex items-center justify-center transition-colors"
-                        aria-label="Eliminar"
+                        aria-label={t.cart_remove}
                       >
                         <span className="material-symbols-outlined text-base">delete</span>
                       </button>
@@ -178,11 +178,11 @@ export default function CartDrawer() {
               ))}
 
               <div className="pt-4 border-t border-outline-variant/30 space-y-3">
-                <h3 className="font-headline font-bold text-primary">Datos de envío</h3>
+                <h3 className="font-headline font-bold text-primary">{t.cart_shipping}</h3>
 
                 <div>
                   <label htmlFor="cart-name" className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1 block">
-                    Nombre *
+                    {t.cart_form_name}
                   </label>
                   <input
                     id="cart-name"
@@ -197,7 +197,7 @@ export default function CartDrawer() {
 
                 <div>
                   <label htmlFor="cart-phone" className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1 block">
-                    Teléfono *
+                    {t.cart_form_phone}
                   </label>
                   <input
                     id="cart-phone"
@@ -212,7 +212,7 @@ export default function CartDrawer() {
 
                 <div>
                   <label htmlFor="cart-address" className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1 block">
-                    Dirección *
+                    {t.cart_form_address}
                   </label>
                   <textarea
                     id="cart-address"
@@ -227,14 +227,14 @@ export default function CartDrawer() {
 
                 <div>
                   <label htmlFor="cart-notes" className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1 block">
-                    Notas adicionales
+                    {t.cart_form_notes}
                   </label>
                   <textarea
                     id="cart-notes"
                     value={form.notes}
                     maxLength={500}
                     rows={2}
-                    placeholder="Comentarios sobre tu pedido (opcional)"
+                    placeholder={t.cart_form_notes_ph}
                     onChange={(e) => setForm({ ...form, notes: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-2xl bg-surface-container-low border border-outline-variant/30 text-sm focus:outline-none focus:border-primary resize-none"
                   />
@@ -250,7 +250,7 @@ export default function CartDrawer() {
           <footer className="border-t border-outline-variant/30 px-6 py-4 space-y-3 bg-surface-container-low">
             <div className="flex justify-between items-center">
               <span className="font-semibold text-on-surface-variant text-sm uppercase tracking-widest">
-                Total
+                {t.cart_total_label}
               </span>
               <span className="font-headline text-2xl font-extrabold text-secondary">
                 {formatPrice(totalPrice)}
@@ -261,13 +261,13 @@ export default function CartDrawer() {
               className="w-full py-3.5 rounded-full bg-[#25D366] hover:bg-[#1ebe57] text-white font-bold text-sm transition-colors flex items-center justify-center gap-2"
             >
               <span className="material-symbols-outlined text-lg">send</span>
-              Finalizar por WhatsApp
+              {t.cart_checkout}
             </button>
             <button
               onClick={clear}
               className="w-full text-xs text-on-surface-variant hover:text-error transition-colors"
             >
-              Vaciar carrito
+              {t.cart_clear}
             </button>
           </footer>
         )}

@@ -228,7 +228,7 @@ export default function Productos() {
                             <button
                               onClick={() => updateQuantity(p.id, quantity - 1)}
                               className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:brightness-110 transition-all shadow-md"
-                              aria-label="Quitar uno"
+                              aria-label={t.aria_remove_one}
                             >
                               <span className="material-symbols-outlined">remove</span>
                             </button>
@@ -239,7 +239,7 @@ export default function Productos() {
                             <button
                               onClick={() => updateQuantity(p.id, quantity + 1)}
                               className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:brightness-110 transition-all shadow-md"
-                              aria-label="Agregar uno"
+                              aria-label={t.aria_add_one}
                             >
                               <span className="material-symbols-outlined">add</span>
                             </button>
@@ -282,7 +282,7 @@ export default function Productos() {
             </Link>
           </div>
           <div className="w-full md:w-64 h-48 md:h-56 relative group">
-            <img className="w-full h-full object-cover rounded-xl shadow-2xl group-hover:scale-105 transition-transform duration-500" src="/al%20por%20mayor.jpg" alt="Distribución mayorista de huevo" loading="lazy" />
+            <img className="w-full h-full object-cover rounded-xl shadow-2xl group-hover:scale-105 transition-transform duration-500" src="/al%20por%20mayor.jpg" alt={t.alt_wholesale_img} loading="lazy" />
             <div className="absolute inset-0 rounded-xl bg-primary/20 group-hover:bg-transparent transition-colors"></div>
           </div>
           {/* Decorative elements */}

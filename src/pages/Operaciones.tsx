@@ -40,7 +40,7 @@ export default function Operaciones() {
         <div className="relative">
           <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary-fixed/30 blur-3xl rounded-full pointer-events-none"></div>
           <div className="relative bg-surface-container-low rounded-xl overflow-hidden p-3 shadow-2xl">
-            <img alt="Centro logístico" className="w-full aspect-square object-cover rounded-lg" src="/Bodega.webp" loading="lazy" />
+            <img alt={t.alt_logistics_img} className="w-full aspect-square object-cover rounded-lg" src="/Bodega.webp" loading="lazy" />
             <div className="absolute bottom-8 left-8 p-5 bg-surface/90 backdrop-blur-md rounded-xl max-w-xs shadow-lg">
               <div className="flex items-center gap-3 mb-1">
                 <span className="material-symbols-outlined text-primary-fixed-dim" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
@@ -103,7 +103,7 @@ export default function Operaciones() {
               </div>
             </div>
             <div className="lg:col-span-2 min-h-64 md:min-h-80 bg-surface-container-high rounded-xl relative overflow-hidden group">
-              <img alt="Mapa de cobertura" className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEEz7aUwGikMRoNe_bM369g7E3YmegaTIB758-Dbp1MP4Kfxai5uZqkpvmNpML_N6sYY46mxbcHHAC86R5QWIloOl-lVjWjWwqLH35NU3TPHBD6kpmjWzVR34Z5qT6nsWk0mZOVG65jpGi1lCOPb2MEDHqKgMvYXvoj_HgDufE_84sXx2zMy-s3PYVTwjcz5MuQQVcNOxSpSyG6gLjlF-InsZT_51H-sxyiF_rboUkEL6GqL3oqQuTu3fiGOdBvA16zLNVyeluvXw" loading="lazy" />
+              <img alt={t.alt_map_img} className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEEz7aUwGikMRoNe_bM369g7E3YmegaTIB758-Dbp1MP4Kfxai5uZqkpvmNpML_N6sYY46mxbcHHAC86R5QWIloOl-lVjWjWwqLH35NU3TPHBD6kpmjWzVR34Z5qT6nsWk0mZOVG65jpGi1lCOPb2MEDHqKgMvYXvoj_HgDufE_84sXx2zMy-s3PYVTwjcz5MuQQVcNOxSpSyG6gLjlF-InsZT_51H-sxyiF_rboUkEL6GqL3oqQuTu3fiGOdBvA16zLNVyeluvXw" loading="lazy" />
               <div className="absolute bottom-5 left-5 bg-surface/90 backdrop-blur-sm p-3 rounded-xl">
                 <p className="text-xs font-bold text-secondary uppercase tracking-widest">{t.dist_coverage_map1}</p>
                 <p className="text-[10px] text-on-surface-variant">{t.dist_coverage_map2}</p>
@@ -134,7 +134,7 @@ export default function Operaciones() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative order-2 lg:order-1">
             <div className="egg-curve bg-secondary-container w-full aspect-square absolute -z-10 scale-110 opacity-20"></div>
-            <img alt="Distribución y logística de huevos" className="w-full h-auto egg-curve shadow-2xl" src="/transporte.webp" loading="lazy" />
+            <img alt={t.alt_transport_img} className="w-full h-auto egg-curve shadow-2xl" src="/transporte.webp" loading="lazy" />
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="font-headline text-3xl md:text-5xl font-extrabold tracking-tight mb-10">{t.log_tech_h2}</h2>
