@@ -15,7 +15,7 @@ export default function Productos() {
   const WHATSAPP_NUMBER = "573152225332";
 
   const handleCotizar = (clasificacion: string) => {
-    const message = `Hola Craks, quiero hacer una cotización para huevos categoria ${clasificacion}`;
+    const message = `Hola Craks, quiero hacer una cotización para huevos ${clasificacion}`;
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   };
