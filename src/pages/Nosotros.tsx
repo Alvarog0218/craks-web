@@ -203,20 +203,6 @@ export default function Nosotros() {
         </div>
       </section>
 
-
-      {/* Allies */}
-      <section className="py-16 px-6 bg-surface">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="font-headline text-2xl md:text-3xl font-extrabold text-primary tracking-tighter mb-4">{t.about_allies_h2}</h2>
-          <p className="text-on-surface-variant mb-10">{t.about_allies_p}</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {["Ara – Jerónimo Martins", "Fonsepan", "Industrias de Alimentos del Fonse", "Alimentos Naturales del Campo", "Agrodelo"].map((ally) => (
-              <span key={ally} className="px-5 py-3 bg-surface-container-high rounded-full font-semibold text-on-surface-variant text-sm">{ally}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Final Simple */}
       <section className="px-6 pb-24">
         <div className="max-w-5xl mx-auto text-center py-16 bg-surface-container-low rounded-3xl border border-outline-variant/10 shadow-sm">

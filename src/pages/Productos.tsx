@@ -1,20 +1,25 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "@/i18n/LanguageContext";
-import { useCart } from "@/contexts/CartContext";
+
 import SEO from "@/components/SEO";
 
 const EGG_IMAGE = "/assets/huevo.png/huevo.webp?v=3";
-const WHITE_EGG_IMAGE = "/assets/huevo.png/huevo-blanco.webp?v=3";
+
 const CLASIFICACIONES = ["B", "A", "AA", "AAA", "Jumbo"];
 
 
 
 export default function Productos() {
-  const { t, formatPrice } = useTranslation();
-  const { items, addItem, updateQuantity } = useCart();
+  const { t } = useTranslation();
+  const WHATSAPP_NUMBER = "573152225332";
+
+  const handleCotizar = (clasificacion: string) => {
+    const message = `Hola Craks, quiero hacer una cotización para huevos categoria ${clasificacion}`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
   const [selectedClasificaciones, setSelectedClasificaciones] = useState<string[]>([]);
-  const [selectedTipo, setSelectedTipo] = useState<string | null>(null);
 
   type Product = {
     id: string;
@@ -29,19 +34,10 @@ export default function Productos() {
 
   const products: Product[] = [
     { id: "b-tradicional",  clasificacion: t.prod_clase_b,    tipo: t.prod_tipo_trad,   description: t.prod_desc_b,    badge: "Clase B",   badgeStyle: "secondary", price: 12500, image: EGG_IMAGE },
-    { id: "b-blanco",       clasificacion: t.prod_clase_b,    tipo: t.prod_tipo_blanco, description: t.prod_desc_b,    badge: "Clase B",   badgeStyle: "secondary", price: 12800, image: WHITE_EGG_IMAGE },
-    
     { id: "a-tradicional",  clasificacion: t.prod_clase_a,    tipo: t.prod_tipo_trad,   description: t.prod_desc_a,    badge: "Clase A",   badgeStyle: "secondary", price: 13800, image: EGG_IMAGE },
-    { id: "a-blanco",       clasificacion: t.prod_clase_a,    tipo: t.prod_tipo_blanco, description: t.prod_desc_a,    badge: "Clase A",   badgeStyle: "secondary", price: 14100, image: WHITE_EGG_IMAGE },
-    
     { id: "aa-tradicional", clasificacion: t.prod_clase_aa,   tipo: t.prod_tipo_trad,   description: t.prod_desc_aa,   badge: "Clase AA",  badgeStyle: "secondary", price: 15200, image: EGG_IMAGE },
-    { id: "aa-blanco",      clasificacion: t.prod_clase_aa,   tipo: t.prod_tipo_blanco, description: t.prod_desc_aa,   badge: "Clase AA",  badgeStyle: "secondary", price: 15500, image: WHITE_EGG_IMAGE },
-    
     { id: "aaa-tradicional",clasificacion: t.prod_clase_aaa,  tipo: t.prod_tipo_trad,   description: t.prod_desc_aaa,  badge: "Clase AAA", badgeStyle: "primary",   price: 16500, image: EGG_IMAGE },
-    { id: "aaa-blanco",     clasificacion: t.prod_clase_aaa,  tipo: t.prod_tipo_blanco, description: t.prod_desc_aaa,  badge: "Clase AAA", badgeStyle: "primary",   price: 16800, image: WHITE_EGG_IMAGE },
-    
     { id: "jumbo-tradicional", clasificacion: t.prod_clase_jumbo,tipo: t.prod_tipo_trad,   description: t.prod_desc_jumbo,badge: "Jumbo",      badgeStyle: "primary",   price: 18500, image: EGG_IMAGE },
-    { id: "jumbo-blanco",      clasificacion: t.prod_clase_jumbo,tipo: t.prod_tipo_blanco, description: t.prod_desc_jumbo,badge: "Jumbo",      badgeStyle: "primary",   price: 18800, image: WHITE_EGG_IMAGE },
   ];
 
   const toggleClasificacion = (c: string) =>
@@ -51,18 +47,14 @@ export default function Productos() {
 
   const resetFilters = () => {
     setSelectedClasificaciones([]);
-    setSelectedTipo(null);
   };
 
   const filtered = products.filter((p) => {
-    const matchesClasificacion =
-      selectedClasificaciones.length === 0 ||
+    return selectedClasificaciones.length === 0 ||
       selectedClasificaciones.some((c) => p.clasificacion.includes(c));
-    const matchesTipo = !selectedTipo || p.tipo === selectedTipo;
-    return matchesClasificacion && matchesTipo;
   });
 
-  const hasFilters = selectedClasificaciones.length > 0 || selectedTipo !== null;
+  const hasFilters = selectedClasificaciones.length > 0;
 
   return (
     <main className="flex-1 max-w-7xl mx-auto w-full px-6 md:px-12 pt-12 pb-20">
@@ -79,44 +71,7 @@ export default function Productos() {
         <h2 className="text-on-surface-variant max-w-xl text-base md:text-lg">{t.prod_subtitle}</h2>
       </section>
 
-      {/* Tipo Selector Menu */}
-      <section className="mb-12">
-        <div className="flex flex-col md:flex-row gap-4 items-center justify-center p-2 bg-surface-container-low rounded-2xl md:rounded-full border border-outline-variant/30 max-w-2xl mx-auto shadow-sm">
-          <button
-            onClick={() => setSelectedTipo(null)}
-            className={`w-full md:w-1/3 py-4 px-6 rounded-xl md:rounded-full font-bold transition-all flex items-center justify-center gap-2 ${
-              selectedTipo === null
-                ? "bg-primary text-on-primary shadow-lg shadow-primary/20 scale-105"
-                : "text-on-surface-variant hover:bg-surface-container-high"
-            }`}
-          >
-            <span className="material-symbols-outlined text-lg">apps</span>
-            {t.nav_home === "Inicio" ? "Todos" : "All"}
-          </button>
-          <button
-            onClick={() => setSelectedTipo(t.prod_tipo_trad)}
-            className={`w-full md:w-1/3 py-4 px-6 rounded-xl md:rounded-full font-bold transition-all flex items-center justify-center gap-3 ${
-              selectedTipo === t.prod_tipo_trad
-                ? "bg-primary text-on-primary shadow-lg shadow-primary/20 scale-105"
-                : "text-on-surface-variant hover:bg-surface-container-high"
-            }`}
-          >
-            <div className="w-6 h-6 rounded-full bg-[#f5cd62] border-2 border-white/20 shadow-inner"></div>
-            {t.prod_tipo_trad}
-          </button>
-          <button
-            onClick={() => setSelectedTipo(t.prod_tipo_blanco)}
-            className={`w-full md:w-1/3 py-4 px-6 rounded-xl md:rounded-full font-bold transition-all flex items-center justify-center gap-3 ${
-              selectedTipo === t.prod_tipo_blanco
-                ? "bg-primary text-on-primary shadow-lg shadow-primary/20 scale-105"
-                : "text-on-surface-variant hover:bg-surface-container-high"
-            }`}
-          >
-            <div className="w-6 h-6 rounded-full bg-[#f8f9fa] border-2 border-primary/10 shadow-inner"></div>
-            {t.prod_tipo_blanco}
-          </button>
-        </div>
-      </section>
+
 
       {/* Layout: Filter + Grid */}
       <div className="flex flex-col lg:flex-row gap-8">
@@ -173,8 +128,7 @@ export default function Productos() {
           )}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
             {filtered.map((p) => {
-              const cartItem = items.find((it) => it.id === p.id);
-              const quantity = cartItem?.quantity || 0;
+
 
               return (
                 <div
@@ -205,46 +159,17 @@ export default function Productos() {
                       <p className="text-primary/80 text-sm mb-4 leading-relaxed flex-grow font-bold">{p.description}</p>
                       
                       <div className="flex justify-between items-center mb-4">
-                        <span className="text-2xl font-black text-primary">{formatPrice(p.price)}</span>
                         <span className="text-[10px] font-bold text-primary/40 uppercase tracking-widest">Panal x 30</span>
                       </div>
                       
                       <div className="space-y-3 mt-auto">
-                        {quantity === 0 ? (
-                          <button
-                            onClick={() => addItem({
-                              id: p.id,
-                              name: `${p.clasificacion} ${p.tipo}`,
-                              price: p.price,
-                              image: p.image
-                            })}
-                            className="w-full py-3.5 rounded-full bg-primary text-on-primary font-bold text-sm hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
-                          >
-                            <span className="material-symbols-outlined text-lg">add_shopping_cart</span>
-                            {t.cart_add}
-                          </button>
-                        ) : (
-                          <div className="flex items-center justify-between w-full p-1 rounded-full border border-primary/20 bg-primary/5">
-                            <button
-                              onClick={() => updateQuantity(p.id, quantity - 1)}
-                              className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:brightness-110 transition-all shadow-md"
-                              aria-label={t.aria_remove_one}
-                            >
-                              <span className="material-symbols-outlined">remove</span>
-                            </button>
-                            <div className="flex flex-col items-center">
-                              <span className="text-[10px] font-bold uppercase tracking-tighter text-primary/60 leading-none">Cant.</span>
-                              <span className="font-headline font-black text-primary text-lg leading-none">{quantity}</span>
-                            </div>
-                            <button
-                              onClick={() => updateQuantity(p.id, quantity + 1)}
-                              className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:brightness-110 transition-all shadow-md"
-                              aria-label={t.aria_add_one}
-                            >
-                              <span className="material-symbols-outlined">add</span>
-                            </button>
-                          </div>
-                        )}
+                        <button
+                          onClick={() => handleCotizar(p.clasificacion)}
+                          className="w-full py-3.5 rounded-full bg-primary text-on-primary font-bold text-sm hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
+                        >
+                          <span className="material-symbols-outlined text-lg">chat</span>
+                          Cotizar
+                        </button>
                       </div>
                     </div>
                     {/* Background decorative element */}
@@ -282,7 +207,7 @@ export default function Productos() {
             </Link>
           </div>
           <div className="w-full md:w-64 h-48 md:h-56 relative group">
-            <img className="w-full h-full object-cover rounded-xl shadow-2xl group-hover:scale-105 transition-transform duration-500" src="/al%20por%20mayor.jpg" alt={t.alt_wholesale_img} loading="lazy" />
+            <img className="w-full h-full object-cover rounded-xl shadow-2xl group-hover:scale-105 transition-transform duration-500" src="/al%20por%20mayor.webp" alt={t.alt_wholesale_img} loading="lazy" />
             <div className="absolute inset-0 rounded-xl bg-primary/20 group-hover:bg-transparent transition-colors"></div>
           </div>
           {/* Decorative elements */}

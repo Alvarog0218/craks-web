@@ -1,10 +1,34 @@
-import { useState } from "react";
+import { type FormEvent, useState } from "react";
 import { useTranslation } from "@/i18n/LanguageContext";
 import SEO from "@/components/SEO";
 
 export default function Contacto() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("distribucion");
+  const WHATSAPP_NUMBER = "573152225332";
+
+  const handleWhatsAppSubmit = (
+    event: FormEvent<HTMLFormElement>,
+    formTitle: string,
+    fields: { name: string; label: string }[],
+  ) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const details = fields.map(({ name, label }) => {
+      const value = formData.get(name)?.toString().trim() || "No indicado";
+      return `${label}: ${value}`;
+    });
+
+    const message = [
+      `Hola Craks, quiero enviar una solicitud de ${formTitle}.`,
+      "",
+      ...details,
+    ].join("\n");
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <main className="flex-1 max-w-7xl mx-auto w-full px-6 md:px-12 pt-16 pb-20">
@@ -71,10 +95,19 @@ export default function Contacto() {
           {activeTab === "distribucion" && (
             <div className="bg-surface-container-low p-8 rounded-xl shadow-xl border border-outline-variant/10">
               <h2 className="text-2xl font-bold text-secondary mb-6">{t.dist_form_h2}</h2>
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <input type="text" placeholder={t.dist_form_company_ph} className="w-full bg-surface-container-high rounded-full px-6 py-4 outline-none" />
-                <input type="email" placeholder={t.email_placeholder} className="w-full bg-surface-container-high rounded-full px-6 py-4 outline-none" />
-                <textarea rows={4} placeholder={t.dist_form_message_ph} className="w-full bg-surface-container-high rounded-xl px-6 py-4 outline-none resize-none"></textarea>
+              <form
+                className="space-y-6"
+                onSubmit={(e) =>
+                  handleWhatsAppSubmit(e, t.contact_tab_dist, [
+                    { name: "company", label: t.dist_form_company },
+                    { name: "email", label: t.dist_form_email },
+                    { name: "message", label: t.dist_form_message },
+                  ])
+                }
+              >
+                <input name="company" type="text" placeholder={t.dist_form_company_ph} className="w-full bg-surface-container-high rounded-full px-6 py-4 outline-none" />
+                <input name="email" type="email" placeholder={t.email_placeholder} className="w-full bg-surface-container-high rounded-full px-6 py-4 outline-none" />
+                <textarea name="message" rows={4} placeholder={t.dist_form_message_ph} className="w-full bg-surface-container-high rounded-xl px-6 py-4 outline-none resize-none"></textarea>
                 <button type="submit" className="w-full yolk-gradient text-on-primary-fixed py-5 rounded-full font-bold text-lg">
                   {t.dist_form_btn}
                 </button>
@@ -85,10 +118,19 @@ export default function Contacto() {
           {activeTab === "asociacion" && (
             <div className="bg-surface-container-low p-8 rounded-xl shadow-xl border border-outline-variant/10">
               <h2 className="text-2xl font-bold text-secondary mb-6">{t.log_form_h2}</h2>
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <input type="text" placeholder={t.log_form_company_ph} className="w-full bg-surface-container-high rounded-full px-6 py-4 outline-none" />
-                <input type="email" placeholder={t.email_placeholder} className="w-full bg-surface-container-high rounded-full px-6 py-4 outline-none" />
-                <textarea rows={4} placeholder={t.log_form_message_ph} className="w-full bg-surface-container-high rounded-xl px-6 py-4 outline-none resize-none"></textarea>
+              <form
+                className="space-y-6"
+                onSubmit={(e) =>
+                  handleWhatsAppSubmit(e, t.contact_tab_log, [
+                    { name: "company", label: t.log_form_company },
+                    { name: "email", label: t.log_form_email },
+                    { name: "message", label: t.log_form_message },
+                  ])
+                }
+              >
+                <input name="company" type="text" placeholder={t.log_form_company_ph} className="w-full bg-surface-container-high rounded-full px-6 py-4 outline-none" />
+                <input name="email" type="email" placeholder={t.email_placeholder} className="w-full bg-surface-container-high rounded-full px-6 py-4 outline-none" />
+                <textarea name="message" rows={4} placeholder={t.log_form_message_ph} className="w-full bg-surface-container-high rounded-xl px-6 py-4 outline-none resize-none"></textarea>
                 <button type="submit" className="w-full yolk-gradient text-on-primary-fixed py-5 rounded-full font-bold text-lg">
                   {t.log_form_btn}
                 </button>
@@ -105,15 +147,25 @@ export default function Contacto() {
                   <p className="text-primary-fixed/80 text-lg max-w-xl">{t.about_cta_p}</p>
                 </div>
                 
-                <form className="space-y-5 bg-white/5 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/10" onSubmit={(e) => e.preventDefault()}>
+                <form
+                  className="space-y-5 bg-white/5 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/10"
+                  onSubmit={(e) =>
+                    handleWhatsAppSubmit(e, t.contact_tab_jobs, [
+                      { name: "name", label: t.jobs_form_name },
+                      { name: "area", label: t.jobs_form_area },
+                      { name: "email", label: t.jobs_form_email },
+                      { name: "message", label: t.jobs_form_message },
+                    ])
+                  }
+                >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
                       <label className="text-[10px] font-bold uppercase text-primary-fixed/60 tracking-widest ml-4">{t.jobs_form_name}</label>
-                      <input type="text" placeholder={t.jobs_form_name_ph} className="w-full bg-white/10 border border-white/10 rounded-full px-6 py-3.5 text-white placeholder:text-white/30 focus:bg-white/20 outline-none transition-all" />
+                      <input name="name" type="text" placeholder={t.jobs_form_name_ph} className="w-full bg-white/10 border border-white/10 rounded-full px-6 py-3.5 text-white placeholder:text-white/30 focus:bg-white/20 outline-none transition-all" />
                     </div>
                     <div className="space-y-1.5">
                       <label className="text-[10px] font-bold uppercase text-primary-fixed/60 tracking-widest ml-4">{t.jobs_form_area}</label>
-                      <select className="w-full bg-white/10 border border-white/10 rounded-full px-6 py-3.5 text-white focus:bg-white/20 outline-none transition-all appearance-none">
+                      <select name="area" className="w-full bg-white/10 border border-white/10 rounded-full px-6 py-3.5 text-white focus:bg-white/20 outline-none transition-all appearance-none">
                         <option className="text-primary">{t.jobs_form_area_sales}</option>
                         <option className="text-primary">{t.jobs_form_area_logistics}</option>
                         <option className="text-primary">{t.jobs_form_area_admin}</option>
@@ -123,11 +175,11 @@ export default function Contacto() {
                   </div>
                   <div className="space-y-1.5">
                     <label className="text-[10px] font-bold uppercase text-primary-fixed/60 tracking-widest ml-4">{t.jobs_form_email}</label>
-                    <input type="email" placeholder="email@example.com" className="w-full bg-white/10 border border-white/10 rounded-full px-6 py-3.5 text-white placeholder:text-white/30 focus:bg-white/20 outline-none transition-all" />
+                    <input name="email" type="email" placeholder="email@example.com" className="w-full bg-white/10 border border-white/10 rounded-full px-6 py-3.5 text-white placeholder:text-white/30 focus:bg-white/20 outline-none transition-all" />
                   </div>
                   <div className="space-y-1.5">
                     <label className="text-[10px] font-bold uppercase text-primary-fixed/60 tracking-widest ml-4">{t.jobs_form_message}</label>
-                    <textarea rows={3} placeholder={t.jobs_form_message_ph} className="w-full bg-white/10 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/30 focus:bg-white/20 outline-none transition-all resize-none"></textarea>
+                    <textarea name="message" rows={3} placeholder={t.jobs_form_message_ph} className="w-full bg-white/10 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/30 focus:bg-white/20 outline-none transition-all resize-none"></textarea>
                   </div>
                   <button type="submit" className="w-full bg-primary-fixed text-on-primary-fixed py-4 rounded-full font-bold text-lg shadow-xl hover:opacity-90 active:scale-[0.98] transition-all">
                     {t.jobs_form_btn}

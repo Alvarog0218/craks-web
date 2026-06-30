@@ -56,6 +56,8 @@ export default function Index() {
         </div>
       </section>
 
+
+
       {/* Services Section: Bento */}
       <section className="py-20 md:py-24 px-6 md:px-20 max-w-7xl mx-auto">
         <div className="mb-12 md:mb-16 text-center max-w-2xl mx-auto">
