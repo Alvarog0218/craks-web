@@ -87,7 +87,7 @@ export default function Contacto() {
 
           <div className="p-7 bg-surface-container-low rounded-xl border border-outline-variant/10">
              <h4 className="font-bold text-secondary mb-3">{t.contact_info_hours}</h4>
-             <p className="text-sm text-on-surface-variant">{t.contact_info_schedule}</p>
+             <p className="text-sm text-on-surface-variant whitespace-pre-line">{t.contact_info_schedule}</p>
           </div>
         </div>
 

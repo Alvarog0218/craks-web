@@ -5,10 +5,7 @@ import { useTranslation } from "@/i18n/LanguageContext";
 import SEO from "@/components/SEO";
 
 const EGG_IMAGE = "/assets/huevo.png/huevo.webp?v=3";
-
-const CLASIFICACIONES = ["B", "A", "AA", "AAA", "Jumbo"];
-
-
+const WHITE_EGG_IMAGE = "/assets/huevo.png/huevo-blanco.webp?v=3";
 
 export default function Productos() {
   const { t } = useTranslation();
@@ -20,9 +17,11 @@ export default function Productos() {
     window.open(url, "_blank", "noopener,noreferrer");
   };
   const [selectedClasificaciones, setSelectedClasificaciones] = useState<string[]>([]);
+  const [selectedTipo, setSelectedTipo] = useState<string | null>(null);
 
   type Product = {
     id: string;
+    classKey: "AAA" | "AA" | "A" | "B" | "C" | "REV_GRANDE" | "REV_MEDIANA" | "REV_PEQUENA";
     clasificacion: string;
     tipo: string;
     description: string;
@@ -33,28 +32,75 @@ export default function Productos() {
   };
 
   const products: Product[] = [
-    { id: "b-tradicional",  clasificacion: t.prod_clase_b,    tipo: t.prod_tipo_trad,   description: t.prod_desc_b,    badge: "Clase B",   badgeStyle: "secondary", price: 12500, image: EGG_IMAGE },
-    { id: "a-tradicional",  clasificacion: t.prod_clase_a,    tipo: t.prod_tipo_trad,   description: t.prod_desc_a,    badge: "Clase A",   badgeStyle: "secondary", price: 13800, image: EGG_IMAGE },
-    { id: "aa-tradicional", clasificacion: t.prod_clase_aa,   tipo: t.prod_tipo_trad,   description: t.prod_desc_aa,   badge: "Clase AA",  badgeStyle: "secondary", price: 15200, image: EGG_IMAGE },
-    { id: "aaa-tradicional",clasificacion: t.prod_clase_aaa,  tipo: t.prod_tipo_trad,   description: t.prod_desc_aaa,  badge: "Clase AAA", badgeStyle: "primary",   price: 16500, image: EGG_IMAGE },
-    { id: "jumbo-tradicional", clasificacion: t.prod_clase_jumbo,tipo: t.prod_tipo_trad,   description: t.prod_desc_jumbo,badge: "Jumbo",      badgeStyle: "primary",   price: 18500, image: EGG_IMAGE },
+    // AAA
+    { id: "aaa-tradicional", classKey: "AAA", clasificacion: t.prod_clase_aaa, tipo: t.prod_tipo_trad, description: t.prod_desc_aaa, badge: "Clase AAA", badgeStyle: "primary", price: 16500, image: EGG_IMAGE },
+    
+    // Revoltura Grande (Blanco)
+    { id: "rev-grande-blanco", classKey: "REV_GRANDE", clasificacion: t.prod_clase_rev_grande, tipo: t.prod_tipo_blanco, description: t.prod_desc_rev_grande, badge: "Revoltura G", badgeStyle: "primary", price: 17200, image: WHITE_EGG_IMAGE },
+    
+    // AA
+    { id: "aa-tradicional", classKey: "AA", clasificacion: t.prod_clase_aa, tipo: t.prod_tipo_trad, description: t.prod_desc_aa, badge: "Clase AA", badgeStyle: "secondary", price: 15200, image: EGG_IMAGE },
+    
+    // Revoltura Mediana (Blanco)
+    { id: "rev-mediana-blanco", classKey: "REV_MEDIANA", clasificacion: t.prod_clase_rev_mediana, tipo: t.prod_tipo_blanco, description: t.prod_desc_rev_mediana, badge: "Revoltura M", badgeStyle: "secondary", price: 15800, image: WHITE_EGG_IMAGE },
+    
+    // A
+    { id: "a-tradicional", classKey: "A", clasificacion: t.prod_clase_a, tipo: t.prod_tipo_trad, description: t.prod_desc_a, badge: "Clase A", badgeStyle: "secondary", price: 13800, image: EGG_IMAGE },
+    
+    // Revoltura Pequeña (Blanco)
+    { id: "rev-pequena-blanco", classKey: "REV_PEQUENA", clasificacion: t.prod_clase_rev_pequena, tipo: t.prod_tipo_blanco, description: t.prod_desc_rev_pequena, badge: "Revoltura P", badgeStyle: "secondary", price: 14200, image: WHITE_EGG_IMAGE },
+    
+    // B
+    { id: "b-tradicional", classKey: "B", clasificacion: t.prod_clase_b, tipo: t.prod_tipo_trad, description: t.prod_desc_b, badge: "Clase B", badgeStyle: "secondary", price: 12500, image: EGG_IMAGE },
+    
+    // C
+    { id: "c-tradicional", classKey: "C", clasificacion: t.prod_clase_c, tipo: t.prod_tipo_trad, description: t.prod_desc_c, badge: "Clase C", badgeStyle: "secondary", price: 11000, image: EGG_IMAGE },
   ];
 
-  const toggleClasificacion = (c: string) =>
+  const toggleClasificacion = (key: string) =>
     setSelectedClasificaciones((prev) =>
-      prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]
+      prev.includes(key) ? prev.filter((x) => x !== key) : [...prev, key]
     );
 
   const resetFilters = () => {
     setSelectedClasificaciones([]);
+    setSelectedTipo(null);
   };
 
   const filtered = products.filter((p) => {
-    return selectedClasificaciones.length === 0 ||
-      selectedClasificaciones.some((c) => p.clasificacion.includes(c));
+    const matchesClasificacion =
+      selectedClasificaciones.length === 0 ||
+      selectedClasificaciones.includes(p.classKey);
+    const matchesTipo = !selectedTipo || p.tipo === selectedTipo;
+    return matchesClasificacion && matchesTipo;
   });
 
-  const hasFilters = selectedClasificaciones.length > 0;
+  const hasFilters = selectedClasificaciones.length > 0 || selectedTipo !== null;
+
+  const clasificacionesMostrar = selectedTipo === t.prod_tipo_blanco
+    ? [
+        { key: "REV_GRANDE", label: t.prod_clase_rev_grande },
+        { key: "REV_MEDIANA", label: t.prod_clase_rev_mediana },
+        { key: "REV_PEQUENA", label: t.prod_clase_rev_pequena },
+      ]
+    : selectedTipo === t.prod_tipo_trad
+      ? [
+          { key: "AAA", label: "AAA" },
+          { key: "AA", label: "AA" },
+          { key: "A", label: "A" },
+          { key: "B", label: "B" },
+          { key: "C", label: "C" },
+        ]
+      : [
+          { key: "AAA", label: "AAA" },
+          { key: "AA", label: "AA" },
+          { key: "A", label: "A" },
+          { key: "B", label: "B" },
+          { key: "C", label: "C" },
+          { key: "REV_GRANDE", label: t.prod_clase_rev_grande },
+          { key: "REV_MEDIANA", label: t.prod_clase_rev_mediana },
+          { key: "REV_PEQUENA", label: t.prod_clase_rev_pequena },
+        ];
 
   return (
     <main className="flex-1 max-w-7xl mx-auto w-full px-6 md:px-12 pt-12 pb-20">
@@ -71,7 +117,44 @@ export default function Productos() {
         <h2 className="text-on-surface-variant max-w-xl text-base md:text-lg">{t.prod_subtitle}</h2>
       </section>
 
-
+      {/* Tipo Selector Menu */}
+      <section className="mb-12">
+        <div className="flex flex-col md:flex-row gap-4 items-center justify-center p-2 bg-surface-container-low rounded-2xl md:rounded-full border border-outline-variant/30 max-w-2xl mx-auto shadow-sm">
+          <button
+            onClick={() => { setSelectedTipo(null); setSelectedClasificaciones([]); }}
+            className={`w-full md:w-1/3 py-4 px-6 rounded-xl md:rounded-full font-bold transition-all flex items-center justify-center gap-2 ${
+              selectedTipo === null
+                ? "bg-primary text-on-primary shadow-lg shadow-primary/20 scale-105"
+                : "text-on-surface-variant hover:bg-surface-container-high"
+            }`}
+          >
+            <span className="material-symbols-outlined text-lg">apps</span>
+            {t.nav_home === "Inicio" ? "Todos" : "All"}
+          </button>
+          <button
+            onClick={() => { setSelectedTipo(t.prod_tipo_trad); setSelectedClasificaciones([]); }}
+            className={`w-full md:w-1/3 py-4 px-6 rounded-xl md:rounded-full font-bold transition-all flex items-center justify-center gap-3 ${
+              selectedTipo === t.prod_tipo_trad
+                ? "bg-primary text-on-primary shadow-lg shadow-primary/20 scale-105"
+                : "text-on-surface-variant hover:bg-surface-container-high"
+            }`}
+          >
+            <div className="w-6 h-6 rounded-full bg-[#f5cd62] border-2 border-white/20 shadow-inner"></div>
+            {t.prod_tipo_trad}
+          </button>
+          <button
+            onClick={() => { setSelectedTipo(t.prod_tipo_blanco); setSelectedClasificaciones([]); }}
+            className={`w-full md:w-1/3 py-4 px-6 rounded-xl md:rounded-full font-bold transition-all flex items-center justify-center gap-3 ${
+              selectedTipo === t.prod_tipo_blanco
+                ? "bg-primary text-on-primary shadow-lg shadow-primary/20 scale-105"
+                : "text-on-surface-variant hover:bg-surface-container-high"
+            }`}
+          >
+            <div className="w-6 h-6 rounded-full bg-[#f8f9fa] border-2 border-primary/10 shadow-inner"></div>
+            {t.prod_tipo_blanco}
+          </button>
+        </div>
+      </section>
 
       {/* Layout: Filter + Grid */}
       <div className="flex flex-col lg:flex-row gap-8">
@@ -90,19 +173,19 @@ export default function Productos() {
               <div>
                 <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 block">{t.prod_filter_clasificacion}</label>
                 <div className="flex flex-wrap gap-2">
-                  {CLASIFICACIONES.map((c) => {
-                    const active = selectedClasificaciones.includes(c);
+                  {clasificacionesMostrar.map((item) => {
+                    const active = selectedClasificaciones.includes(item.key);
                     return (
                       <button
-                        key={c}
-                        onClick={() => toggleClasificacion(c)}
+                        key={item.key}
+                        onClick={() => toggleClasificacion(item.key)}
                         className={`px-3 py-1.5 text-xs font-bold rounded-full transition-colors ${
                           active
                             ? "bg-secondary text-on-secondary"
                             : "bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed/50"
                         }`}
                       >
-                        {c}
+                        {item.label}
                       </button>
                     );
                   })}
