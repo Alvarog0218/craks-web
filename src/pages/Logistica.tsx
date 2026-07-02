@@ -174,7 +174,7 @@ export default function Logistica() {
         <div className="max-w-5xl mx-auto bg-secondary rounded-xl p-10 md:p-14 text-center">
           <h2 className="font-headline text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-5">{t.trans_final_h2}</h2>
           <p className="text-white/85 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">{t.trans_final_p}</p>
-          <a href="https://wa.me/573152225332?text=Hola%20Craks%2C%20quiero%20informacion%20sobre%20el%20servicio%20logistico%20y%20transporte%20de%20carga." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-primary-fixed text-on-primary-fixed px-8 py-4 rounded-full font-headline font-black text-base hover:brightness-105 active:scale-95 transition-all">
+          <a href="https://wa.me/573152225332?text=Hola%20Craks%2C%20quiero%20informacion%20sobre%20el%20servicio%20logistico%20y%20transporte%20de%20carga." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-black text-base hover:brightness-105 active:scale-95 transition-all">
             {t.trans_final_btn}
             <span className="material-symbols-outlined">arrow_forward</span>
           </a>
