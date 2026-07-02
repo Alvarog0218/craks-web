@@ -10,6 +10,7 @@ const Productos = lazy(() => import("@/pages/Productos"));
 const Nosotros = lazy(() => import("@/pages/Nosotros"));
 const Contacto = lazy(() => import("@/pages/Contacto"));
 const Operaciones = lazy(() => import("@/pages/Operaciones"));
+const Logistica = lazy(() => import("@/pages/Logistica"));
 
 function Loader() {
   return (
@@ -42,6 +43,7 @@ export default function App() {
                 <Route path="/nosotros" element={<Nosotros />} />
                 <Route path="/contacto" element={<Contacto />} />
                 <Route path="/operaciones" element={<Operaciones />} />
+                <Route path="/logistica" element={<Logistica />} />
               </Routes>
             </Suspense>
           </Layout>

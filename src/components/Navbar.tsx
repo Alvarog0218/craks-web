@@ -6,6 +6,7 @@ const navLinks = [
   { path: "/", page: "inicio", icon: "home", key: "nav_home" },
   { path: "/nosotros", page: "nosotros", icon: "group", key: "nav_about" },
   { path: "/operaciones", page: "operaciones", icon: "local_shipping", key: "nav_logistics" },
+  { path: "/logistica", page: "logistica", icon: "route", key: "nav_transport" },
   { path: "/contacto", page: "contacto", icon: "hub", key: "nav_contact" },
   { path: "/productos", page: "productos", icon: "egg", key: "nav_products" },
 ] as const;
@@ -96,7 +97,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Links */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.page}
