@@ -1,11 +1,25 @@
-import { type FormEvent, useState } from "react";
+import { type FormEvent, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { useTranslation } from "@/i18n/LanguageContext";
 import SEO from "@/components/SEO";
 
+type ContactTab = "distribucion" | "asociacion" | "empleo";
+
+function getTabFromHash(hash: string): ContactTab {
+  if (hash === "#empleo") return "empleo";
+  if (hash === "#asociacion") return "asociacion";
+  return "distribucion";
+}
+
 export default function Contacto() {
   const { t } = useTranslation();
-  const [activeTab, setActiveTab] = useState("distribucion");
+  const location = useLocation();
+  const [activeTab, setActiveTab] = useState<ContactTab>(() => getTabFromHash(location.hash));
   const WHATSAPP_NUMBER = "573152225332";
+
+  useEffect(() => {
+    setActiveTab(getTabFromHash(location.hash));
+  }, [location.hash]);
 
   const handleWhatsAppSubmit = (
     event: FormEvent<HTMLFormElement>,
@@ -93,7 +107,7 @@ export default function Contacto() {
 
         <div className="lg:col-span-3">
           {activeTab === "distribucion" && (
-            <div className="bg-surface-container-low p-8 rounded-xl shadow-xl border border-outline-variant/10">
+            <div id="distribucion" className="bg-surface-container-low p-8 rounded-xl shadow-xl border border-outline-variant/10">
               <h2 className="text-2xl font-bold text-secondary mb-6">{t.dist_form_h2}</h2>
               <form
                 className="space-y-6"
@@ -116,7 +130,7 @@ export default function Contacto() {
           )}
 
           {activeTab === "asociacion" && (
-            <div className="bg-surface-container-low p-8 rounded-xl shadow-xl border border-outline-variant/10">
+            <div id="asociacion" className="bg-surface-container-low p-8 rounded-xl shadow-xl border border-outline-variant/10">
               <h2 className="text-2xl font-bold text-secondary mb-6">{t.log_form_h2}</h2>
               <form
                 className="space-y-6"
@@ -139,7 +153,7 @@ export default function Contacto() {
           )}
 
           {activeTab === "empleo" && (
-            <div className="bg-primary p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
+            <div id="empleo" className="bg-primary p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
               <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-primary-fixed/10 rounded-full blur-3xl pointer-events-none"></div>
               <div className="relative z-10">
                 <div className="mb-10">

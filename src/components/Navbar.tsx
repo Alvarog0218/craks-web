@@ -80,7 +80,7 @@ export default function Navbar() {
 
         <div className="mt-auto pt-8">
           <Link
-            to="/operaciones"
+            to="/contacto#empleo"
             onClick={() => setOpen(false)}
             className="yolk-gradient block w-full text-center py-4 rounded-full font-bold text-on-primary-fixed text-sm uppercase tracking-wide"
           >
