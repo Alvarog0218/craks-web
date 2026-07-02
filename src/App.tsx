@@ -3,6 +3,7 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { Suspense, lazy } from "react";
 import Index from "@/pages/Index";
 
@@ -27,6 +28,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       <Navbar />
       {children}
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

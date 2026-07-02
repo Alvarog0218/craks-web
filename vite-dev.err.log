@@ -1,0 +1,65 @@
+[2m1:28:25 p. m.[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\Dev\craks-web\src\App.tsx: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (29:4)
+
+[0m [90m 27 |[31m           [33m<[31m[33m/[31m[33mLayout[31m[33m>[31m
+ [90m 28 |[31m       [33m<[31m[33m/[31m[33mLanguageProvider[31m[33m>[31m
+[31m[1m>[22m[31m[90m 29 |[31m     [33m<[31m[33m/[31m[33mBrowserRouter[31m[33m>[31m
+ [90m    |[31m     [31m[1m^[22m[31m
+ [90m 30 |[31m   )[33m;[31m
+ [90m 31 |[31m }
+ [90m 32 |[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/Dev/craks-web/src/App.tsx[39m:29:4
+[33m  27 |            </Layout>
+  28 |        </LanguageProvider>
+  29 |      </BrowserRouter>
+     |                ^
+  30 |    );
+  31 |  }[39m
+      at constructor (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:6599:19)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:4742:18)
+      at TypeScriptParserMixin.jsxParseElement (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:4749:17)
+      at TypeScriptParserMixin.parseExprAtom (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:4759:19)
+      at TypeScriptParserMixin.parseExprSubscripts (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:10831:21)
+      at D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:9775:39
+      at TypeScriptParserMixin.tryParse (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:6907:20)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:9775:18)
+      at TypeScriptParserMixin.parseExpressionBase (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:10784:23)
+      at D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseStatementContent (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:12895:23)
+      at TypeScriptParserMixin.parseStatementContent (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:12612:25)
+      at TypeScriptParserMixin.parse (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:14488:25)
+      at TypeScriptParserMixin.parse (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:10126:18)
+      at parse (D:\Dev\craks-web\node_modules\@babel\parser\lib\index.js:14522:38)
+      at parser (D:\Dev\craks-web\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (D:\Dev\craks-web\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (D:\Dev\craks-web\node_modules\@babel\core\lib\transformation\index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (D:\Dev\craks-web\node_modules\@babel\core\lib\transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (D:\Dev\craks-web\node_modules\gensync\index.js:261:32)
+      at D:\Dev\craks-web\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (D:\Dev\craks-web\node_modules\gensync\index.js:223:11)
+      at D:\Dev\craks-web\node_modules\gensync\index.js:189:28
+      at D:\Dev\craks-web\node_modules\@babel\core\lib\gensync-utils\async.js:67:7
+      at D:\Dev\craks-web\node_modules\gensync\index.js:113:33
+      at step (D:\Dev\craks-web\node_modules\gensync\index.js:287:14)
+      at D:\Dev\craks-web\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (D:\Dev\craks-web\node_modules\gensync\index.js:223:11)
